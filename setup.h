@@ -8,6 +8,8 @@
 #include "video.h"
 #include "game.h"
 #include "music.h"
+#include "GQueue.h"
+#include "kbc.h"
 
 extern int fps;
 
@@ -18,9 +20,8 @@ void setup_timer();
 void setup_rtc();
 
 extern Queue keys;
-void setup_kbd();
-
-void setup_mouse();
+extern GQueue *mouseQueue;
+void setup_kbc();
 
 extern char *base;
 void setup_video();

@@ -1,6 +1,8 @@
 
 #include "game.h"
 
+static Mouse mouse;
+
 static Sprite *sprite;
 static Song *song;
 
@@ -15,7 +17,7 @@ void updateSprite(Sprite *sprite, double sec, char key) {
 				break;
 			case 0x48: // UP
 				sprite->y--;
-				play_song(song);
+				//play_song(song);
 				break;
 			case 0x50: // DOWN
 				sprite->y++;
@@ -55,7 +57,21 @@ void update(double sec) {
 			default:
 				break;
 		}
-		
+	
+	if (!isEmptyGQueue(mouseQueue)) {
+		parse_mouse_event(mouseQueue, &mouse);
+		sprite->x += mouse.xsig * mouse.dx;
+		sprite->y -= mouse.ysig * mouse.dy;
+		if (sprite->x > HRES)
+			sprite->x = HRES;
+		if (sprite->y > VRES)
+			sprite->y = VRES;
+		if (sprite->x < 0)
+			sprite->x = 0;
+		if (sprite->y < 0)
+			sprite->y = 0;			
+	}
+	
 	sprite->update(sprite, sec, c);	
 }
 

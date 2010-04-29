@@ -29,7 +29,7 @@ void drawSprite(Sprite *sprite, char *buffer) {
 	for (i = 0; i < sprite->height; i++)
 		for (j = 0; j < sprite->width; j++)
 			if ((pix = sprite->img[sprite->imgIndex][i*sprite->width+j]))
-				buffer[(i+sprite->y)*HRES + j+sprite->x] = pix;
+				set_pixelb(j+sprite->x, i+sprite->y, pix, buffer);
 }
 
 void deleteSprite(Sprite *sprite) {

@@ -58,7 +58,7 @@ void process_args(int argc, char **argv) {
 	}
 }
 
-static _go32_dpmi_seginfo old_t0_isr, old_kbd_isr, old_rtc_isr;
+static _go32_dpmi_seginfo old_t0_isr, old_kbd_isr, old_rtc_isr, old_mouse_isr;
 
 void setup_timer() {
 	timer_load(TIMER_0, TIMER_CLK / 1000);
@@ -76,24 +76,47 @@ void setup_rtc() {
 }
 
 Queue keys;
+GQueue *mouseQueue;
 
-void setup_kbd() {
+void setup_kbc() {	
 	queueInit(&keys);
+	mouseQueue = newGQueue(3, 3 * sizeof(uchar));
+	
+	disable_irq(KBD_IRQ);
+	disable_irq(MOUSE_IRQ);  
+
+	if (kbc_init(0) != 1) {
+		fprintf(stderr, "Rato Nao Encontrado\n");
+		enable_irq(KBD_IRQ);
+		enable_irq(MOUSE_IRQ);	
+		//exit(2);
+	}
+	
+	void mouse_isr();
+	install_asm_irq_handler(MOUSE_IRQ, mouse_isr, &old_mouse_isr); 
+	
+	void mouse_isr_end();
+	_go32_dpmi_lock_code(mouse_isr, ((unsigned int) mouse_isr_end) - ((unsigned int) mouse_isr));
 
 	void kbd_isr();
 	install_asm_irq_handler(KBD_IRQ, kbd_isr, &old_kbd_isr);
+	
 	enable_irq(KBD_IRQ);
-}
-
-void setup_mouse() {
+	//enable_irq(MOUSE_IRQ); 
 }
 
 char *base;
 
 void setup_video() {
-	base = enter_graphics(mode);
-	if (base == NULL)
+	int i = 0;
+	for (i = 0; i < 3; i++)
+		if ((base = enter_graphics(mode)) != NULL)
+			break;
+			
+	if (base == NULL) {
+		fprintf(stderr, "Modo Grafico Nao Suportado!\n");
 		exit(2);
+	}
 }
 
 void tear_down() {
@@ -106,4 +129,6 @@ void tear_down() {
 
 	reinstall_asm_irq_handler(KBD_IRQ, &old_kbd_isr);	
 	reinstall_asm_irq_handler(T0_IRQ, &old_t0_isr);
+	reinstall_asm_irq_handler(MOUSE_IRQ, &old_mouse_isr);
+	deleteGQueue(mouseQueue);
 }
