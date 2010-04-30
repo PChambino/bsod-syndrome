@@ -14,7 +14,7 @@
 #include "sprite.h"
 #include "pixmap.h"
 #include "music.h"
-
+#include "mouse.h"
 
 void game_init();
 

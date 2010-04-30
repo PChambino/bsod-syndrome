@@ -1,11 +1,12 @@
-#ifndef _READ_XPM_H_
-#define _READ_XPM_H_
+#ifndef _SPRITE_H_
+#define _SPRITE_H_
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
 #include "video.h"
+#include "mouse.h"
 
 /** @defgroup Sprite Sprite
  * @{
@@ -35,13 +36,15 @@ struct Sprite {
 	char **img;
 	int imgs, imgIndex;
 	int width, height;
-	void (*update) (Sprite *sprite, double sec, char key);
+	void (*update) (Sprite *sprite, double sec, char key, Mouse *mouse);
 };
 
 Sprite* newSprite(int x, int y, char **map[], int maps,
-	void (*update)(Sprite *sprite, double sec, char key));
+	void (*update)(Sprite *sprite, double sec, char key, Mouse *mouse));
 
 void drawSprite(Sprite *sprite, char *buffer);
+
+void moveSprite(Sprite *sprite, int dx, int dy);
 
 void deleteSprite(Sprite *sprite);
 

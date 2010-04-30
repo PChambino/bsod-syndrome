@@ -256,13 +256,4 @@ void blink_led(uchar led);
 
 /** @} end of KeyboardController */
 
-typedef struct {
-	uchar *data;
-	int yov, xov, ysig, xsig, mb, rb, lb, dx, dy;
-} Mouse;
-
-void parse_mouse_event();
-
-void print_mouse_event();
-
 #endif

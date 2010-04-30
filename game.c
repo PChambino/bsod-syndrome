@@ -6,7 +6,7 @@ static Mouse mouse;
 static Sprite *sprite;
 static Song *song;
 
-void updateSprite(Sprite *sprite, double sec, char key) {
+void updateSprite(Sprite *sprite, double sec, char key, Mouse *mouse) {
 	if (key)
 	 	switch (key) {
 			case 0x4d: // RIGHT
@@ -25,6 +25,9 @@ void updateSprite(Sprite *sprite, double sec, char key) {
 			default:
 				break;
 	 	}
+	
+	if (mouse)
+		moveSprite(sprite, mouse->xsig * mouse->dx, mouse->xsig * mouse->dx);
 }
 
 void game_init() {
@@ -58,21 +61,13 @@ void update(double sec) {
 				break;
 		}
 	
+	int mouseEvent = 0;
 	if (!isEmptyGQueue(mouseQueue)) {
 		parse_mouse_event(mouseQueue, &mouse);
-		sprite->x += mouse.xsig * mouse.dx;
-		sprite->y -= mouse.ysig * mouse.dy;
-		if (sprite->x > HRES)
-			sprite->x = HRES;
-		if (sprite->y > VRES)
-			sprite->y = VRES;
-		if (sprite->x < 0)
-			sprite->x = 0;
-		if (sprite->y < 0)
-			sprite->y = 0;			
+		mouseEvent = 1;
 	}
 	
-	sprite->update(sprite, sec, c);	
+	sprite->update(sprite, sec, c, (mouseEvent ? &mouse : NULL));
 }
 
 void draw(char *buffer) {
@@ -96,7 +91,7 @@ void game_loop(int fps) {
 	extern int time_tick;
 	int lastTime = time_tick;
 	int timePerFrame;
-	
+
 	while (1) {
 		disable();
 		
@@ -109,7 +104,7 @@ void game_loop(int fps) {
 		
 		// copies from buffer to screen
 		memcpy(base, buffer, HRES * VRES * sizeof(char));
-				
+		
 		enable();
 		
 		// waits for a while

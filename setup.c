@@ -69,10 +69,10 @@ void setup_timer() {
 }
 
 void setup_rtc() {
-	void rtc_isr();
+/*	void rtc_isr();
 	install_c_irq_handler(RTC_IRQ, rtc_isr, &old_rtc_isr);
 	write_rtcv(RTC_STAT_B, read_rtcv(RTC_STAT_B) | RTC_PIE);
-	enable_irq(RTC_IRQ);
+	enable_irq(RTC_IRQ);*/
 }
 
 Queue keys;
@@ -89,7 +89,7 @@ void setup_kbc() {
 		fprintf(stderr, "Rato Nao Encontrado\n");
 		enable_irq(KBD_IRQ);
 		enable_irq(MOUSE_IRQ);	
-		//exit(2);
+		exit(2);
 	}
 	
 	void mouse_isr();
@@ -102,7 +102,7 @@ void setup_kbc() {
 	install_asm_irq_handler(KBD_IRQ, kbd_isr, &old_kbd_isr);
 	
 	enable_irq(KBD_IRQ);
-	//enable_irq(MOUSE_IRQ); 
+	enable_irq(MOUSE_IRQ); 
 }
 
 char *base;
@@ -122,13 +122,13 @@ void setup_video() {
 void tear_down() {
 	leave_graphics();
 
-	speaker_off();
+/*	speaker_off();
 	disable_irq(RTC_IRQ);
 	write_rtcv(RTC_STAT_B, read_rtcv(RTC_STAT_B) & ~(RTC_PIE | RTC_AIE | RTC_UIE));
-	reinstall_c_irq_handler(RTC_IRQ, &old_rtc_isr);
+	reinstall_c_irq_handler(RTC_IRQ, &old_rtc_isr);*/
 
 	reinstall_asm_irq_handler(KBD_IRQ, &old_kbd_isr);	
 	reinstall_asm_irq_handler(T0_IRQ, &old_t0_isr);
-	reinstall_asm_irq_handler(MOUSE_IRQ, &old_mouse_isr);
+//	reinstall_asm_irq_handler(MOUSE_IRQ, &old_mouse_isr);
 	deleteGQueue(mouseQueue);
 }
