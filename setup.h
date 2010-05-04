@@ -15,16 +15,20 @@ extern int fps;
 
 void process_args(int argc, char **argv);
 
-void setup_timer();
+extern FILE* logger;
 
-void setup_rtc();
+void setup_log();
+
+extern char *base;
+void setup_video();
 
 extern Queue keys;
 extern GQueue *mouseQueue;
 void setup_kbc();
 
-extern char *base;
-void setup_video();
+void setup_rtc();
+
+void setup_timer();
 
 void tear_down();
 

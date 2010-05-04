@@ -14,5 +14,5 @@ void timer_load(int timer, int value) {
 void mili_sleep(int mili) {
 	int end = time_tick + mili;
 	
-	while (time_tick < end) { end = end; }
+	while (time_tick < end) { }
 }

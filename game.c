@@ -17,7 +17,7 @@ void updateSprite(Sprite *sprite, double sec, char key, Mouse *mouse) {
 				break;
 			case 0x48: // UP
 				sprite->y--;
-				//play_song(song);
+				play_song(song);
 				break;
 			case 0x50: // DOWN
 				sprite->y++;
@@ -27,11 +27,11 @@ void updateSprite(Sprite *sprite, double sec, char key, Mouse *mouse) {
 	 	}
 	
 	if (mouse)
-		moveSprite(sprite, mouse->xsig * mouse->dx, mouse->xsig * mouse->dx);
+		moveSprite(sprite, mouse->dx, mouse->dy);
 }
 
 void game_init() {
-	disable();
+	//disable();
 	
 	srand(time(NULL));
 	
@@ -50,7 +50,7 @@ void game_init() {
 	song->pause = 10;
 	song->notes = notes;
 	
-	enable();
+	//enable();
 }
 
 void game_end() {
@@ -90,6 +90,7 @@ void draw(char *buffer) {
 }
 
 void game_loop(int fps) {
+	fprintf(logger, "Game Init\n");
 	game_init();
 	atexit(game_end);
 	
@@ -97,28 +98,30 @@ void game_loop(int fps) {
 	char buffer[HRES*VRES];
 	
 	// calculates time to wait per frame
-	int waitPerFrame = 1000 / fps;
+	/*int waitPerFrame = 1000 / fps;
 	
 	extern int time_tick;
 	int lastTime = time_tick;
-	int timePerFrame;
+	int timePerFrame;*/
+
+	fprintf(logger, "Game Loop\n");
 
 	while (1) {
-		disable();
+		//disable();
 		
 		// calculates last frame time
-		timePerFrame = time_tick - lastTime;
-		lastTime = time_tick;
+		/*timePerFrame = time_tick - lastTime;
+		lastTime = time_tick;*/
 		
-		update(timePerFrame / 1000);
+		update(1);//timePerFrame / 1000);
 		draw(buffer);
 		
 		// copies from buffer to screen
 		memcpy(base, buffer, HRES * VRES * sizeof(char));
 		
-		enable();
+		//enable();
 		
 		// waits for a while
-		mili_sleep(waitPerFrame);
+		//mili_sleep(waitPerFrame);
 	}
 }

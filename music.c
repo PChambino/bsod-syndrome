@@ -33,10 +33,10 @@ void rtc_isr() {
 				}
 				
 				Note *note = &song->notes[songIndex];
-				noteTime = note->dur;
+				/*noteTime = note->dur;
 				timer_load(TIMER_2, TIMER_CLK / notes_frequency[note->freq]);
 				speaker_on();
-				state = PLAYING;
+				state = PLAYING;*/
 				break;
 			case PLAYING:
 				noteTime--;
