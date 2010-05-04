@@ -12,9 +12,11 @@
 #include "timer.h"
 #include "setup.h"
 #include "sprite.h"
-#include "pixmap.h"
 #include "music.h"
 #include "mouse.h"
+
+#include "pixmap.h"
+#include "bg.h"
 
 void game_init();
 

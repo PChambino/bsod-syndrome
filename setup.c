@@ -83,7 +83,7 @@ void setup_kbc() {
 	mouseQueue = newGQueue(3, 3 * sizeof(uchar));
 	
 	disable_irq(KBD_IRQ);
-	disable_irq(MOUSE_IRQ);  
+/*	disable_irq(MOUSE_IRQ);  
 
 	if (kbc_init(0) != 1) {
 		fprintf(stderr, "Rato Nao Encontrado\n");
@@ -97,12 +97,12 @@ void setup_kbc() {
 	
 	void mouse_isr_end();
 	_go32_dpmi_lock_code(mouse_isr, ((unsigned int) mouse_isr_end) - ((unsigned int) mouse_isr));
-
+*/
 	void kbd_isr();
 	install_asm_irq_handler(KBD_IRQ, kbd_isr, &old_kbd_isr);
 	
 	enable_irq(KBD_IRQ);
-	enable_irq(MOUSE_IRQ); 
+//	enable_irq(MOUSE_IRQ); 
 }
 
 char *base;

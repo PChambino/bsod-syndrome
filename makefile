@@ -11,7 +11,7 @@ $(PROG): $(OBJS)
 main.o: setup.h game.h
 setup.o: setup.h video.h ints.h game.h queue.h gqueue.h kbc.h
 video.o: video.h
-game.o: game.h video.h queue.h sprite.h
+game.o: game.h video.h queue.h sprite.h bg.h
 queue.o: queue.h
 ints.o: ints.h
 timer.o: timer.h ints.h
@@ -33,3 +33,7 @@ mouseisr.o: mouseisr.asm
 	
 clean:
 	rm $(OBJS)
+
+dosbox:
+	make
+	mv $(PROG:.exe=.000) $(PROG)

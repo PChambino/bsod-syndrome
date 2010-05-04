@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <go32.h>
+#include <pc.h>
 
 #include "utypes.h"
 
@@ -14,6 +15,11 @@
  *
  * Entering/leaving/utility video functions
  */
+
+#define BIT14ON 0x4000
+
+#define INPUT_STATUS        0x03da
+#define VRETRACE            0x08
 
 /*
  * there are two global variables, declared (but not defined) here
@@ -54,6 +60,8 @@ void clear_screen(char color);
 /** Draw a line of color "color" between point (xi,yi) and (xf,yf) at memory address "base"
 */
 void draw_line(int xi, int yi, int xf, int yf, int color);
+
+void wait_for_retrace();
 
 /** @} end of video */ 
 

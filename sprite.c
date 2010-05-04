@@ -24,12 +24,25 @@ Sprite* newSprite(int x, int y, char **map[], int maps,
 }
 
 void drawSprite(Sprite *sprite, char *buffer) {
+	int i;
+	for (i = 0; i < sprite->height; i++)
+		memcpy(buffer+HRES*(i+sprite->y)+sprite->x,
+			sprite->img[sprite->imgIndex]+i*sprite->width,
+			sprite->width);
+}
+
+void drawSpriteT(Sprite *sprite, char t, char *buffer) {
 	int i, j;
 	char pix;
 	for (i = 0; i < sprite->height; i++)
 		for (j = 0; j < sprite->width; j++)
-			if ((pix = sprite->img[sprite->imgIndex][i*sprite->width+j]))
+			if ((pix = sprite->img[sprite->imgIndex][i*sprite->width+j]) != t)
 				set_pixelb(j+sprite->x, i+sprite->y, pix, buffer);
+}
+
+void drawSpriteBG(Sprite *sprite, char *buffer) {
+	if (sprite->width == HRES && sprite->height == VRES)
+		memcpy(buffer, sprite->img[sprite->imgIndex], HRES * VRES * sizeof(char));
 }
 
 void moveSprite(Sprite *sprite, int dx, int dy) {

@@ -3,7 +3,7 @@
 
 static Mouse mouse;
 
-static Sprite *sprite;
+static Sprite *sprite, *spriteBG;
 static Song *song;
 
 void updateSprite(Sprite *sprite, double sec, char key, Mouse *mouse) {
@@ -31,6 +31,8 @@ void updateSprite(Sprite *sprite, double sec, char key, Mouse *mouse) {
 }
 
 void game_init() {
+	disable();
+	
 	srand(time(NULL));
 	
 	char **maps[] = {penguin};
@@ -39,15 +41,21 @@ void game_init() {
 	sprite->x -= sprite->width/2;
 	sprite->y -= sprite->height/2;
 	
+	char **mapsBG[] = {BG};
+	spriteBG = newSprite(0, 0, mapsBG, 1, NULL);
+	
 	Note notes[] = {{Sol6, 100}, {Mi6,50}, {Sol6, 50}, {Mi6, 25}}; 
 	song = malloc(sizeof(Song));
 	song->lenght = sizeof(notes)/sizeof(Note);
 	song->pause = 10;
 	song->notes = notes;
+	
+	enable();
 }
 
 void game_end() {
 	deleteSprite(sprite);
+	deleteSprite(spriteBG);
 	free(song);
 }
 
@@ -71,17 +79,20 @@ void update(double sec) {
 }
 
 void draw(char *buffer) {
-	int i = 0;
+/*	int i = 0;
 	for (i = 0; i < VRES; i++)
-		memset(buffer+i*HRES, i,HRES);
+		memset(buffer+i*HRES, i,HRES);*/
+
+	drawSpriteBG(spriteBG, buffer);
 	
+	//drawSpriteInv(sprite, 0, buffer);
 	drawSprite(sprite, buffer);
 }
 
 void game_loop(int fps) {
 	game_init();
 	atexit(game_end);
-
+	
 	// creates a buffer for double-buffering
 	char buffer[HRES*VRES];
 	

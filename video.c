@@ -1,7 +1,5 @@
 
 #include "video.h"
-
-#define BIT14ON 0x4000
  
 int HRES = 0;
 int VRES = 0;
@@ -188,4 +186,11 @@ void draw_line(int xi, int yi, int xf, int yf, int color) {
 			error -= 1.0;
 		}
 	}
+}
+
+void wait_for_retrace() {
+    /* wait until done with vertical retrace */
+    while  ((inp(INPUT_STATUS) & VRETRACE)) {};
+    /* wait until done refreshing */
+    while (!(inp(INPUT_STATUS) & VRETRACE)) {};
 }

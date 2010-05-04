@@ -43,6 +43,8 @@ Sprite* newSprite(int x, int y, char **map[], int maps,
 	void (*update)(Sprite *sprite, double sec, char key, Mouse *mouse));
 
 void drawSprite(Sprite *sprite, char *buffer);
+void drawSpriteT(Sprite *sprite, char t, char *buffer);
+void drawSpriteBG(Sprite *sprite, char *buffer);
 
 void moveSprite(Sprite *sprite, int dx, int dy);
 
