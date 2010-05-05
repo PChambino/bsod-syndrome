@@ -11,7 +11,7 @@ typedef struct {
 	int yov, xov, ysig, xsig, mb, rb, lb, dx, dy;
 } Mouse;
 
-void parse_mouse_event(GQueue *mouseQueue, Mouse *mouse);
+int parse_mouse_event(GQueue *mouseQueue, Mouse *mouse);
 
 void print_mouse_event(Mouse *mouse);
 

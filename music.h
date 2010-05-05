@@ -1,6 +1,9 @@
 #ifndef _MUSIC_H_
 #define _MUSIC_H_
 
+#include <stdlib.h>
+#include <string.h>
+
 #include "timer.h"
 #include "rtc.h"
 
@@ -32,6 +35,10 @@ void speaker_on();
 /** Turns the speeker off
  */
 void speaker_off();
+
+Song* newSong(int pause, Note notes[], int lenght);
+
+void deleteSong(Song *s);
 
 /** Plays a song using busy-waiting
 <pre>

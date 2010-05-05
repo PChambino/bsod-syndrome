@@ -61,8 +61,8 @@ void process_args(int argc, char **argv) {
 FILE* logger;
 
 void setup_log() {
-	//logger = fopen("log.txt", "a+");
-	logger = stderr;
+	logger = fopen("log.txt", "a+");
+	//logger = stderr;
 	
 	RTC_DATE date; rtc_read_date(&date);
 	RTC_TIME time; rtc_read_time(&time);
@@ -96,7 +96,7 @@ void setup_kbc() {
 	fprintf(logger, "Setup KBC\n");
 	
 	queueInit(&keys);
-	mouseQueue = newGQueue(10, 3 * sizeof(uchar));
+	mouseQueue = newGQueue(10000, 3 * sizeof(uchar));
 	
 	disable_irq(KBD_IRQ);
 	disable_irq(MOUSE_IRQ);  
@@ -154,8 +154,8 @@ void tear_down() {
 	// mouse
 	reinstall_asm_irq_handler(MOUSE_IRQ, &old_mouse_isr);
 	deleteGQueue(mouseQueue);
-	if(hasMouse)
-		mouse_disable();
+	/*if(hasMouse)
+		mouse_disable();*/
 
 	// timer 0
 	//reinstall_asm_irq_handler(T0_IRQ, &old_t0_isr);

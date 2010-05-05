@@ -17,6 +17,7 @@
 
 #include "pixmap.h"
 #include "bg.h"
+#include "hammer.h"
 
 void game_init();
 

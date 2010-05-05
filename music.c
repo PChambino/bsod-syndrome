@@ -21,7 +21,7 @@ static int songIndex = 0;
 
 void rtc_isr() {
 	Byte statC = read_rtcv(RTC_STAT_C);
-	
+
 	if ((statC & RTC_IRQF) != 0 && (statC & RTC_PF) != 0) {
 		switch (state) {
 			case OFF:
@@ -32,11 +32,11 @@ void rtc_isr() {
 					break;
 				}
 				
-				Note *note = &song->notes[songIndex];
-				/*noteTime = note->dur;
+				Note *note = &song->notes[songIndex++];
+				noteTime = note->dur;
 				timer_load(TIMER_2, TIMER_CLK / notes_frequency[note->freq]);
 				speaker_on();
-				state = PLAYING;*/
+				state = PLAYING;
 				break;
 			case PLAYING:
 				noteTime--;
@@ -64,6 +64,22 @@ void speaker_on() {
 
 void speaker_off() {
 	outportb(SPEAKER_CTRL, inportb(SPEAKER_CTRL) & ~(SPEAKER_ENABLE | TIMER2_ENABLE));
+}
+
+Song* newSong(int pause, Note notes[], int lenght) {
+	Song *s = malloc(sizeof(Song));
+	s->pause = pause;
+	s->lenght = lenght;
+	int sizeofnotes = lenght * sizeof(Note);
+	s->notes = malloc(sizeofnotes);
+	memcpy(s->notes, notes, sizeofnotes);
+	
+	return s;
+}
+
+void deleteSong(Song *s) {
+	free(s->notes);
+	free(s);
 }
 
 void play_song(Song *s) {

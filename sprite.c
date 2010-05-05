@@ -52,10 +52,10 @@ void moveSprite(Sprite *sprite, int dx, int dy) {
 		sprite->x = 0;
 	if (sprite->y < 0)
 		sprite->y = 0;
-	if (sprite->x > HRES) // TODO considerar largura ?
-		sprite->x = HRES;
-	if (sprite->y > VRES) // TODO considerar altura ?
-		sprite->y = VRES;
+	if (sprite->x + sprite->width > HRES)
+		sprite->x = HRES - sprite->width;
+	if (sprite->y + sprite->height > VRES)
+		sprite->y = VRES - sprite->height;
 }
 
 void deleteSprite(Sprite *sprite) {

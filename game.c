@@ -7,6 +7,16 @@ static Sprite *sprite, *spriteBG;
 static Song *song;
 
 void updateSprite(Sprite *sprite, double sec, char key, Mouse *mouse) {
+	static int down = 0;
+	static int time = 10;
+	if (down) {
+		if (time-- == 0) {
+			sprite->imgIndex = (sprite->imgIndex + 1) % sprite->imgs;
+			down = 0;
+			time = 10;
+		}
+	}
+
 	if (key)
 	 	switch (key) {
 			case 0x4d: // RIGHT
@@ -17,17 +27,26 @@ void updateSprite(Sprite *sprite, double sec, char key, Mouse *mouse) {
 				break;
 			case 0x48: // UP
 				sprite->y--;
-				play_song(song);
 				break;
 			case 0x50: // DOWN
 				sprite->y++;
+				break;
+			case 0x1c: // ENTER
+				down = 1;
+				sprite->imgIndex = (sprite->imgIndex + 1) % sprite->imgs;
 				break;
 			default:
 				break;
 	 	}
 	
-	if (mouse)
+	if (mouse) {
+		//print_mouse_event(mouse);
 		moveSprite(sprite, mouse->dx, mouse->dy);
+		if (mouse->lb) {
+			down = 1;
+			sprite->imgIndex = (sprite->imgIndex + 1) % sprite->imgs;
+		}
+	}
 }
 
 void game_init() {
@@ -35,20 +54,17 @@ void game_init() {
 	
 	srand(time(NULL));
 	
-	char **maps[] = {penguin};
-	sprite = newSprite(HRES/2, VRES/2, maps, 1, updateSprite);
+	char **maps[] = {hammer_up, hammer_down};
+	sprite = newSprite(HRES/2, VRES/2, maps, sizeof(maps)/sizeof(char*), updateSprite);
 		
 	sprite->x -= sprite->width/2;
 	sprite->y -= sprite->height/2;
 	
 	char **mapsBG[] = {BG};
-	spriteBG = newSprite(0, 0, mapsBG, 1, NULL);
+	spriteBG = newSprite(0, 0, mapsBG, sizeof(mapsBG)/sizeof(char*), NULL);
 	
-	Note notes[] = {{Sol6, 100}, {Mi6,50}, {Sol6, 50}, {Mi6, 25}}; 
-	song = malloc(sizeof(Song));
-	song->lenght = sizeof(notes)/sizeof(Note);
-	song->pause = 10;
-	song->notes = notes;
+	Note notes[] = {{Sol6, 100}, {Mi6, 50}, {Sol6, 50}, {Mi6, 25}}; 
+	song = newSong(10, notes, sizeof(notes)/sizeof(Note));
 	
 	//enable();
 }
@@ -56,7 +72,7 @@ void game_init() {
 void game_end() {
 	deleteSprite(sprite);
 	deleteSprite(spriteBG);
-	free(song);
+	deleteSong(song);
 }
 
 void update(double sec) {
@@ -65,17 +81,13 @@ void update(double sec) {
 		switch (c = queueGet(&keys)) {
 			case 1: // ESC
 				exit(0);
+			case 0x0F: // TAB
+				play_song(song);
 			default:
 				break;
 		}
 	
-	int mouseEvent = 0;
-	if (!isEmptyGQueue(mouseQueue)) {
-		parse_mouse_event(mouseQueue, &mouse);
-		mouseEvent = 1;
-	}
-	
-	sprite->update(sprite, sec, c, (mouseEvent ? &mouse : NULL));
+	sprite->update(sprite, sec, c, (parse_mouse_event(mouseQueue, &mouse) ? &mouse : NULL));
 }
 
 void draw(char *buffer) {
@@ -85,8 +97,8 @@ void draw(char *buffer) {
 
 	drawSpriteBG(spriteBG, buffer);
 	
-	//drawSpriteInv(sprite, 0, buffer);
-	drawSprite(sprite, buffer);
+	drawSpriteT(sprite, 15, buffer);
+	//drawSprite(sprite, buffer);
 }
 
 void game_loop(int fps) {
@@ -105,9 +117,10 @@ void game_loop(int fps) {
 	int timePerFrame;*/
 
 	fprintf(logger, "Game Loop\n");
-
 	while (1) {
 		//disable();
+		disable_irq(MOUSE_IRQ);
+		disable_irq(KBD_IRQ);
 		
 		// calculates last frame time
 		/*timePerFrame = time_tick - lastTime;
@@ -120,6 +133,8 @@ void game_loop(int fps) {
 		memcpy(base, buffer, HRES * VRES * sizeof(char));
 		
 		//enable();
+		enable_irq(KBD_IRQ);
+		enable_irq(MOUSE_IRQ);
 		
 		// waits for a while
 		//mili_sleep(waitPerFrame);

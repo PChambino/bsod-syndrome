@@ -11,7 +11,7 @@ $(PROG): $(OBJS)
 main.o: setup.h game.h
 setup.o: setup.h video.h ints.h game.h queue.h gqueue.h kbc.h
 video.o: video.h
-game.o: game.h video.h queue.h sprite.h bg.h
+game.o: game.h video.h queue.h sprite.h bg.h hammer.h
 queue.o: queue.h
 ints.o: ints.h
 timer.o: timer.h ints.h

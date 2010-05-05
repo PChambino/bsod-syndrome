@@ -28,6 +28,8 @@ _mouse_isr:
 	; todos os registos utilizados na rotina
 	; instruções da rotina
 
+	mov eax, 0
+	
 	mov ecx, dword[_mouse_data_i]
 	mov eax, 0
 	in al, DATA_REG
@@ -47,6 +49,8 @@ _mouse_isr:
 		add esp, 8
 	fim:
 
+	mov eax, 0
+	
 	mov al, EOI ; sinaliza EOI para o PIC-1
 	out PIC1_CMD, al
 	out PIC2_CMD, al
