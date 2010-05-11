@@ -1,8 +1,7 @@
 
 #include "sprite.h"
 
-Sprite* newSprite(int x, int y, char **map[], int maps,
-	void (*update)(Sprite *sprite, double sec, char key, Mouse *mouse))
+Sprite* newSprite(int x, int y, char **map[], int maps)
 {
 	Sprite *sprite;
 	sprite = malloc(sizeof(Sprite));
@@ -17,8 +16,6 @@ Sprite* newSprite(int x, int y, char **map[], int maps,
 			&sprite->width, &sprite->height);
 	}
 	sprite->imgIndex = 0;
-	
-	sprite->update = update;
 	
 	return sprite;
 }

@@ -15,7 +15,6 @@
 #include "music.h"
 #include "mouse.h"
 
-#include "pixmap.h"
 #include "bg.h"
 #include "hammer.h"
 

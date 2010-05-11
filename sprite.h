@@ -36,11 +36,10 @@ struct Sprite {
 	char **img;
 	int imgs, imgIndex;
 	int width, height;
-	void (*update) (Sprite *sprite, double sec, char key, Mouse *mouse);
+	//void (*update) (Sprite *sprite, double sec, char key, Mouse *mouse);
 };
 
-Sprite* newSprite(int x, int y, char **map[], int maps,
-	void (*update)(Sprite *sprite, double sec, char key, Mouse *mouse));
+Sprite* newSprite(int x, int y, char **map[], int maps);
 
 void drawSprite(Sprite *sprite, char *buffer);
 void drawSpriteT(Sprite *sprite, char t, char *buffer);
