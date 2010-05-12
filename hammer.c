@@ -3,13 +3,17 @@
 
 Hammer* newHammer() {
 	Hammer* hammer = malloc(sizeof(Hammer));
-	hammer->state = UP;
 	
 	char **maps[] = {hammer_up, hammer_down};
 	hammer->sprite = newSprite(HRES/2, VRES/2, maps, sizeof(maps)/sizeof(char*));
 	
 	hammer->sprite->x -= hammer->sprite->width/2;
 	hammer->sprite->y -= hammer->sprite->height/2;
+	
+	Note notes[] = {{Fas3, 30}, {Fa2, 50}, {Fas3, 30}};
+	hammer->sound = newSong(10, notes, sizeof(notes)/sizeof(Note));
+	
+	hammer->state = UP;
 	
 	return hammer;
 }
@@ -18,26 +22,27 @@ void drawHammer(Hammer *hammer, char* buffer) {
 	drawSpriteT(hammer->sprite, 15, buffer);
 }
 
-void updateHammer(Hammer *hammer, double sec, char key, Mouse *mouse) {
-	static int time = 0;
+void updateHammer(Hammer *hammer, double mili, char key, Mouse *mouse) {
+	static int delay = 0;
 	int dx = 0, dy = 0;
 	
 	switch (hammer->state) {
 		case UP:
 			switch (key) {
-				case 0x4d: // RIGHT
+				case RIGHT_KEY:
 					dx = HAMMER_DELTA;
 					break;
-				case 0x4b: // LEFT
+				case LEFT_KEY:
 					dx = -HAMMER_DELTA;
 					break;
-				case 0x48: // UP
+				case UP_KEY:
 					dy = HAMMER_DELTA;
 					break;
-				case 0x50: // DOWN
+				case DOWN_KEY:
 					dy = -HAMMER_DELTA;
 					break;
-				case 0x1c: // ENTER
+				case SPACE_KEY:
+				case ENTER_KEY:
 					hammer->state = HIT;
 					break;
 				default:
@@ -54,12 +59,14 @@ void updateHammer(Hammer *hammer, double sec, char key, Mouse *mouse) {
 			moveSprite(hammer->sprite, dx, dy);
 			break;
 		case HIT:
+			play_song(hammer->sound);
 			hammer->sprite->imgIndex = (hammer->sprite->imgIndex + 1) % hammer->sprite->imgs;
-			time = HAMMER_DELAY;
+			delay = HAMMER_DELAY;
 			hammer->state = DOWN;
 			break;
 		case DOWN:
-			if (time-- <= 0) {
+			delay -= mili;
+			if (delay <= 0) {
 				hammer->sprite->imgIndex = (hammer->sprite->imgIndex + 1) % hammer->sprite->imgs;
 				hammer->state = UP;
 			}
@@ -71,49 +78,6 @@ void updateHammer(Hammer *hammer, double sec, char key, Mouse *mouse) {
 
 void deleteHammer(Hammer* hammer) {
 	deleteSprite(hammer->sprite);
+	deleteSong(hammer->sound);
 	free(hammer);
 }
-
-/*void updateSprite(Sprite *sprite, double sec, char key, Mouse *mouse) {
-	static int down = 0;
-	static int time = 10;
-	if (down) {
-		if (time-- == 0) {
-			sprite->imgIndex = (sprite->imgIndex + 1) % sprite->imgs;
-			down = 0;
-			time = 100;
-		}
-	}
-
-	if (key)
-	 	switch (key) {
-			case 0x4d: // RIGHT
-				sprite->x++;
-				break;
-			case 0x4b: // LEFT
-				sprite->x--;
-				break;
-			case 0x48: // UP
-				sprite->y--;
-				break;
-			case 0x50: // DOWN
-				sprite->y++;
-				break;
-			case 0x1c: // ENTER
-				down = 1;
-				sprite->imgIndex = (sprite->imgIndex + 1) % sprite->imgs;
-				break;
-			default:
-				break;
-	 	}
-	
-	if (mouse) {
-		//print_mouse_event(mouse);
-		moveSprite(sprite, mouse->dx, mouse->dy);
-		if (mouse->lb) {
-			down = 1;
-			sprite->imgIndex = (sprite->imgIndex + 1) % sprite->imgs;
-		}
-	}
-}
-*/

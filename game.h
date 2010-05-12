@@ -14,13 +14,14 @@
 #include "sprite.h"
 #include "music.h"
 #include "mouse.h"
+#include "hammer.h"
+#include "keys.h"
 
 #include "bg.h"
-#include "hammer.h"
 
 void game_init();
 
-void update(double sec);
+void update(int mili);
 
 void draw(char *buffer);
 

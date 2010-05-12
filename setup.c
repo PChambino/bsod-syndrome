@@ -62,7 +62,7 @@ FILE* logger;
 
 void setup_log() {
 	logger = fopen("log.txt", "a+");
-	//logger = stderr;
+//	logger = stderr;
 	
 	RTC_DATE date; rtc_read_date(&date);
 	RTC_TIME time; rtc_read_time(&time);
@@ -101,6 +101,7 @@ void setup_kbc() {
 	disable_irq(KBD_IRQ);
 	disable_irq(MOUSE_IRQ);  
 
+	fprintf(logger, "KBC INIT\n");
 	if ((hasMouse = kbc_init(0)) == false)
 		fprintf(logger, "Rato Nao Encontrado\n");
 	else
@@ -122,6 +123,8 @@ void setup_kbc() {
 	enable_irq(KBD_IRQ);
 	enable_irq(MOUSE_IRQ);
 }
+
+int mili_tick = 0;
 
 void setup_rtc() {
 	fprintf(logger, "Setup RTC\n");
@@ -162,7 +165,7 @@ void tear_down() {
 
 	// rtc
 	speaker_off();
-	disable_irq(RTC_IRQ);
+//	disable_irq(RTC_IRQ);
 	write_rtcv(RTC_STAT_B, read_rtcv(RTC_STAT_B) & ~(RTC_PIE | RTC_AIE | RTC_UIE));
 	reinstall_c_irq_handler(RTC_IRQ, &old_rtc_isr);
 		

@@ -26,6 +26,7 @@ extern Queue keys;
 extern GQueue *mouseQueue;
 void setup_kbc();
 
+extern int mili_tick;
 void setup_rtc();
 
 void setup_timer();

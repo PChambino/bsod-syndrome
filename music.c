@@ -13,49 +13,43 @@ float notes_frequency[] = { 16.35, 17.32, 18.35, 19.45, 20.6, 21.83, 23.12, 24.5
 
 
 typedef enum {OFF, INIT, PLAYING, PAUSING} MusicState;
+
 static MusicState state = OFF;
-
 static Song *song;
-static int noteTime = 0;
-static int songIndex = 0;
+static int noteIndex = 0;
 
-void rtc_isr() {
-	Byte statC = read_rtcv(RTC_STAT_C);
-
-	if ((statC & RTC_IRQF) != 0 && (statC & RTC_PF) != 0) {
-		switch (state) {
-			case OFF:
-				break;
-			case INIT:
-				if (songIndex >= song->lenght) {
-					state = OFF;
-					break;
-				}
-				
-				Note *note = &song->notes[songIndex++];
-				noteTime = note->dur;
-				timer_load(TIMER_2, TIMER_CLK / notes_frequency[note->freq]);
-				speaker_on();
-				state = PLAYING;
-				break;
-			case PLAYING:
-				noteTime--;
-				if (noteTime <= 0) {
-					speaker_off();
-					state = PAUSING;
-					noteTime = song->pause;
-				}
-				break;
-			case PAUSING:
-				noteTime--;
-				if (noteTime <= 0) {
-					state = INIT;
-				}				
-		}
-	}
+void music_state_machine() {
+	static int noteTime = 0;
 	
-	outportb(PIC1_CMD, EOI);
-	outportb(PIC2_CMD, EOI);
+	switch (state) {
+		case OFF:
+			break;
+		case INIT:
+			if (noteIndex >= song->lenght) {
+				state = OFF;
+				break;
+			}
+			
+			Note *note = &song->notes[noteIndex++];
+			noteTime = note->dur;
+			timer_load(TIMER_2, TIMER_CLK / notes_frequency[note->freq]);
+			speaker_on();
+			state = PLAYING;
+			break;
+		case PLAYING:
+			noteTime--;
+			if (noteTime <= 0) {
+				speaker_off();
+				state = PAUSING;
+				noteTime = song->pause;
+			}
+			break;
+		case PAUSING:
+			noteTime--;
+			if (noteTime <= 0) {
+				state = INIT;
+			}				
+	}
 }
 
 void speaker_on() {
@@ -84,8 +78,6 @@ void deleteSong(Song *s) {
 
 void play_song(Song *s) {
 	song = s;
-	songIndex = 0;
+	noteIndex = 0;
 	state = INIT;
 }
-
-
