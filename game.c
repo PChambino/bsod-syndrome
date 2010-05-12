@@ -43,6 +43,10 @@ void update(int mili) {
 void draw(char *buffer) {
 	drawSpriteBG(spriteBG, buffer);
 	drawHammer(hammer, buffer);
+
+	drawString("Eva     80", 368, 85, 0, 1, buffer);
+	
+	drawString("80", 700, 17, 0, 3, buffer);
 }
 
 void game_loop(int fps) {

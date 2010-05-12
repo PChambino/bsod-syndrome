@@ -10,7 +10,7 @@ Hammer* newHammer() {
 	hammer->sprite->x -= hammer->sprite->width/2;
 	hammer->sprite->y -= hammer->sprite->height/2;
 	
-	Note notes[] = {{Fas3, 30}, {Fa2, 50}, {Fas3, 30}};
+	Note notes[] = {{Fas3, 30}, {Fa2, 50}};
 	hammer->sound = newSong(10, notes, sizeof(notes)/sizeof(Note));
 	
 	hammer->state = UP;
