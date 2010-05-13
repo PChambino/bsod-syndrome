@@ -16,8 +16,10 @@
 #include "mouse.h"
 #include "hammer.h"
 #include "keys.h"
-
+#include "cscreen.h"
 #include "bg.h"
+
+#define NUM_PCS 6
 
 void game_init();
 

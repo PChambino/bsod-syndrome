@@ -5,7 +5,11 @@ static Mouse mouse;
 
 static Sprite *spriteBG;
 static Hammer *hammer;
+static CScreen **cscreens;
 static Song *song;
+
+static int numPCs;
+static int score;
 
 void game_init() {
 	srand(time(NULL));
@@ -14,14 +18,31 @@ void game_init() {
 	spriteBG = newSprite(0, 0, mapsBG, sizeof(mapsBG)/sizeof(char*));
 
 	hammer = newHammer();
+
+	numPCs = NUM_PCS;
+	score = 0;
+	
+	cscreens = malloc(numPCs * sizeof(CScreen));
+	cscreens[0] = newCScreen(241, 367, 0);
+	cscreens[1] = newCScreen(435, 366, 0);
+	cscreens[2] = newCScreen(626, 363, 0);
+	cscreens[3] = newCScreen(388, 224, 1);
+	cscreens[4] = newCScreen(532, 216, 1);
+	cscreens[5] = newCScreen(672, 209, 1);
 	
 	Note notes[] = {{Sol6, 100}, {Mi6, 50}, {Sol6, 50}, {Mi6, 25}}; 
-	song = newSong(10, notes, sizeof(notes)/sizeof(Note));
+	song = newSong(10, notes, sizeof(notes)/sizeof(Note));	
 }
 
 void game_end() {
 	deleteSong(song);
 	deleteHammer(hammer);
+
+	int i;
+	for (i = 0; i < NUM_PCS; i++)
+		deleteCScreen(cscreens[i]);
+	free(cscreens);
+		
 	deleteSprite(spriteBG);
 }
 
@@ -38,15 +59,30 @@ void update(int mili) {
 		}
 	
 	updateHammer(hammer, mili, c, (parse_mouse_event(mouseQueue, &mouse) ? &mouse : NULL));
+	
+	int i;
+	for (i = 0; i < NUM_PCS; i++)
+		updateCScreen(cscreens[i], hammer, &numPCs, &score, mili);
+		
+	if (numPCs <= 0) {
+		// termina!
+	}	
 }
 
 void draw(char *buffer) {
 	drawSpriteBG(spriteBG, buffer);
-	drawHammer(hammer, buffer);
+
+	static char scoreStr[3];
+	sprintf(scoreStr, "%d", score);
+	drawString(scoreStr, 700, 17, 0, 3, buffer);
 
 	drawString("Eva     80", 368, 85, 0, 1, buffer);
 	
-	drawString("80", 700, 17, 0, 3, buffer);
+	int i;
+	for (i = 0; i < NUM_PCS; i++)
+		drawCScreen(cscreens[i], buffer);
+	
+	drawHammer(hammer, buffer);
 }
 
 void game_loop(int fps) {

@@ -31,8 +31,6 @@ static const char table[];
 static const int charWidth = 8;
 static const int charHeight = 16;
 
-#include "setup.h"
-
 void drawChar(char c,int x, int y, int color, int scale, char *buffer) {
 	int i, j, si, sj, lin = 0;
 	char pos;

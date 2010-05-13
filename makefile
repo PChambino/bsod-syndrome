@@ -4,7 +4,7 @@ CFLAGS=-Wall
 
 PROG=BSoD.exe
 OBJS=main.o setup.o video.o game.o queue.o ints.o timer.o kbd_isr.o t0_isr.o sprite.o read_xpm.o \
-rtc.o music.o gqueue.o kbc.o mouseisr.o mouse.o hammer.o rtc_isr.o keys.o
+rtc.o music.o gqueue.o kbc.o mouseisr.o mouse.o hammer.o rtc_isr.o keys.o cscreen.o
 
 $(PROG): $(OBJS)
 	$(CC) $^ kbc_init.o -o $@
@@ -25,6 +25,7 @@ kbc.o: kbc.h
 mouse.o: mouse.h kbc.h
 hammer.o: hammer.h hammer_p.h keys.h
 keys.o: keys.h
+cscreen.o: cscreen.h music.h sprite.h cscreenp.h hammer.h
 
 rtc_isr.o: rtc.h
 kbd_isr.o: kbd_isr.asm
