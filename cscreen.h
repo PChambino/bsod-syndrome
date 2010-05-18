@@ -20,7 +20,8 @@ typedef enum {WINDOWS, REINSTALLED, BSOD, DEATH, INACTIVE} CScreenState;
 
 typedef struct {
 	Sprite * sprite;
-	Song * sound;
+	Song * crash;
+	Song * reinstall;
 	CScreenState state;
 	int nextCrashTime;
 	int deathTime;

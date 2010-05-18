@@ -7,6 +7,7 @@
 
 #include "video.h"
 #include "mouse.h"
+#include "utypes.h"
 
 /** @defgroup Sprite Sprite
  * @{
@@ -46,6 +47,9 @@ void drawSpriteT(Sprite *sprite, char t, char *buffer);
 void drawSpriteBG(Sprite *sprite, char *buffer);
 
 void moveSprite(Sprite *sprite, int dx, int dy);
+
+Bool collidesSpriteRect(Sprite *sprite, int x, int y, int width, int height);
+Bool collidesSprite(Sprite *sprite, Sprite *other);
 
 void deleteSprite(Sprite *sprite);
 

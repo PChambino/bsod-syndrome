@@ -55,6 +55,29 @@ void moveSprite(Sprite *sprite, int dx, int dy) {
 		sprite->y = VRES - sprite->height;
 }
 
+Bool collidesSpriteRect(Sprite *sprite, int x, int y, int width, int height) {
+	int top1 = sprite->y;
+	int top2 = y;
+	int bottom1 = sprite->y + sprite->height;
+	int bottom2 = y + height;
+	int left1 = sprite->x;
+	int left2 = x;
+	int right1 = sprite->x + sprite->width;
+	int right2 = x + width;
+	
+	if (top1 > bottom2) return false;
+	if (top2 > bottom1) return false;
+	
+	if (right1 < left2) return false;
+    if (left1 > right2) return false;
+
+	return true; 
+}
+
+Bool collidesSprite(Sprite *sprite, Sprite *other) {
+	return collidesSpriteRect(sprite, other->x, other->y, other->width, other->height);
+}
+
 void deleteSprite(Sprite *sprite) {
 	for (sprite->imgIndex = 0; sprite->imgIndex < sprite->imgs; sprite->imgIndex++)
 		free(sprite->img[sprite->imgIndex]);

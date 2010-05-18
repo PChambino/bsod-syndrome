@@ -24,7 +24,7 @@ void game_init() {
 	
 	cscreens = malloc(numPCs * sizeof(CScreen));
 	cscreens[0] = newCScreen(241, 367, 0);
-	cscreens[1] = newCScreen(435, 366, 0);
+	cscreens[1] = newCScreen(435, 363, 0);
 	cscreens[2] = newCScreen(626, 363, 0);
 	cscreens[3] = newCScreen(388, 224, 1);
 	cscreens[4] = newCScreen(532, 216, 1);

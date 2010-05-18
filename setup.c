@@ -96,7 +96,7 @@ void setup_kbc() {
 	fprintf(logger, "Setup KBC\n");
 	
 	queueInit(&keys);
-	mouseQueue = newGQueue(10000, 3 * sizeof(uchar));
+	mouseQueue = newGQueue(100, 3 * sizeof(uchar));
 	
 	disable_irq(KBD_IRQ);
 	disable_irq(MOUSE_IRQ);  

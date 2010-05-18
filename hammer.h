@@ -10,7 +10,7 @@
 #define HAMMER_DELTA 50
 #define HAMMER_DELAY 200
 
-typedef enum {UP, HIT, DOWN} HammerState;
+typedef enum {GET_HAMMER, UP, HIT, DOWN, GET_CD, CD, CD_HIT} HammerState;
 
 typedef struct {
 	Sprite* sprite;

@@ -18,7 +18,11 @@ CScreen * newCScreen(int x, int y, int small){
 					{Mi6, 175},{Mi6, 150},{Mi6, 125},{Mi6, 100},
 					{Mi6, 75},{Mi6, 50},{Mi6, 25},
 					{Mi6, 1000}};
-	cscreen->sound = newSong(50, notes, sizeof(notes)/sizeof(Note));
+	cscreen->crash = newSong(50, notes, sizeof(notes)/sizeof(Note));
+	
+	Note notes1[] = {{Mi3, 150}, {Fa3, 150}, {Sol3, 150}, {Re3, 150}, 
+					 {Do6, 250}, {Do6, 250}};
+	cscreen->reinstall = newSong(50, notes1, sizeof(notes1)/sizeof(Note));
 	
 	cscreen->state = WINDOWS;
 	
@@ -29,7 +33,8 @@ CScreen * newCScreen(int x, int y, int small){
 
 void deleteCScreen(CScreen* cscreen){
 	deleteSprite(cscreen->sprite);
-	deleteSong(cscreen->sound);
+	deleteSong(cscreen->crash);
+	deleteSong(cscreen->reinstall);
 	free(cscreen);
 }
 
@@ -50,10 +55,12 @@ void updateCScreen(CScreen *cscreen, Hammer *hammer, int *numberPCs, int *score,
 					cscreen->state = BSOD;
 					cscreen->deathTime = bsodTime;
 					cscreen->sprite->imgIndex++;
-					play_song(cscreen->sound);
+					play_song(cscreen->crash);
 				}
 			}
 			// verificar colisoes com o cd
+			if (hammer->state == CD_HIT && collidesSprite(hammer->sprite, cscreen->sprite))
+				cscreen->state = REINSTALLED;
 			break;
 		case BSOD:
 			cscreen->deathTime -= mili;
@@ -63,20 +70,25 @@ void updateCScreen(CScreen *cscreen, Hammer *hammer, int *numberPCs, int *score,
 				*score -= scoreDeath;
 			}
 			else if (hammer->state == HIT
-				&& hammer->sprite->x >= cscreen->sprite->x && hammer->sprite->x <= cscreen->sprite->x + cscreen->sprite->width
-				&& hammer->sprite->y + hammer->sprite->height >= cscreen->sprite->y
-				&& hammer->sprite->y + hammer->sprite->height <= cscreen->sprite->y + cscreen->sprite->height) {
-					cscreen->state = WINDOWS;
-					cscreen->sprite->imgIndex--;
-					*score += scoreSaved;
-					countedSavesUntilCD--;
-					if (countedSavesUntilCD <= 0) {
-						countedSavesUntilCD = savesUntilCD;
-						//hammer->state = CD;
-					}
+			&& collidesSpriteRect(cscreen->sprite,
+			hammer->sprite->x, hammer->sprite->y + hammer->sprite->height/2,
+			hammer->sprite->width/2, hammer->sprite->height/2))
+			{
+				cscreen->state = WINDOWS;
+				cscreen->sprite->imgIndex--;
+				*score += scoreSaved;
+				countedSavesUntilCD--;
+				if (countedSavesUntilCD <= 0) {
+					countedSavesUntilCD = savesUntilCD;
+					hammer->state = GET_CD;
 				}
+			} else if (hammer->state == CD_HIT && collidesSprite(hammer->sprite, cscreen->sprite))
+				cscreen->state = REINSTALLED;
 			break;
 		case REINSTALLED:
+			cscreen->sprite->imgIndex = 2 + rand() % 2;
+			play_song(cscreen->reinstall);
+			hammer->state = GET_HAMMER;
 		case DEATH:
 			numberPCs--;
 			// aumentar dificuldade
