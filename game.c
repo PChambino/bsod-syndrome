@@ -13,11 +13,26 @@ static Score *highScores;
 
 static GameState state;
 
+static Button *helpButton;
+static Button *exitButton;
+
+static Sprite *helpBoard;
+static Sprite *scoreBoard;
+
 void game_init() {
 	srand(time(NULL));
 	
 	char **mapsBG[] = {BG};
 	spriteBG = newSprite(0, 0, mapsBG, sizeof(mapsBG)/sizeof(char*));
+
+//	mapsBG[0] = HELP_BOARD;
+//	helpBoard = newSprite(0, 0, mapsBG, sizeof(mapsBG)/sizeof(char*));
+
+	mapsBG[0] = SCORE_BOARD;
+	scoreBoard = newSprite(0, 0, mapsBG, sizeof(mapsBG)/sizeof(char*));
+
+	helpButton = newButton(0, 160, HELP_OVER);
+	exitButton = newButton(196, 40, EXIT_OVER);
 
 	hammer = newHammer();
 	
@@ -48,7 +63,12 @@ void game_end() {
 	for (i = 0; i < NUM_PCS; i++)
 		deleteCScreen(cscreens[i]);
 	free(cscreens);
-		
+	
+	deleteButton(helpButton);
+	deleteButton(exitButton);
+	
+//	deleteSprite(helpBoard);
+	deleteSprite(scoreBoard);
 	deleteSprite(spriteBG);
 }
 
@@ -86,9 +106,24 @@ void update(int mili) {
 				hammer->state = GET_HAMMER;
 			}
 			
-			// check for collisions between hammer and: exit, help
+			updateButton(helpButton, hammer);
+			if (helpButton->state == CLICKED)
+				state = HELP;
+				
+			updateButton(exitButton, hammer);
+			if (exitButton->state == CLICKED)
+				exit(0);
+			
 			break;
 		case END:
+			updateButton(helpButton, hammer);
+			if (helpButton->state == CLICKED)
+				state = HELP;
+				
+			updateButton(exitButton, hammer);
+			if (exitButton->state == CLICKED)
+				exit(0);
+				
 			if (c == ENTER_KEY || c == SPACE_KEY)
 				state = SCORE;
 			break;
@@ -122,13 +157,17 @@ void draw(char *buffer) {
 			drawHighScores(highScores, 368, 85, 0, 1, buffer);
 			
 			for (i = 0; i < NUM_PCS; i++)
-				drawCScreen(cscreens[i], buffer);	
+				drawCScreen(cscreens[i], buffer);
+				
+			drawButton(helpButton, buffer);
+			drawButton(exitButton, buffer);
+			
 			break;
 		case SCORE:
-			// draw score board and name for score
+			drawSpriteBG(scoreBoard, buffer);
 			break;
 		case HELP:
-			// draw help board
+//			drawSpriteBG(helpBoard, buffer);
 			break;
 		default:
 			break;

@@ -18,6 +18,8 @@
 #include "keys.h"
 #include "score.h"
 #include "cscreen.h"
+#include "button.h"
+#include "button_p.h"
 #include "bg.h"
 
 #define NUM_PCS 6
