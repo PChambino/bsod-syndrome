@@ -16,10 +16,13 @@
 #include "mouse.h"
 #include "hammer.h"
 #include "keys.h"
+#include "score.h"
 #include "cscreen.h"
 #include "bg.h"
 
 #define NUM_PCS 6
+
+typedef enum {PLAYING, END, HELP, SCORE} GameState;
 
 void game_init();
 
@@ -30,5 +33,7 @@ void draw(char *buffer);
 void game_loop(int fps);
 
 void game_end();
+
+void reset_game();
 
 #endif

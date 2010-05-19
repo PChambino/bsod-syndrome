@@ -268,8 +268,8 @@ __attribute__((unused)) static char * LINUX_SMALL[] = {
 
 __attribute__((unused)) static char * MAC_BIG[] = {
 "80 70 2",
-"  0",
-". 15",
+"  15",
+". 8",
 "                                                                                ",
 "                                                                                ",
 "                                                                                ",
@@ -344,8 +344,8 @@ __attribute__((unused)) static char * MAC_BIG[] = {
 
 __attribute__((unused)) static char * MAC_SMALL[] = {
 "60 50 2",
-"  0",
-". 15",
+"  15",
+". 8",
 "                                                            ",
 "                                                            ",
 "                                                            ",

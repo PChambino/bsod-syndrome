@@ -6,10 +6,12 @@ static Mouse mouse;
 static Sprite *spriteBG;
 static Hammer *hammer;
 static CScreen **cscreens;
-static Song *song;
 
 static int numPCs;
-static int score;
+static Score score;
+static Score *highScores;
+
+static GameState state;
 
 void game_init() {
 	srand(time(NULL));
@@ -18,11 +20,10 @@ void game_init() {
 	spriteBG = newSprite(0, 0, mapsBG, sizeof(mapsBG)/sizeof(char*));
 
 	hammer = newHammer();
-
-	numPCs = NUM_PCS;
-	score = 0;
 	
-	cscreens = malloc(numPCs * sizeof(CScreen));
+	numPCs = NUM_PCS;
+	
+	cscreens = malloc(NUM_PCS * sizeof(CScreen));
 	cscreens[0] = newCScreen(241, 367, 0);
 	cscreens[1] = newCScreen(435, 363, 0);
 	cscreens[2] = newCScreen(626, 363, 0);
@@ -30,12 +31,17 @@ void game_init() {
 	cscreens[4] = newCScreen(532, 216, 1);
 	cscreens[5] = newCScreen(672, 209, 1);
 	
-	Note notes[] = {{Sol6, 100}, {Mi6, 50}, {Sol6, 50}, {Mi6, 25}}; 
-	song = newSong(10, notes, sizeof(notes)/sizeof(Note));	
+	score.score = 0;
+	
+	highScores = readHighScores();
+	
+	state = PLAYING;
 }
 
 void game_end() {
-	deleteSong(song);
+	saveHighScores(highScores);
+	deleteHighScores(highScores);
+	
 	deleteHammer(hammer);
 
 	int i;
@@ -46,41 +52,87 @@ void game_end() {
 	deleteSprite(spriteBG);
 }
 
-void update(int mili) {
-	char c = 0;
-	if (!queueEmpty(&keys))
-		switch (c = queueGet(&keys)) {
-			case ESC_KEY:
-				exit(0);
-			case TAB_KEY:
-				play_song(song);
-			default:
-				break;
-		}
-	
-	updateHammer(hammer, mili, c, (parse_mouse_event(mouseQueue, &mouse) ? &mouse : NULL));
-	
+void reset_game() {
+	fprintf(logger, "Reset Game\n");
+	score.score = 0;
+	numPCs = NUM_PCS;
+
+	hammer->state = GET_HAMMER;
+
 	int i;
 	for (i = 0; i < NUM_PCS; i++)
-		updateCScreen(cscreens[i], hammer, &numPCs, &score, mili);
-		
-	if (numPCs <= 0) {
-		// termina!
-	}	
+		resetCScreen(cscreens[i]);
+}
+
+void update(int mili) {
+	char c = 0;
+	if (!queueEmpty(&keys)) {
+		c = queueGet(&keys);
+		if (c == ESC_KEY)
+			exit(0);
+	}
+	Bool mouseEvent = parse_mouse_event(mouseQueue, &mouse);
+
+	updateHammer(hammer, mili, c, (mouseEvent ? &mouse : NULL));
+
+	int i;
+	switch (state) {
+		case PLAYING:
+			for (i = 0; i < NUM_PCS; i++)
+				updateCScreen(cscreens[i], hammer, &numPCs, &score.score, mili);	
+
+			if (numPCs == 0) {
+				state = END;
+				hammer->state = GET_HAMMER;
+			}
+			
+			// check for collisions between hammer and: exit, help
+			break;
+		case END:
+			if (c == ENTER_KEY || c == SPACE_KEY)
+				state = SCORE;
+			break;
+		case SCORE:
+			// check score for highscore
+			// input name for score (if highscore)
+			if (c == ENTER_KEY) {
+				// save highscores...			
+				reset_game();
+				state = PLAYING;
+			}
+			break;
+		case HELP:
+			if (c == ENTER_KEY || c == SPACE_KEY)
+				state = PLAYING;
+			break;
+		default:
+			break;
+	}
 }
 
 void draw(char *buffer) {
-	drawSpriteBG(spriteBG, buffer);
-
-	static char scoreStr[3];
-	sprintf(scoreStr, "%d", score);
-	drawString(scoreStr, 700, 17, 0, 3, buffer);
-
-	drawString("Eva     80", 368, 85, 0, 1, buffer);
-	
 	int i;
-	for (i = 0; i < NUM_PCS; i++)
-		drawCScreen(cscreens[i], buffer);
+	switch (state) {
+		case END:
+		case PLAYING:
+			drawSpriteBG(spriteBG, buffer);
+		
+			drawScoreValue(&score, 695, 17, 0, 3, buffer);
+		
+			drawHighScores(highScores, 368, 85, 0, 1, buffer);
+			
+			for (i = 0; i < NUM_PCS; i++)
+				drawCScreen(cscreens[i], buffer);	
+			break;
+		case SCORE:
+			// draw score board and name for score
+			break;
+		case HELP:
+			// draw help board
+			break;
+		default:
+			break;
+	}
 	
 	drawHammer(hammer, buffer);
 }

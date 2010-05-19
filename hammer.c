@@ -50,8 +50,8 @@ void updateHammer(Hammer *hammer, double mili, char key, Mouse *mouse) {
 				case DOWN_KEY:
 					dy = -HAMMER_DELTA;
 					break;
-				case SPACE_KEY:
 				case ENTER_KEY:
+				case SPACE_KEY:
 					hit_flag = 1;
 					break;
 				default:

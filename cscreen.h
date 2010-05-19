@@ -28,8 +28,13 @@ typedef struct {
 } CScreen;
 
 CScreen * newCScreen(int x, int y, int small);// small -> 1 for small screen, otherwise draw big screen
+
 void deleteCScreen(CScreen*);
+
 void updateCScreen(CScreen *cscreen, Hammer *hammer, int *numberPCs, int *score, double mili);
+
 void drawCScreen(CScreen *cscreen, char *buffer);
+
+void resetCScreen(CScreen* cscreen);
 
 #endif

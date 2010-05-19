@@ -2,7 +2,6 @@
 #define _KEYS_H_
 
 #include "video.h"
-#include "string.h"
 
 #define RELEASED 		0x80
 
@@ -16,6 +15,9 @@
 #define LEFT_KEY 		0x4B
 #define UP_KEY 			0x48
 #define DOWN_KEY 		0x50
+
+extern const int charWidth;
+extern const int charHeight;
 
 char scancodeToAscii(char sc);
 

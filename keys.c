@@ -19,7 +19,7 @@ static const char ascii[] = {
 
 char scancodeToAscii(char sc) {
 	int i;
-	for (i = 0; i < 41; i++) {
+	for (i = 0; i < scancodeCount; i++) {
 		if (scancode[i] == sc)
 			return ascii[i];
 	}
@@ -28,8 +28,8 @@ char scancodeToAscii(char sc) {
 }
 
 static const char table[];
-static const int charWidth = 8;
-static const int charHeight = 16;
+const int charWidth = 8;
+const int charHeight = 16;
 
 void drawChar(char c,int x, int y, int color, int scale, char *buffer) {
 	int i, j, si, sj, lin = 0;

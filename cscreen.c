@@ -38,12 +38,12 @@ void deleteCScreen(CScreen* cscreen){
 	free(cscreen);
 }
 
+static int crashTimeMax = crashTimeMaxInitial;
+static int bsodTime = BSoDTime;
+static int savesUntilCD = savesUntilCDInitial;
+static int countedSavesUntilCD = savesUntilCDInitial;
+
 void updateCScreen(CScreen *cscreen, Hammer *hammer, int *numberPCs, int *score, double mili){
-	static int crashTimeMax = crashTimeMaxInitial;
-	static int bsodTime = BSoDTime;
-	static int savesUntilCD = savesUntilCDInitial;
-	static int countedSavesUntilCD = savesUntilCDInitial;
-	
 	switch (cscreen->state) {
 		case WINDOWS:
 			if(cscreen->nextCrashTime == -1)
@@ -90,8 +90,8 @@ void updateCScreen(CScreen *cscreen, Hammer *hammer, int *numberPCs, int *score,
 			play_song(cscreen->reinstall);
 			hammer->state = GET_HAMMER;
 		case DEATH:
-			numberPCs--;
-			// aumentar dificuldade
+			(*numberPCs)--;
+			// aumenta dificuldade
 			savesUntilCD++;
 			crashTimeMax -= crashTimeDecrease;
 			cscreen->state = INACTIVE;
@@ -105,4 +105,15 @@ void updateCScreen(CScreen *cscreen, Hammer *hammer, int *numberPCs, int *score,
 
 void drawCScreen(CScreen *cscreen, char *buffer){
 	drawSprite(cscreen->sprite, buffer);
+}
+
+void resetCScreen(CScreen* cscreen) {
+	crashTimeMax = crashTimeMaxInitial;
+	bsodTime = BSoDTime;
+	savesUntilCD = savesUntilCDInitial;
+	countedSavesUntilCD = savesUntilCDInitial;
+
+	cscreen->sprite->imgIndex = 0;	
+	cscreen->nextCrashTime = -1;
+	cscreen->state = WINDOWS;
 }
