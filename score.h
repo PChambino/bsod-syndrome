@@ -3,7 +3,9 @@
 
 #include <stdio.h>
 #include <fcntl.h>
+#include <string.h>
 
+#include "utypes.h"
 #include "keys.h"
 
 #define NUM_HIGHSCORES 6
@@ -17,16 +19,24 @@ typedef struct {
 	int score;
 } Score;
 
-Score* newHighScores();
+Score* newScore();
 
-void deleteHighScores(Score* hs);
+Score** newHighScores();
+
+void deleteScore(Score* s);
+
+void deleteHighScores(Score** hs);
 
 void drawScoreValue(Score* s, int x, int y, int color, int scale, char* buffer);
 
-void drawHighScores(Score* hs, int x, int y, int color, int scale, char* buffer);
+void drawHighScores(Score** hs, int x, int y, int color, int scale, char* buffer);
 
-void saveHighScores(Score* hs);
+void saveHighScores(Score** hs);
 
-Score* readHighScores();
+Score** readHighScores();
+
+Bool putScore(Score** hs, Score* s);
+
+Bool isHighScore(Score** hs, Score* s);
 
 #endif

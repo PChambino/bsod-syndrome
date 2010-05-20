@@ -8,8 +8,10 @@ static Hammer *hammer;
 static CScreen **cscreens;
 
 static int numPCs;
-static Score score;
-static Score *highScores;
+
+static Score *score;
+static Score **highScores;
+static Bool highScore;
 
 static GameState state;
 
@@ -20,13 +22,16 @@ static Sprite *helpBoard;
 static Sprite *scoreBoard;
 
 void game_init() {
+	disable_irq(MOUSE_IRQ);
+	disable_irq(KBD_IRQ);
+
 	srand(time(NULL));
 	
 	char **mapsBG[] = {BG};
 	spriteBG = newSprite(0, 0, mapsBG, sizeof(mapsBG)/sizeof(char*));
 
-//	mapsBG[0] = HELP_BOARD;
-//	helpBoard = newSprite(0, 0, mapsBG, sizeof(mapsBG)/sizeof(char*));
+	mapsBG[0] = HELP_BOARD;
+	helpBoard = newSprite(0, 0, mapsBG, sizeof(mapsBG)/sizeof(char*));
 
 	mapsBG[0] = SCORE_BOARD;
 	scoreBoard = newSprite(0, 0, mapsBG, sizeof(mapsBG)/sizeof(char*));
@@ -46,14 +51,19 @@ void game_init() {
 	cscreens[4] = newCScreen(532, 216, 1);
 	cscreens[5] = newCScreen(672, 209, 1);
 	
-	score.score = 0;
+	score = newScore();
 	
 	highScores = readHighScores();
 	
 	state = PLAYING;
+
+	enable_irq(KBD_IRQ);
+	enable_irq(MOUSE_IRQ);
 }
 
 void game_end() {
+	deleteScore(score);
+
 	saveHighScores(highScores);
 	deleteHighScores(highScores);
 	
@@ -67,14 +77,14 @@ void game_end() {
 	deleteButton(helpButton);
 	deleteButton(exitButton);
 	
-//	deleteSprite(helpBoard);
+	deleteSprite(helpBoard);
 	deleteSprite(scoreBoard);
 	deleteSprite(spriteBG);
 }
 
 void reset_game() {
 	fprintf(logger, "Reset Game\n");
-	score.score = 0;
+	score->score = 0;
 	numPCs = NUM_PCS;
 
 	hammer->state = GET_HAMMER;
@@ -85,7 +95,7 @@ void reset_game() {
 }
 
 void update(int mili) {
-	char c = 0;
+	char c = 0, k = 0;
 	if (!queueEmpty(&keys)) {
 		c = queueGet(&keys);
 		if (c == ESC_KEY)
@@ -95,11 +105,11 @@ void update(int mili) {
 
 	updateHammer(hammer, mili, c, (mouseEvent ? &mouse : NULL));
 
-	int i;
+	int i, len;
 	switch (state) {
 		case PLAYING:
 			for (i = 0; i < NUM_PCS; i++)
-				updateCScreen(cscreens[i], hammer, &numPCs, &score.score, mili);	
+				updateCScreen(cscreens[i], hammer, &numPCs, &score->score, mili);	
 
 			if (numPCs == 0) {
 				state = END;
@@ -124,20 +134,44 @@ void update(int mili) {
 			if (exitButton->state == CLICKED)
 				exit(0);
 				
-			if (c == ENTER_KEY || c == SPACE_KEY)
+			if (hammer->state == HIT) {
 				state = SCORE;
+				highScore = isHighScore(highScores, score);
+			}
 			break;
 		case SCORE:
-			// check score for highscore
-			// input name for score (if highscore)
-			if (c == ENTER_KEY) {
-				// save highscores...			
+			if (highScore) {
+				if (c != 0) {
+					if (c == BACKSPACE_KEY) {
+						len = strlen(score->name);
+						if (len > 0) {
+							score->name[len - 1] = NULL;
+						}
+						break;
+					}
+					
+					k = scancodeToAscii(c);
+					if (k != 0) {
+						len = strlen(score->name);
+						if (len < SCORE_NAME_LEN) {
+							score->name[len] = k;
+							score->name[len + 1] = NULL;
+						}
+					}
+				}
+			}
+
+			if (hammer->state == HIT && (!highScore || (c != SPACE_KEY && score->name[0] != NULL))) {
+				if (highScore) {
+					putScore(highScores, score);
+					saveHighScores(highScores);
+				}
 				reset_game();
 				state = PLAYING;
 			}
 			break;
 		case HELP:
-			if (c == ENTER_KEY || c == SPACE_KEY)
+			if (hammer->state == HIT)
 				state = PLAYING;
 			break;
 		default:
@@ -152,7 +186,7 @@ void draw(char *buffer) {
 		case PLAYING:
 			drawSpriteBG(spriteBG, buffer);
 		
-			drawScoreValue(&score, 695, 17, 0, 3, buffer);
+			drawScoreValue(score, 695, 17, 0, 3, buffer);
 		
 			drawHighScores(highScores, 368, 85, 0, 1, buffer);
 			
@@ -165,9 +199,16 @@ void draw(char *buffer) {
 			break;
 		case SCORE:
 			drawSpriteBG(scoreBoard, buffer);
+			
+			drawScoreValue(score, 150, 200, 15, 10, buffer);
+			
+			if (highScore) {
+				drawString("Name:", 40, 415, 15, 5, buffer);
+				drawString(score->name, 250, 415, 15, 5, buffer);
+			}
 			break;
 		case HELP:
-//			drawSpriteBG(helpBoard, buffer);
+			drawSpriteBG(helpBoard, buffer);
 			break;
 		default:
 			break;

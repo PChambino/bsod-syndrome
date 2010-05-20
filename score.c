@@ -5,21 +5,35 @@ const char HIGHSCORES_FILE[] = "high.txt";
 
 static char scoreStr[SCORE_STR_LEN];
 
-Score* newHighScores() {
-	Score *hs = malloc(NUM_HIGHSCORES * sizeof(Score));
+Score* newScore() {
+	Score* s = malloc(sizeof(Score));
+	s->name = malloc((SCORE_NAME_LEN + 1) * sizeof(char));
+	s->name[0] = NULL;
+	s->score = 0;
+	
+	return s;
+}
+
+Score** newHighScores() {
+	Score **hs = malloc(NUM_HIGHSCORES * sizeof(Score*));
 	
 	int i;
 	for (i = 0; i < NUM_HIGHSCORES; i++) {
-		hs[i].name = NULL;
-		hs[i].score = 0;
+		hs[i] = newScore();		
 	}
-	
 	return hs;
 }
 
-void deleteHighScores(Score* hs) {
-	// free names ?
-	
+void deleteScore(Score* s) {
+	free(s->name);
+	free(s);
+}
+
+void deleteHighScores(Score** hs) {
+	int i;
+	for (i = 0; i < NUM_HIGHSCORES; i++) {
+		deleteScore(hs[i]);
+	}
 	free(hs);
 }
 
@@ -28,18 +42,18 @@ void drawScoreValue(Score* s, int x, int y, int color, int scale, char* buffer) 
 	drawString(scoreStr, x, y, color, scale, buffer);
 }
 
-void drawHighScores(Score* hs, int x, int y, int color, int scale, char* buffer) {
+void drawHighScores(Score** hs, int x, int y, int color, int scale, char* buffer) {
 	int i;
 	for (i = 0; i < NUM_HIGHSCORES; i++) {
-		if (hs[i].name == NULL)
+		if (hs[i]->name[0] == NULL)
 			break;
-		drawString(hs[i].name, x, y+(charHeight*i), color, scale, buffer); 
-		drawScoreValue(&hs[i], x+(charWidth*scale*(1+SCORE_NAME_LEN)), y+(charHeight*i),
+		drawString(hs[i]->name, x, y+(charHeight*i), color, scale, buffer); 
+		drawScoreValue(hs[i], x+(charWidth*scale*(1+SCORE_NAME_LEN)), y+(charHeight*i),
 			color, scale, buffer);
 	}
 }
 
-void saveHighScores(Score* hs) {
+void saveHighScores(Score** hs) {
 	int file = open(HIGHSCORES_FILE, O_WRONLY | O_TRUNC | O_CREAT, 0777);
 	
 	if (file == -1)
@@ -47,30 +61,27 @@ void saveHighScores(Score* hs) {
 		
 	int i;
 	for (i = 0; i < NUM_HIGHSCORES; i++) {
-		if (hs[i].name == NULL)
+		if (hs[i]->name[0] == NULL)
 			break;
-		write(file, hs[i].name, SCORE_NAME_LEN * sizeof(char));
-		write(file, &hs[i].score, sizeof(int));
+		write(file, hs[i]->name, (SCORE_NAME_LEN + 1) * sizeof(char));
+		write(file, &hs[i]->score, sizeof(int));
 	}
 	
 	close(file);
 }
 
-Score* readHighScores() {
-	Score *hs = newHighScores();
+Score** readHighScores() {
+	Score **hs = newHighScores();
 	
 	int file = open(HIGHSCORES_FILE, O_RDONLY);
 
 	if (file >= 0) {
 		int i;
 		for (i = 0; i < NUM_HIGHSCORES; i++) {
-			char *name = malloc(SCORE_NAME_LEN * sizeof(char));
-			if (read(file, name, SCORE_NAME_LEN * sizeof(char)) == 0) {
-				free(name);
+			if (read(file, hs[i]->name, SCORE_NAME_LEN * sizeof(char)) == 0) {
 				break;
 			}
-			hs[i].name = name;
-			if (read(file, &hs[i].score, sizeof(int)) == 0) break;
+			if (read(file, &hs[i]->score, sizeof(int)) == 0) break;
 		}
 		
 		close(file);
@@ -79,4 +90,32 @@ Score* readHighScores() {
 	return hs;
 }
 
+Bool putScore(Score** hs, Score* s) {
+	int i;
+	for (i = NUM_HIGHSCORES - 1; i >= 0; i--) {
+		if (hs[i]->name[0] == NULL)
+			continue;
+		
+		if (hs[i]->score < s->score) {
+			if (i == NUM_HIGHSCORES - 1)
+				continue;
+			strcpy(hs[i+1]->name, hs[i]->name);
+			hs[i+1]->score = hs[i]->score;
+			continue;
+		}
+		
+		if (i == NUM_HIGHSCORES - 1)
+			return false;
+		
+		break;
+	}
 
+	strcpy(hs[i+1]->name, s->name);
+	hs[i+1]->score = s->score;
+	
+	return true;
+}
+
+Bool isHighScore(Score** hs, Score* s) {
+	return (hs[NUM_HIGHSCORES - 1]->name[0] == NULL || hs[NUM_HIGHSCORES - 1]->score < s->score); 
+}
