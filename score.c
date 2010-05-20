@@ -78,7 +78,7 @@ Score** readHighScores() {
 	if (file >= 0) {
 		int i;
 		for (i = 0; i < NUM_HIGHSCORES; i++) {
-			if (read(file, hs[i]->name, SCORE_NAME_LEN * sizeof(char)) == 0) {
+			if (read(file, hs[i]->name, (SCORE_NAME_LEN + 1) * sizeof(char)) == 0) {
 				break;
 			}
 			if (read(file, &hs[i]->score, sizeof(int)) == 0) break;

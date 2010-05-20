@@ -24,10 +24,15 @@ static Sprite *scoreBoard;
 void game_init() {
 	disable_irq(MOUSE_IRQ);
 	disable_irq(KBD_IRQ);
+	
+	// loading screen
+	char **mapsBG[] = {LOADING_BOARD};
+	Sprite *loadingBG = newSprite(0, 0, mapsBG, sizeof(mapsBG)/sizeof(char*));
+	drawSpriteBG(loadingBG, base);
 
 	srand(time(NULL));
 	
-	char **mapsBG[] = {BG};
+	mapsBG[0] = BG;
 	spriteBG = newSprite(0, 0, mapsBG, sizeof(mapsBG)/sizeof(char*));
 
 	mapsBG[0] = HELP_BOARD;
@@ -105,6 +110,7 @@ void update(int mili) {
 
 	updateHammer(hammer, mili, c, (mouseEvent ? &mouse : NULL));
 
+	Bool shift_flag = false;
 	int i, len;
 	switch (state) {
 		case PLAYING:
@@ -141,7 +147,14 @@ void update(int mili) {
 			break;
 		case SCORE:
 			if (highScore) {
+				shift_flag = false;
+				
 				if (c != 0) {
+					if (c == SHIFT_KEY) {
+						shift_flag = true;
+						break;
+					}
+						
 					if (c == BACKSPACE_KEY) {
 						len = strlen(score->name);
 						if (len > 0) {
@@ -154,7 +167,7 @@ void update(int mili) {
 					if (k != 0) {
 						len = strlen(score->name);
 						if (len < SCORE_NAME_LEN) {
-							score->name[len] = k;
+							score->name[len] = (shift_flag)? toupper(k): k;
 							score->name[len + 1] = NULL;
 						}
 					}
@@ -224,7 +237,7 @@ void game_loop(int fps) {
 	
 	// creates a buffer for double-buffering
 	char buffer[HRES*VRES];
-	
+
 	// calculates time to wait per frame
 	int waitPerFrame = 1000 / fps;
 	

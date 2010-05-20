@@ -10,6 +10,7 @@
 #define ENTER_KEY  		0x1C
 #define SPACE_KEY  		0x39
 #define BACKSPACE_KEY 	0x0E
+#define SHIFT_KEY		0x2A
 
 #define RIGHT_KEY 		0x4D
 #define LEFT_KEY 		0x4B
