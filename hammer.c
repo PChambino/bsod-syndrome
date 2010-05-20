@@ -66,6 +66,8 @@ void updateHammer(Hammer *hammer, double mili, char key, Mouse *mouse) {
 			}
 
 			if (hit_flag) {
+				play_song(hammer->sound);
+
 				if (hammer->state == UP) {
 					hammer->state = HIT;
 				} else {
@@ -76,19 +78,25 @@ void updateHammer(Hammer *hammer, double mili, char key, Mouse *mouse) {
 			moveSprite(hammer->sprite, dx, dy);
 			break;
 		case HIT:
-			play_song(hammer->sound);
 			hammer->sprite->imgIndex++;
 			delay = HAMMER_DELAY;
 			hammer->state = DOWN;
-			break;
-		case CD_HIT:
-			hammer->state = CD;
 			break;
 		case DOWN:
 			delay -= mili;
 			if (delay <= 0) {
 				hammer->sprite->imgIndex--;
 				hammer->state = UP;
+			}
+			break;
+		case CD_HIT:
+			delay = HAMMER_DELAY;
+			hammer->state = CD_DOWN;
+			break;
+		case CD_DOWN:
+			delay -= mili;
+			if (delay <= 0) {
+				hammer->state = CD;
 			}
 			break;
 		default:
