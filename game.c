@@ -100,7 +100,7 @@ void reset_game() {
 }
 
 void update(int mili) {
-	char c = 0, k = 0;
+	Byte c = 0;
 	if (!queueEmpty(&keys)) {
 		c = queueGet(&keys);
 		if (c == ESC_KEY)
@@ -110,7 +110,8 @@ void update(int mili) {
 
 	updateHammer(hammer, mili, c, (mouseEvent ? &mouse : NULL));
 
-	Bool shift_flag = false;
+	static Bool shift_flag = false;
+	char k;
 	int i, len;
 	switch (state) {
 		case PLAYING:
@@ -147,11 +148,12 @@ void update(int mili) {
 			break;
 		case SCORE:
 			if (highScore) {
-				shift_flag = false;
-				
 				if (c != 0) {
 					if (c == SHIFT_KEY) {
 						shift_flag = true;
+					}
+					if (c == (SHIFT_KEY | RELEASED)) {
+						shift_flag = false;
 						break;
 					}
 						
@@ -167,7 +169,7 @@ void update(int mili) {
 					if (k != 0) {
 						len = strlen(score->name);
 						if (len < SCORE_NAME_LEN) {
-							score->name[len] = (shift_flag)? toupper(k): k;
+							score->name[len] = (shift_flag ? toupper(k) : k);
 							score->name[len + 1] = NULL;
 						}
 					}
