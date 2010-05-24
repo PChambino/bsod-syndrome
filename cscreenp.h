@@ -1,4 +1,12 @@
 
+/** @defgroup ComputerScreenImages ComputerScreenButtonImages
+ * @{
+ *
+ * Computer screen images pixmap
+ */
+ 
+ /** BSOD big screen pixmap
+ */
 __attribute__((unused)) static char * BSOD_BIG[] = {
 "80 70 2",
 "  1",
@@ -74,6 +82,8 @@ __attribute__((unused)) static char * BSOD_BIG[] = {
 "                                                                                ",
 "                                                                                "};
 
+/** BSOD small screen pixmap
+*/
 __attribute__((unused)) static char * BSOD_SMALL[] = {
 "60 50 2",
 "  1",
@@ -129,7 +139,8 @@ __attribute__((unused)) static char * BSOD_SMALL[] = {
 "                                                            ",
 "                                                            "};
 
-
+/**Linux big screen pixmap
+ */
 __attribute__((unused)) static char * LINUX_BIG[] = {
 "80 70 4",
 "  0",
@@ -207,7 +218,8 @@ __attribute__((unused)) static char * LINUX_BIG[] = {
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"};
 
-
+/** Linux small screen pixmap
+ */
 __attribute__((unused)) static char * LINUX_SMALL[] = {
 "60 50 4",
 "  0",
@@ -265,7 +277,8 @@ __attribute__((unused)) static char * LINUX_SMALL[] = {
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
 "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"};
 
-
+/** Apple big screen pixmap
+ */
 __attribute__((unused)) static char * MAC_BIG[] = {
 "80 70 2",
 "  15",
@@ -341,7 +354,8 @@ __attribute__((unused)) static char * MAC_BIG[] = {
 "                                                                                ",
 "                                                                                "};
 
-
+/** Apple small screen pixmap
+ */
 __attribute__((unused)) static char * MAC_SMALL[] = {
 "60 50 2",
 "  15",
@@ -397,7 +411,8 @@ __attribute__((unused)) static char * MAC_SMALL[] = {
 "                                                            ",
 "                                                            "};
 
-
+/** Windows big screen pixmap
+ */
 __attribute__((unused)) static char * WINDOWS_BIG[] = {
 "80 70 6",
 "  15",
@@ -477,7 +492,8 @@ __attribute__((unused)) static char * WINDOWS_BIG[] = {
 "                                                                                ",
 "                                                                                "};
 
-
+/** Windows small screen pixmap
+ */
 __attribute__((unused)) static char * WINDOWS_SMALL[] = {
 "60 50 6",
 "  15",
@@ -537,6 +553,8 @@ __attribute__((unused)) static char * WINDOWS_SMALL[] = {
 "                                                            ",
 "                                                            "};
 
+/** Death big screen pixmap
+ */
 __attribute__((unused)) static char * DEATH_BIG[] = {
 "80 70 2",
 "  15",
@@ -612,6 +630,8 @@ __attribute__((unused)) static char * DEATH_BIG[] = {
 "    .                                                                      .    ",
 "                                                                                "};
 
+/** Death small screen pixmap
+ */
 __attribute__((unused)) static char * DEATH_SMALL[] = {
 "60 50 2",
 "  15",
@@ -666,3 +686,4 @@ __attribute__((unused)) static char * DEATH_SMALL[] = {
 "       .                                           ..       ",
 "     .                                                .     ",
 "                                                            "};
+/** @} end of ComputerScreenImages */
