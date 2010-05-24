@@ -36,11 +36,15 @@ void speaker_on();
  */
 void speaker_off();
 
+/** Creates a song
+*/
 Song* newSong(int pause, Note notes[], int lenght);
 
+/** Deletes a song 
+*/
 void deleteSong(Song *s);
 
-/** Plays a song using busy-waiting
+/** Plays a song in background using rtc
 <pre>
   usage example:
 

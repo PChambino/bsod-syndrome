@@ -31,26 +31,59 @@
 */
 char *read_xpm(char *map[], int *width, int *height);
 
+/** Sprite definition
+*/
 typedef struct Sprite Sprite;
+
+/** Sprite definition
+*/
 struct Sprite {
-	int x, y;
-	char **img;
-	int imgs, imgIndex;
-	int width, height;
-	//void (*update) (Sprite *sprite, double sec, char key, Mouse *mouse);
+	int x, y; //< position on screen
+	char **img; //< array of images
+	int imgs, imgIndex; //< images count and index of current image
+	int width, height; //< images sizes
 };
 
+/** Creates a sprite
+	@param map arrays of pixmaps
+	@param maps size of map
+	@return a pointer to a sprite
+*/
 Sprite* newSprite(int x, int y, char **map[], int maps);
 
+/** @name Sprite Draw Functions
+*/
+//@{
+/** Draws a sprite line by line using memcpy
+*/
 void drawSprite(Sprite *sprite, char *buffer);
+/** Draws a sprite pixel by pixel, not drawing pixel of color t
+	@param t transparent color
+*/
 void drawSpriteT(Sprite *sprite, char t, char *buffer);
+/** Draws a sprite entirely to the buffer using mempy.
+	Image should be at position 0,0 and have a size equal to the screen.
+*/
 void drawSpriteBG(Sprite *sprite, char *buffer);
+//@}
 
+/** Moves x and y variables of sprite by dx and dy.
+*/
 void moveSprite(Sprite *sprite, int dx, int dy);
 
+/** @name Sprite Collisions Functions
+*/
+//@{
+/** Checks collision between a sprite and a rectangle
+*/
 Bool collidesSpriteRect(Sprite *sprite, int x, int y, int width, int height);
+/** Checks collision between two sprites
+*/
 Bool collidesSprite(Sprite *sprite, Sprite *other);
+//@}
 
+/** Deletes a sprite
+*/
 void deleteSprite(Sprite *sprite);
 
 /** @} end of Sprite */

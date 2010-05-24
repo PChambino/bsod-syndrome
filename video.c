@@ -7,15 +7,6 @@ int VRES = 0;
 static __dpmi_meminfo map; ///< mapping information
 static char *base = NULL; ///< apontador genérico para aceder à memória gráfica
 
-/** Enter graphics mode, enabling near pointers and mapping video physical memory
- * to program virtual address.
- *
- * Returns a generic pointer pointing to video memory address or NULL on error. 
- * "mode" specifies the VESA graphics mode to use, and
- * the mapping information is returned through "map".
- *
- * Also initializes two global variables, VRES and HRES,
- */
 char * enter_graphics(int mode) {
 	unsigned long dosbuf, address=0;
 
@@ -82,8 +73,6 @@ char * enter_graphics(int mode) {
 	return base;
 }
 
-/** Unmap video memory, disable near pointer and returns to text mode
- */
 void leave_graphics() {
 	__dpmi_regs regs; /*__dpmi_regs é uma estrutura que representa os registos do CPU */
 
@@ -94,8 +83,6 @@ void leave_graphics() {
 	__dpmi_int(0x10, &regs); /* gera interrupção software 0x10, entrando no modo texto */
 }
 
-/** Draws a pixel of color "color" at screen coordinates x, y at memory address "base"
- */
 void set_pixelb(int x, int y, int color, char *base) {
 	if (base != NULL && x >= 0 && y >= 0 && x < HRES && y < VRES)
 		*(base + y*HRES + x) = color;
@@ -105,8 +92,6 @@ void set_pixel(int x, int y, int color) {
 	set_pixelb(x, y, color, base);
 }
 
-/** Returns the pixel color at screen coordinates x, y at memory address "base"
- */
 int get_pixelb(int x, int y, char *base) {
 	return *(base + y*HRES + x);
 }
@@ -115,8 +100,6 @@ int get_pixel(int x, int y) {
 	return get_pixelb(x, y, base);
 }
 
-/** Set graphics memory at memory address "base" to "color".
- */
 void clear_screenb(char color, char *base) {
 	int k = 0;
 	int i = 0;
@@ -132,9 +115,6 @@ void clear_screen(char color) {
 	clear_screenb(color, base);
 }
 
-/** Draw a line of color "color" between point (xi,yi) and (xf,yf) at memory address "base".
-	Algoritmo de Bresenham
-*/
 void draw_line(int xi, int yi, int xf, int yf, int color) {
 	int temp;
 	int deltax, deltay;

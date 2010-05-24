@@ -1,4 +1,11 @@
-/* XPM */ 
+
+/** @defgroup HammerImages HammerImages
+ * @{
+ * Hammer images pixmaps.
+ */
+ 
+/** Hammer Up Image
+*/
 __attribute__((unused)) static char * hammer_up[] = {
 "64 64 4",
 "! 15",
@@ -70,7 +77,8 @@ __attribute__((unused)) static char * hammer_up[] = {
 "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!",
 "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"};
 
-/* XPM */ 
+/** Hammer Down Image
+*/
 __attribute__((unused)) static char * hammer_down[] = {
 "64 64 4",
 "! 15",

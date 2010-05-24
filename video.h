@@ -21,9 +21,6 @@
 #define INPUT_STATUS        0x03da
 #define VRETRACE            0x08
 
-/*
- * there are two global variables, declared (but not defined) here
- */
 extern int HRES;  /**< global variable with the horizontal resolution in pixels */
 extern int VRES;  /**< global variable with the vertical resolution in pixels */
 
@@ -42,25 +39,36 @@ char * enter_graphics(int mode);
  */
 void leave_graphics();
 
-/** Draws a pixel of color "color" at screen coordinates x, y at memory address "base"
- */
+/** @name Set Pixel Functions
+	Draws a pixel of color "color" at screen coordinates x, y at memory address "base"
+*/
+//@{
 void set_pixelb(int x, int y, int color, char *base);
 void set_pixel(int x, int y, int color);
+//@}
 
-/** Returns the pixel color at screen coordinates x, y at memory address "base"
- */
+/** @name Get Pixel Functions
+	Returns the pixel color at screen coordinates x, y at memory address "base"
+*/
+//@{
 int get_pixelb(int x, int y, char *base);
 int get_pixel(int x, int y);
+//@}
 
-/** Set graphics memory at memory address "base" to "color".
- */
+/** @name Clear Screen Functions
+	Set graphics memory at memory address "base" to "color".
+*/
+//@{
 void clear_screenb(char color, char *base);
 void clear_screen(char color);
+//@}
 
 /** Draw a line of color "color" between point (xi,yi) and (xf,yf) at memory address "base"
 */
 void draw_line(int xi, int yi, int xf, int yf, int color);
 
+/** Waits for the screen vertical retrace.
+*/
 void wait_for_retrace();
 
 /** @} end of video */ 
