@@ -33,7 +33,8 @@ void updateHammer(Hammer *hammer, double mili, char key, Mouse *mouse) {
 			break;
 		case GET_CD:
 			hammer->sprite->imgIndex += 2;
-			hammer->state = CD;
+			delay = HAMMER_DELAY;
+			hammer->state = CD_DOWN;
 			break;
 		case CD:
 		case UP:

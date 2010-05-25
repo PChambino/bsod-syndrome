@@ -3,17 +3,19 @@
 
 static int mode = 0x103;
 int fps = 100;
+int soundON = 1;
 
 static void printUsage() {
 	printf("Usage: BSoD [options] \n"
 		   "Options: \n"
-		   " -mode <0x101 | 0x103 | 0x105 | 0x107> Where 0x101 = 640x480 \n"
+/*		   " -mode <0x101 | 0x103 | 0x105 | 0x107> Where 0x101 = 640x480 \n"
 		   "                                             0x103 = 800x600 (Default) \n"
 		   "                                             0x105 = 1024x768 \n"
-		   "                                             0x107 = 1280x1024 \n"
-		   " -fps <n>                              Where <n> is a positive number. \n"
-		   "                                       Default is 100. \n"
-		   " -help                                 Prints this info and exits. \n"
+		   "                                             0x107 = 1280x1024 \n"*/
+		   " -fps <n>        Where <n> is a positive number. \n"
+		   "                 Default is 100. \n"
+		   " -nosound        Disables sound. \n"
+		   " -help           Prints this info and exits. \n"
 		   "\n");
 }
 
@@ -25,7 +27,7 @@ void process_args(int argc, char **argv) {
 			printUsage();
 			exit(0);
 		}
-		else if (strcmp(argv[i],"-mode") == 0) {
+/*		else if (strcmp(argv[i],"-mode") == 0) {
 			i++;
 			if (i >= argc) { error = 1; break; }
 			if (sscanf(argv[i],"%x",&mode) != 1) { error = 1; break; }
@@ -40,12 +42,15 @@ void process_args(int argc, char **argv) {
 					break;
 			}
 			if (error) break;
-		}
+		}*/
 		else if (strcmp(argv[i],"-fps") == 0) {
 			i++;
 			if (i >= argc) {	error = 1; break; }
 			if (sscanf(argv[i],"%d",&fps) != 1) { error = 1; break; }
 			if (fps <= 0 || fps > 1000) { error = 1; break; }
+		}
+		else if (strcmp(argv[i],"-nosound") == 0) {
+			soundON = 0;
 		}
 		else {
 			error = 1; break;
@@ -96,7 +101,7 @@ void setup_kbc() {
 	fprintf(logger, "Setup KBC\n");
 	
 	queueInit(&keys);
-	mouseQueue = newGQueue(100, 3 * sizeof(uchar));
+	mouseQueue = newGQueue(10000, 3 * sizeof(uchar));
 	
 	disable_irq(KBD_IRQ);
 	disable_irq(MOUSE_IRQ);  
@@ -165,7 +170,7 @@ void tear_down() {
 
 	// rtc
 	speaker_off();
-//	disable_irq(RTC_IRQ);
+	disable_irq(RTC_IRQ);
 	write_rtcv(RTC_STAT_B, read_rtcv(RTC_STAT_B) & ~(RTC_PIE | RTC_AIE | RTC_UIE));
 	reinstall_c_irq_handler(RTC_IRQ, &old_rtc_isr);
 		

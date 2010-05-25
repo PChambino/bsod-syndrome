@@ -1,5 +1,6 @@
 
 #include "rtc.h"
+#include "setup.h"
 
 void rtc_isr() {
 	void music_state_machine();
@@ -8,7 +9,7 @@ void rtc_isr() {
 	Byte statC = read_rtcv(RTC_STAT_C);
 
 	if ((statC & RTC_IRQF) != 0 && (statC & RTC_PF) != 0) {
-		music_state_machine();
+		if (soundON) music_state_machine();
 		
 		mili_tick++;
 	}

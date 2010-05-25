@@ -21,6 +21,10 @@
 */
 extern int fps;
 
+/** Flag is 1 if sound should be played, 0 otherwise.
+*/
+extern int soundON;
+
 /** Reads and process arguments.
 */
 void process_args(int argc, char **argv);

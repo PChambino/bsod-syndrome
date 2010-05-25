@@ -133,6 +133,11 @@ void update(int mili) {
 			
 			break;
 		case END:
+			if (hammer->state == HIT) {
+				state = SCORE;
+				highScore = isHighScore(highScores, score);
+			}
+			
 			updateButton(helpButton, hammer);
 			if (helpButton->state == CLICKED)
 				state = HELP;
@@ -141,10 +146,6 @@ void update(int mili) {
 			if (exitButton->state == CLICKED)
 				exit(0);
 				
-			if (hammer->state == HIT) {
-				state = SCORE;
-				highScore = isHighScore(highScores, score);
-			}
 			break;
 		case SCORE:
 			if (highScore) {
@@ -220,6 +221,8 @@ void draw(char *buffer) {
 			if (highScore) {
 				drawString("Name:", 40, 415, 15, 5, buffer);
 				drawString(score->name, 250, 415, 15, 5, buffer);
+			} else {
+				drawString("You FAIL!", 40, 415, 15, 7, buffer);
 			}
 			break;
 		case HELP:
