@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>BSoD Syndrome: Sprite</title>
+<title>BSoD-Syndrome: Sprite</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -38,30 +38,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <div class="contents">
-<h1>Sprite</h1><table border="0" cellpadding="0" cellspacing="0">
+<h1>Sprite</h1>
+<p><a class="el" href="struct_sprite.html" title="Sprite definition.">Sprite</a> related functions.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Data Structures</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_sprite.html">Sprite</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="struct_sprite.html" title="Sprite definition.">Sprite</a> definition.  <a href="struct_sprite.html#_details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2>Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_sprite.html">Sprite</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sprite.html#gabb1060e0b7ecf8b4eba2c1bb55cfe5e2">Sprite</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="struct_sprite.html" title="Sprite definition.">Sprite</a> definition.  <a href="#gabb1060e0b7ecf8b4eba2c1bb55cfe5e2"></a><br/></td></tr>
 <tr><td colspan="2"><h2>Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sprite.html#ga87bd140b1b1b28386f37ebac5c9b9d2e">read_xpm</a> (char *map[], int *width, int *height)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reads a xpm-like sprite defined in "map" (look at pixmap.h for examples).  <a href="#ga87bd140b1b1b28386f37ebac5c9b9d2e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_sprite.html">Sprite</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sprite.html#ga7de84d48ef02e444f38190dfd1ac9690">newSprite</a> (int x, int y, char **map[], int maps)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a sprite.  <a href="#ga7de84d48ef02e444f38190dfd1ac9690"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sprite.html#gae8e68f89e4bd1e98645808b9109f896b">moveSprite</a> (<a class="el" href="struct_sprite.html">Sprite</a> *sprite, int dx, int dy)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Moves x and y variables of sprite by dx and dy.  <a href="#gae8e68f89e4bd1e98645808b9109f896b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sprite.html#ga87294dafbc36911f5f1adbbd759d69de">deleteSprite</a> (<a class="el" href="struct_sprite.html">Sprite</a> *sprite)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Deletes a sprite.  <a href="#ga87294dafbc36911f5f1adbbd759d69de"></a><br/></td></tr>
 <tr><td colspan="2"><h2>Sprite Draw Functions</h2></td></tr>
 <tr><td colspan="2"><p><a class="anchor" id="amgrp1363bab36863ab11837f9bc9087b4f4f"></a> </p>
 <br/><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sprite.html#ga12e2c68a7bc16fd28963980a6c1a7141">drawSprite</a> (<a class="el" href="struct_sprite.html">Sprite</a> *sprite, char *buffer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draws a sprite line by line using memcpy.  <a href="#ga12e2c68a7bc16fd28963980a6c1a7141"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sprite.html#ga08f2a8c4ed48cde16ca6ebd9a3e748d1">drawSpriteT</a> (<a class="el" href="struct_sprite.html">Sprite</a> *sprite, char t, char *buffer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draws a sprite pixel by pixel, not drawing pixel of color t.  <a href="#ga08f2a8c4ed48cde16ca6ebd9a3e748d1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sprite.html#gada12c5893e93e7b9e744ab3a8164afc8">drawSpriteBG</a> (<a class="el" href="struct_sprite.html">Sprite</a> *sprite, char *buffer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draws a sprite entirely to the buffer using mempy.  <a href="#gada12c5893e93e7b9e744ab3a8164afc8"></a><br/></td></tr>
 <tr><td colspan="2"><h2>Sprite Collisions Functions</h2></td></tr>
 <tr><td colspan="2"><p><a class="anchor" id="amgrp6355eb51cfdc59ae98a142f35683924a"></a> </p>
 <br/><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___user_types.html#ga39db6982619d623273fad8a383489309">Bool</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sprite.html#ga6c61e3d4469911e51e3cffc24d74cad3">collidesSpriteRect</a> (<a class="el" href="struct_sprite.html">Sprite</a> *sprite, int x, int y, int width, int height)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Checks collision between a sprite and a rectangle.  <a href="#ga6c61e3d4469911e51e3cffc24d74cad3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___user_types.html#ga39db6982619d623273fad8a383489309">Bool</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sprite.html#ga2e550f30ca6a94427bcc22e12d8e090d">collidesSprite</a> (<a class="el" href="struct_sprite.html">Sprite</a> *sprite, <a class="el" href="struct_sprite.html">Sprite</a> *other)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Checks collision between two sprites.  <a href="#ga2e550f30ca6a94427bcc22e12d8e090d"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p><a class="el" href="struct_sprite.html">Sprite</a> related functions </p>
+<p><a class="el" href="struct_sprite.html" title="Sprite definition.">Sprite</a> related functions. </p>
 <hr/><h2>Typedef Documentation</h2>
 <a class="anchor" id="gabb1060e0b7ecf8b4eba2c1bb55cfe5e2"></a><!-- doxytag: member="sprite.h::Sprite" ref="gabb1060e0b7ecf8b4eba2c1bb55cfe5e2" args="" -->
 <div class="memitem">
@@ -73,7 +87,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p><a class="el" href="struct_sprite.html">Sprite</a> definition </p>
+
+<p><a class="el" href="struct_sprite.html" title="Sprite definition.">Sprite</a> definition. </p>
 
 </div>
 </div>
@@ -102,7 +117,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Checks collision between two sprites </p>
+
+<p>Checks collision between two sprites. </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___sprite_ga2e550f30ca6a94427bcc22e12d8e090d_cgraph.png" border="0" usemap="#group___sprite_ga2e550f30ca6a94427bcc22e12d8e090d_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -148,7 +171,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Checks collision between a sprite and a rectangle </p>
+
+<p>Checks collision between a sprite and a rectangle. </p>
 
 </div>
 </div>
@@ -167,7 +191,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Deletes a sprite </p>
+
+<p>Deletes a sprite. </p>
 
 </div>
 </div>
@@ -195,7 +220,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Draws a sprite line by line using memcpy </p>
+
+<p>Draws a sprite line by line using memcpy. </p>
 
 </div>
 </div>
@@ -223,7 +249,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Draws a sprite entirely to the buffer using mempy. Image should be at position 0,0 and have a size equal to the screen. </p>
+
+<p>Draws a sprite entirely to the buffer using mempy. </p>
+<p>Image should be at position 0,0 and have a size equal to the screen. </p>
 
 </div>
 </div>
@@ -257,13 +285,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Draws a sprite pixel by pixel, not drawing pixel of color t </p>
+
+<p>Draws a sprite pixel by pixel, not drawing pixel of color t. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>t</em>&nbsp;</td><td>transparent color </td></tr>
   </table>
   </dd>
 </dl>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___sprite_ga08f2a8c4ed48cde16ca6ebd9a3e748d1_cgraph.png" border="0" usemap="#group___sprite_ga08f2a8c4ed48cde16ca6ebd9a3e748d1_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -297,6 +333,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
+
 <p>Moves x and y variables of sprite by dx and dy. </p>
 
 </div>
@@ -337,7 +374,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Creates a sprite </p>
+
+<p>Creates a sprite. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>map</em>&nbsp;</td><td>arrays of pixmaps </td></tr>
@@ -346,6 +384,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>a pointer to a sprite </dd></dl>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___sprite_ga7de84d48ef02e444f38190dfd1ac9690_cgraph.png" border="0" usemap="#group___sprite_ga7de84d48ef02e444f38190dfd1ac9690_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -379,13 +424,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Reads a xpm-like sprite defined in "map" (look at pixmap.h for examples). Returns the address of the allocated memory where the sprite was read. Updates "width" and "heigh" with the sprite dimension. Return NULL on error. Assumes that VRES and HRES (the screen vertical and horizontal resolution) are externaly defined.</p>
+
+<p>Reads a xpm-like sprite defined in "map" (look at pixmap.h for examples). </p>
+<p>Returns the address of the allocated memory where the sprite was read. Updates "width" and "heigh" with the sprite dimension. Return NULL on error. Assumes that VRES and HRES (the screen vertical and horizontal resolution) are externaly defined.</p>
 <p>Usage example, using the defined sprite in pixmap.h: </p>
 <pre>
    include "pixmap.h" // defines  pic1, pic2, etc 
    int wd, hg;
    char *sprite = read_xpm(pic1, &amp;wd, &amp;hg);
  </pre> 
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___sprite_ga87bd140b1b1b28386f37ebac5c9b9d2e_cgraph.png" border="0" usemap="#group___sprite_ga87bd140b1b1b28386f37ebac5c9b9d2e_cgraph_map" alt=""></div>
+</div>
+</p>
+
 </div>
 </div>
 </div>
@@ -403,7 +457,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon May 24 05:42:05 2010 for BSoD Syndrome by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue May 25 04:21:02 2010 for BSoD-Syndrome by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

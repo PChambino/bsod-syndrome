@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>BSoD Syndrome: RealTimeController</title>
+<title>BSoD-Syndrome: RealTimeController</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -38,22 +38,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <div class="contents">
-<h1>RealTimeController</h1><table border="0" cellpadding="0" cellspacing="0">
+<h1>RealTimeController</h1>
+<p>Real Time Controller related functions.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Data Structures</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_t_c___t_i_m_e.html">RTC_TIME</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Time structure.  <a href="struct_r_t_c___t_i_m_e.html#_details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_r_t_c___d_a_t_e.html">RTC_DATE</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Data structure.  <a href="struct_r_t_c___d_a_t_e.html#_details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2>Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___real_time_controller.html#ga839845a3a9f35e3860e525cfe86f3405">bcd2dec</a> (<a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a> i)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">converts BCD (Binary Coded Decimal) to decimal  <a href="#ga839845a3a9f35e3860e525cfe86f3405"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___real_time_controller.html#ga4b857d1c0d66ceaf587d2343881252c1">dec2bcd</a> (<a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a> i)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">converts decimal to BCD (Binary Coded Decimal)  <a href="#ga4b857d1c0d66ceaf587d2343881252c1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___real_time_controller.html#gae9b349676544e84360bb9278ef4c0a96">rtc_valid</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Wait until data in rtc is valid.  <a href="#gae9b349676544e84360bb9278ef4c0a96"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___real_time_controller.html#ga4a59b403e6b8da03106ab2a09ec2431f">read_rtc</a> (<a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a> add)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns rtc data from I/O address add.  <a href="#ga4a59b403e6b8da03106ab2a09ec2431f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___real_time_controller.html#ga433f5ef3940f2cce7b17aa9771080516">read_rtcv</a> (<a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a> add)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns rtc data from I/O address add.  <a href="#ga433f5ef3940f2cce7b17aa9771080516"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___real_time_controller.html#ga18c4e040accb4c214682d5605f596e60">write_rtc</a> (<a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a> add, <a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a> value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write value to I/O address add.  <a href="#ga18c4e040accb4c214682d5605f596e60"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___real_time_controller.html#ga28ed5315f068afb9339b74dd434c04bd">write_rtcv</a> (<a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a> add, <a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a> value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write value to I/O address add.  <a href="#ga28ed5315f068afb9339b74dd434c04bd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___real_time_controller.html#ga3554832f0cd4b7366219d8c1aa9ae321">rtc_read_time</a> (<a class="el" href="struct_r_t_c___t_i_m_e.html">RTC_TIME</a> *)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Read RTC stored time.  <a href="#ga3554832f0cd4b7366219d8c1aa9ae321"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___real_time_controller.html#gaef01346a833632b8540100f23fecdd09">rtc_read_date</a> (<a class="el" href="struct_r_t_c___d_a_t_e.html">RTC_DATE</a> *)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Read RTC stored date.  <a href="#gaef01346a833632b8540100f23fecdd09"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___real_time_controller.html#ga41fd5f9c71342629f1149063251e3827">rtc_read_alarm</a> (<a class="el" href="struct_r_t_c___t_i_m_e.html">RTC_TIME</a> *)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Read RTC stored alarm.  <a href="#ga41fd5f9c71342629f1149063251e3827"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___real_time_controller.html#gab5992248e26867cf6bb3b08aa822b37e">rtc_write_alarm</a> (<a class="el" href="struct_r_t_c___t_i_m_e.html">RTC_TIME</a> *)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write alarm to RTC.  <a href="#gab5992248e26867cf6bb3b08aa822b37e"></a><br/></td></tr>
 <tr><td colspan="2"><h2>The RTC registers</h2></td></tr>
 <tr><td colspan="2"><p><a class="anchor" id="amgrp0e9d1303ea5fcec8cdcf992099c25cc6"></a> </p>
 <br/><br/></td></tr>
@@ -140,7 +156,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">1-Valid RAM and time  <a href="#ga35577ed27885901641e6120257455adb"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>Real Time Controller related functions </p>
+<p>Real Time Controller related functions. </p>
 <hr/><h2>Define Documentation</h2>
 <a class="anchor" id="ga4d3c383e9185072b666e8ed980d20471"></a><!-- doxytag: member="rtc.h::RTC_12_24" ref="ga4d3c383e9185072b666e8ed980d20471" args="" -->
 <div class="memitem">
@@ -549,6 +565,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
+
 <p>converts BCD (Binary Coded Decimal) to decimal </p>
 
 </div>
@@ -568,6 +585,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
+
 <p>converts decimal to BCD (Binary Coded Decimal) </p>
 
 </div>
@@ -587,7 +605,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Returns rtc data from I/O address add. Doesn't check valid bit </p>
+
+<p>Returns rtc data from I/O address add. </p>
+<p>Doesn't check valid bit </p>
 
 </div>
 </div>
@@ -606,7 +626,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Returns rtc data from I/O address add. Check valid bit </p>
+
+<p>Returns rtc data from I/O address add. </p>
+<p>Check valid bit </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___real_time_controller_ga433f5ef3940f2cce7b17aa9771080516_cgraph.png" border="0" usemap="#group___real_time_controller_ga433f5ef3940f2cce7b17aa9771080516_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -625,8 +654,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Read RTC stored alarm</p>
-<p>Uses <a class="el" href="group___real_time_controller.html#ga433f5ef3940f2cce7b17aa9771080516">read_rtcv()</a> and <a class="el" href="group___real_time_controller.html#ga839845a3a9f35e3860e525cfe86f3405">bcd2dec()</a> </p>
+
+<p>Read RTC stored alarm. </p>
+<p>Uses <a class="el" href="group___real_time_controller.html#ga433f5ef3940f2cce7b17aa9771080516" title="Returns rtc data from I/O address add.">read_rtcv()</a> and <a class="el" href="group___real_time_controller.html#ga839845a3a9f35e3860e525cfe86f3405" title="converts BCD (Binary Coded Decimal) to decimal">bcd2dec()</a> </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___real_time_controller_ga41fd5f9c71342629f1149063251e3827_cgraph.png" border="0" usemap="#group___real_time_controller_ga41fd5f9c71342629f1149063251e3827_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -645,8 +682,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Read RTC stored date</p>
-<p>Uses <a class="el" href="group___real_time_controller.html#ga433f5ef3940f2cce7b17aa9771080516">read_rtcv()</a> and <a class="el" href="group___real_time_controller.html#ga839845a3a9f35e3860e525cfe86f3405">bcd2dec()</a> </p>
+
+<p>Read RTC stored date. </p>
+<p>Uses <a class="el" href="group___real_time_controller.html#ga433f5ef3940f2cce7b17aa9771080516" title="Returns rtc data from I/O address add.">read_rtcv()</a> and <a class="el" href="group___real_time_controller.html#ga839845a3a9f35e3860e525cfe86f3405" title="converts BCD (Binary Coded Decimal) to decimal">bcd2dec()</a> </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___real_time_controller_gaef01346a833632b8540100f23fecdd09_cgraph.png" border="0" usemap="#group___real_time_controller_gaef01346a833632b8540100f23fecdd09_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -665,8 +710,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Read RTC stored time</p>
-<p>Uses <a class="el" href="group___real_time_controller.html#ga433f5ef3940f2cce7b17aa9771080516">read_rtcv()</a> and <a class="el" href="group___real_time_controller.html#ga839845a3a9f35e3860e525cfe86f3405">bcd2dec()</a> </p>
+
+<p>Read RTC stored time. </p>
+<p>Uses <a class="el" href="group___real_time_controller.html#ga433f5ef3940f2cce7b17aa9771080516" title="Returns rtc data from I/O address add.">read_rtcv()</a> and <a class="el" href="group___real_time_controller.html#ga839845a3a9f35e3860e525cfe86f3405" title="converts BCD (Binary Coded Decimal) to decimal">bcd2dec()</a> </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___real_time_controller_ga3554832f0cd4b7366219d8c1aa9ae321_cgraph.png" border="0" usemap="#group___real_time_controller_ga3554832f0cd4b7366219d8c1aa9ae321_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -684,7 +737,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Wait until data in rtc is valid. Data is valid until +/- 240 usec after this function returns, thus a read/write can be done to the RTC within this time period </p>
+
+<p>Wait until data in rtc is valid. </p>
+<p>Data is valid until +/- 240 usec after this function returns, thus a read/write can be done to the RTC within this time period </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___real_time_controller_gae9b349676544e84360bb9278ef4c0a96_cgraph.png" border="0" usemap="#group___real_time_controller_gae9b349676544e84360bb9278ef4c0a96_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -703,8 +765,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Write alarm to RTC</p>
-<p>Uses <a class="el" href="group___real_time_controller.html#ga28ed5315f068afb9339b74dd434c04bd">write_rtcv()</a> and <a class="el" href="group___real_time_controller.html#ga4b857d1c0d66ceaf587d2343881252c1">dec2bcd()</a> </p>
+
+<p>Write alarm to RTC. </p>
+<p>Uses <a class="el" href="group___real_time_controller.html#ga28ed5315f068afb9339b74dd434c04bd" title="Write value to I/O address add.">write_rtcv()</a> and <a class="el" href="group___real_time_controller.html#ga4b857d1c0d66ceaf587d2343881252c1" title="converts decimal to BCD (Binary Coded Decimal)">dec2bcd()</a> </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___real_time_controller_gab5992248e26867cf6bb3b08aa822b37e_cgraph.png" border="0" usemap="#group___real_time_controller_gab5992248e26867cf6bb3b08aa822b37e_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -732,7 +802,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Write value to I/O address add. Doesn't check valid bit </p>
+
+<p>Write value to I/O address add. </p>
+<p>Doesn't check valid bit </p>
 
 </div>
 </div>
@@ -760,7 +832,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Write value to I/O address add. Check valid bit </p>
+
+<p>Write value to I/O address add. </p>
+<p>Check valid bit </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___real_time_controller_ga28ed5315f068afb9339b74dd434c04bd_cgraph.png" border="0" usemap="#group___real_time_controller_ga28ed5315f068afb9339b74dd434c04bd_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -779,7 +860,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon May 24 05:42:05 2010 for BSoD Syndrome by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue May 25 04:21:02 2010 for BSoD-Syndrome by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

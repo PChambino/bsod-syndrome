@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>BSoD Syndrome: Score</title>
+<title>BSoD-Syndrome: Score</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -38,22 +38,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <div class="contents">
-<h1>Score</h1><table border="0" cellpadding="0" cellspacing="0">
+<h1>Score</h1>
+<p><a class="el" href="struct_score.html" title="Score definition.">Score</a> related functions.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Data Structures</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_score.html">Score</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="struct_score.html" title="Score definition.">Score</a> definition.  <a href="struct_score.html#_details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2>Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_score.html">Score</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___score.html#ga945d4c8f59cd1a6c77abf9d9a2364383">newScore</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates <a class="el" href="struct_score.html" title="Score definition.">Score</a>.  <a href="#ga945d4c8f59cd1a6c77abf9d9a2364383"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_score.html">Score</a> **&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___score.html#gaa1cf38308819d6c3cf6200ae43b6b39f">newHighScores</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a array of scores.  <a href="#gaa1cf38308819d6c3cf6200ae43b6b39f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___score.html#gaf39db209f51c1f22c569b5bd77429dca">deleteScore</a> (<a class="el" href="struct_score.html">Score</a> *s)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Deletes score.  <a href="#gaf39db209f51c1f22c569b5bd77429dca"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___score.html#gacd1aa7ee8c0ab176538db46f884a59a2">deleteHighScores</a> (<a class="el" href="struct_score.html">Score</a> **hs)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Deletes a array of scores.  <a href="#gacd1aa7ee8c0ab176538db46f884a59a2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___score.html#ga0303f8659fed122736045ee2f8f6054a">drawScoreValue</a> (<a class="el" href="struct_score.html">Score</a> *s, int x, int y, int color, int scale, char *buffer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draw score value Uses drawString.  <a href="#ga0303f8659fed122736045ee2f8f6054a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___score.html#ga0e4fd288e59491b3f5a5e8dd1e84c58c">drawHighScores</a> (<a class="el" href="struct_score.html">Score</a> **hs, int x, int y, int color, int scale, char *buffer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draw a array of scores Uses drawString.  <a href="#ga0e4fd288e59491b3f5a5e8dd1e84c58c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___score.html#ga0255e5cc09bab7c8d8fa7e2b55dc2e11">saveHighScores</a> (<a class="el" href="struct_score.html">Score</a> **hs)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Saves the array of scores to the file HIGHSCORES_FILE.  <a href="#ga0255e5cc09bab7c8d8fa7e2b55dc2e11"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_score.html">Score</a> **&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___score.html#ga6c31567afb59e40594078891288c28e5">readHighScores</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reads an array of scores from the file HIGHSCORES_FILE.  <a href="#ga6c31567afb59e40594078891288c28e5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___user_types.html#ga39db6982619d623273fad8a383489309">Bool</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___score.html#ga32799dde0fa161339aeb424281c5a7f4">putScore</a> (<a class="el" href="struct_score.html">Score</a> **hs, <a class="el" href="struct_score.html">Score</a> *s)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Puts score to arrays of scores in order.  <a href="#ga32799dde0fa161339aeb424281c5a7f4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___user_types.html#ga39db6982619d623273fad8a383489309">Bool</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___score.html#gac35a933363ba9dc2b594705a78f8c90d">isHighScore</a> (<a class="el" href="struct_score.html">Score</a> **hs, <a class="el" href="struct_score.html">Score</a> *s)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Checks if score enters in the array of scores.  <a href="#gac35a933363ba9dc2b594705a78f8c90d"></a><br/></td></tr>
 <tr><td colspan="2"><h2>Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___score.html#ga9d35a587435c2b25a5ebbef13324fa22">HIGHSCORES_FILE</a> []</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Highscore save file.  <a href="#ga9d35a587435c2b25a5ebbef13324fa22"></a><br/></td></tr>
 <tr><td colspan="2"><h2>Score Limits</h2></td></tr>
 <tr><td colspan="2"><p><a class="anchor" id="amgrp51f9fda2db8711a79b6755bf94e56761"></a> </p>
 <br/><br/></td></tr>
@@ -62,7 +77,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___score.html#gad0124e7daf4e1b51917c99467a13b7ca">SCORE_STR_LEN</a>&nbsp;&nbsp;&nbsp;3</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p><a class="el" href="struct_score.html">Score</a> related functions </p>
+<p><a class="el" href="struct_score.html" title="Score definition.">Score</a> related functions. </p>
 <hr/><h2>Define Documentation</h2>
 <a class="anchor" id="ga3d27c1647941c494db6fde669ab23d0e"></a><!-- doxytag: member="score.h::NUM_HIGHSCORES" ref="ga3d27c1647941c494db6fde669ab23d0e" args="" -->
 <div class="memitem">
@@ -119,13 +134,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Deletes a array of scores </p>
+
+<p>Deletes a array of scores. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>hs</em>&nbsp;</td><td>the array of scores to delete </td></tr>
   </table>
   </dd>
 </dl>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___score_gacd1aa7ee8c0ab176538db46f884a59a2_cgraph.png" border="0" usemap="#group___score_gacd1aa7ee8c0ab176538db46f884a59a2_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -144,7 +167,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Deletes score </p>
+
+<p>Deletes score. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>s</em>&nbsp;</td><td>score to be deleted </td></tr>
@@ -202,7 +226,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Draw a array of scores Uses drawString </p>
+
+<p>Draw a array of scores Uses drawString. </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___score_ga0e4fd288e59491b3f5a5e8dd1e84c58c_cgraph.png" border="0" usemap="#group___score_ga0e4fd288e59491b3f5a5e8dd1e84c58c_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -254,7 +286,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Draw score value Uses drawString </p>
+
+<p>Draw score value Uses drawString. </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___score_ga0303f8659fed122736045ee2f8f6054a_cgraph.png" border="0" usemap="#group___score_ga0303f8659fed122736045ee2f8f6054a_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -282,6 +322,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
+
 <p>Checks if score enters in the array of scores. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
@@ -307,8 +348,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Creates a array of scores </p>
+
+<p>Creates a array of scores. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>a pointer to the array of scores </dd></dl>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___score_gaa1cf38308819d6c3cf6200ae43b6b39f_cgraph.png" border="0" usemap="#group___score_gaa1cf38308819d6c3cf6200ae43b6b39f_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -326,7 +375,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Creates <a class="el" href="struct_score.html">Score</a> </p>
+
+<p>Creates <a class="el" href="struct_score.html" title="Score definition.">Score</a>. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>a pointer to the new score </dd></dl>
 
 </div>
@@ -355,6 +405,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
+
 <p>Puts score to arrays of scores in order. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
@@ -380,7 +431,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Reads an array of scores from the file HIGHSCORES_FILE </p>
+
+<p>Reads an array of scores from the file HIGHSCORES_FILE. </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___score_ga6c31567afb59e40594078891288c28e5_cgraph.png" border="0" usemap="#group___score_ga6c31567afb59e40594078891288c28e5_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -399,7 +458,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Saves the array of scores to the file HIGHSCORES_FILE </p>
+
+<p>Saves the array of scores to the file HIGHSCORES_FILE. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>hs</em>&nbsp;</td><td>arrays of scores </td></tr>
@@ -420,7 +480,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Highscore save file </p>
+
+<p>Highscore save file. </p>
 
 </div>
 </div>
@@ -439,7 +500,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon May 24 05:42:05 2010 for BSoD Syndrome by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue May 25 04:21:02 2010 for BSoD-Syndrome by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

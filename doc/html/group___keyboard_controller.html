@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>BSoD Syndrome: KeyboardController</title>
+<title>BSoD-Syndrome: KeyboardController</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -38,21 +38,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <div class="contents">
-<h1>KeyboardController</h1><table border="0" cellpadding="0" cellspacing="0">
+<h1>KeyboardController</h1>
+<p>Keyboard and <a class="el" href="struct_mouse.html" title="Mouse Event definition.">Mouse</a> related functions.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#ga34599ca5c55cb9be3b235d7422aff45c">KBC_TIMEOUT</a>&nbsp;&nbsp;&nbsp;30</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">maximum amount of milliseconds to wait for KBC response/availability  <a href="#ga34599ca5c55cb9be3b235d7422aff45c"></a><br/></td></tr>
 <tr><td colspan="2"><h2>Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#ga088f9ac488fbbf9ecf5a7238919c4e2c">kbc_init</a> (int debug)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Initializes the KeyBoard Controller.  <a href="#ga088f9ac488fbbf9ecf5a7238919c4e2c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#ga2f953c4ccfdb59883c1821412f73f237">mouse_disable</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Disable the mouse, sending a StreamDisable to the mouse, then disables generation of mouse interrupts at the KBC, sends a DisableMouse to the KBC and finnaly disable mouse interrupts at the PIC2.  <a href="#ga2f953c4ccfdb59883c1821412f73f237"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#gad0f35d8bf87c5a507aede8692c45f877">write_kbc_cmd</a> (unsigned data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write 'data' to the command register, returning 0 for OK or -1 on timeout.  <a href="#gad0f35d8bf87c5a507aede8692c45f877"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#gaa9a19096e4c8f7457fe99ad274ae4836">has_DOS_mouse_ISR</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns 1 if a DOS mouse driver is installed, 0 if not.  <a href="#gaa9a19096e4c8f7457fe99ad274ae4836"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#gab19779ea7896435b3d4a5ff8a420f37e">write_kbc_data</a> (unsigned data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write 'data' to the data register, returning ACK, Error or -1 on timeout.  <a href="#gab19779ea7896435b3d4a5ff8a420f37e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#ga60b51b413d6f90bfb8dd7df85ddb63a2">write_aux</a> (unsigned cmd)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Send 'cmd' to the mouse, prefacing it with the WriteMouse command to the command register.  <a href="#ga60b51b413d6f90bfb8dd7df85ddb63a2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#ga52a7ce44125208dfa303e597e6302a71">read_kbc</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns the data read a the data register.  <a href="#ga52a7ce44125208dfa303e597e6302a71"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#gad0f4763c978797b701c51fe3841ebdb0">write_kbc</a> (unsigned adr, unsigned data)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write 'data' at IO address 'adr' , returning -1 on error or timeout.  <a href="#gad0f4763c978797b701c51fe3841ebdb0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#ga55d69f46dae31a8035bfe4920ad695e5">blink_leds</a> (void)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">shortky blink all three keyboard LEDs  <a href="#ga55d69f46dae31a8035bfe4920ad695e5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#gaa1d5a573482dc5ead6039c0db68b85f6">blink_led</a> (<a class="el" href="group___user_types.html#ga65f85814a8290f9797005d3b28e7e5fc">uchar</a> led)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">shortky blink left(1), middle(2) or right(3) keyboard LED  <a href="#gaa1d5a573482dc5ead6039c0db68b85f6"></a><br/></td></tr>
 <tr><td colspan="2"><h2>The hardware register addresses</h2></td></tr>
 <tr><td colspan="2"><p><a class="anchor" id="amgrp372a25e47c984857a96cb8cf822c3828"></a> </p>
 <br/><br/></td></tr>
@@ -113,11 +126,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#ga177bb59d36f14c1024b2de1601693605">WriteCommand</a>&nbsp;&nbsp;&nbsp;0x60</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write Command_Byte, one arg.  <a href="#ga177bb59d36f14c1024b2de1601693605"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#ga884864c92108739e60113ca2079cbe71">DisableMouse</a>&nbsp;&nbsp;&nbsp;0xA7</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Disable <a class="el" href="struct_mouse.html">Mouse</a> Interface.  <a href="#ga884864c92108739e60113ca2079cbe71"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Disable <a class="el" href="struct_mouse.html" title="Mouse Event definition.">Mouse</a> Interface.  <a href="#ga884864c92108739e60113ca2079cbe71"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#gacaa321c74955e015d83da05cd321c0f8">EnableMouse</a>&nbsp;&nbsp;&nbsp;0xA8</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Enable <a class="el" href="struct_mouse.html">Mouse</a> Interface.  <a href="#gacaa321c74955e015d83da05cd321c0f8"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Enable <a class="el" href="struct_mouse.html" title="Mouse Event definition.">Mouse</a> Interface.  <a href="#gacaa321c74955e015d83da05cd321c0f8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#gab47f9ef099e1f33e026e5ee549900624">TestMouse</a>&nbsp;&nbsp;&nbsp;0xA9</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Test <a class="el" href="struct_mouse.html">Mouse</a> Interface, returns 0 if OK.  <a href="#gab47f9ef099e1f33e026e5ee549900624"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Test <a class="el" href="struct_mouse.html" title="Mouse Event definition.">Mouse</a> Interface, returns 0 if OK.  <a href="#gab47f9ef099e1f33e026e5ee549900624"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#gaf555314895f7b6544624a51f22e3aeb0">Test8042</a>&nbsp;&nbsp;&nbsp;0xAA</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Test KBC, returns 0x55 if sucess, 0xFC on error.  <a href="#gaf555314895f7b6544624a51f22e3aeb0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#ga5414bbfebe830e7887014106d3fd681e">TestKBD</a>&nbsp;&nbsp;&nbsp;0xAB</td></tr>
@@ -127,11 +140,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#gace4e2548e5f13bab908c668fe5df5819">NEnableKBD</a>&nbsp;&nbsp;&nbsp;0xAE</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">New (versus historical) Enable keyboard.  <a href="#gace4e2548e5f13bab908c668fe5df5819"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#ga1ace60d764c21d4e3dfe01f6b9b401e0">WriteMouse</a>&nbsp;&nbsp;&nbsp;0xD4</td></tr>
-<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write <a class="el" href="struct_mouse.html">Mouse</a>, one arg, see "Commands for the Mouse".  <a href="#ga1ace60d764c21d4e3dfe01f6b9b401e0"></a><br/></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write <a class="el" href="struct_mouse.html" title="Mouse Event definition.">Mouse</a>, one arg, see "Commands for the Mouse".  <a href="#ga1ace60d764c21d4e3dfe01f6b9b401e0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#ga01e50ef9f098e20f6b0b0429644862cf">ResetPC</a>&nbsp;&nbsp;&nbsp;0xFE</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reset PC (reboot).  <a href="#ga01e50ef9f098e20f6b0b0429644862cf"></a><br/></td></tr>
 <tr><td colspan="2"><h2>Bit meanings in the Command_Byte</h2></td></tr>
-<tr><td colspan="2"><p><a class="anchor" id="amgrp22837900a5e0efd014657e1817de0ea4"></a> (read/write with command ReadCommand/WriteCommand) </p>
+<tr><td colspan="2"><p><a class="anchor" id="amgrp22837900a5e0efd014657e1817de0ea4"></a>(read/write with command ReadCommand/WriteCommand) </p>
 <br/><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#gafc6b776bcf10fb8d8c84c9e2a924025e">INT_1</a>&nbsp;&nbsp;&nbsp;(1 &lt;&lt; 0)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Enable generation of interrupts from keyboard.  <a href="#gafc6b776bcf10fb8d8c84c9e2a924025e"></a><br/></td></tr>
@@ -142,7 +155,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#gaf9776e4566c3a77a7c3631530998f386">EN_MOUSE</a>&nbsp;&nbsp;&nbsp;(1 &lt;&lt; 5)</td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Enable mouse interface (zero enables, one disables).  <a href="#gaf9776e4566c3a77a7c3631530998f386"></a><br/></td></tr>
 <tr><td colspan="2"><h2>Commands to the Mouse</h2></td></tr>
-<tr><td colspan="2"><p><a class="anchor" id="amgrp3da47b5f248be7cc1555cc8bccfb63fc"></a> Prefaced with command WriteMouse </p>
+<tr><td colspan="2"><p><a class="anchor" id="amgrp3da47b5f248be7cc1555cc8bccfb63fc"></a>Prefaced with command WriteMouse </p>
 <br/><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#gad6089b7326e09854f0670e5dd3b4612a">MouseReset</a>&nbsp;&nbsp;&nbsp;0xFF</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___keyboard_controller.html#ga1e9689f4bb2acbcbb8c83dde66b2192f">MouseDefaults</a>&nbsp;&nbsp;&nbsp;0xF6</td></tr>
@@ -193,7 +206,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">1 if positive y movement, -1 if negative  <a href="#gaab5db4b8ea62f4cce4c01f703f0c8592"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>Keyboard and <a class="el" href="struct_mouse.html">Mouse</a> related functions </p>
+<p>Keyboard and <a class="el" href="struct_mouse.html" title="Mouse Event definition.">Mouse</a> related functions. </p>
 <hr/><h2>Define Documentation</h2>
 <a class="anchor" id="ga6f6489887e08bff4887d0bc5dcf214d8"></a><!-- doxytag: member="kbc.h::ACK" ref="ga6f6489887e08bff4887d0bc5dcf214d8" args="" -->
 <div class="memitem">
@@ -311,7 +324,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Disable <a class="el" href="struct_mouse.html">Mouse</a> Interface. </p>
+<p>Disable <a class="el" href="struct_mouse.html" title="Mouse Event definition.">Mouse</a> Interface. </p>
 
 </div>
 </div>
@@ -371,7 +384,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Enable <a class="el" href="struct_mouse.html">Mouse</a> Interface. </p>
+<p>Enable <a class="el" href="struct_mouse.html" title="Mouse Event definition.">Mouse</a> Interface. </p>
 
 </div>
 </div>
@@ -945,7 +958,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Test <a class="el" href="struct_mouse.html">Mouse</a> Interface, returns 0 if OK. </p>
+<p>Test <a class="el" href="struct_mouse.html" title="Mouse Event definition.">Mouse</a> Interface, returns 0 if OK. </p>
 
 </div>
 </div>
@@ -1005,7 +1018,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
-<p>Write <a class="el" href="struct_mouse.html">Mouse</a>, one arg, see "Commands for the Mouse". </p>
+<p>Write <a class="el" href="struct_mouse.html" title="Mouse Event definition.">Mouse</a>, one arg, see "Commands for the Mouse". </p>
 
 </div>
 </div>
@@ -1165,7 +1178,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
+
 <p>shortky blink left(1), middle(2) or right(3) keyboard LED </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___keyboard_controller_gaa1d5a573482dc5ead6039c0db68b85f6_cgraph.png" border="0" usemap="#group___keyboard_controller_gaa1d5a573482dc5ead6039c0db68b85f6_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -1184,7 +1205,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
+
 <p>shortky blink all three keyboard LEDs </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___keyboard_controller_ga55d69f46dae31a8035bfe4920ad695e5_cgraph.png" border="0" usemap="#group___keyboard_controller_ga55d69f46dae31a8035bfe4920ad695e5_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -1202,8 +1231,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Returns 1 if a DOS mouse driver is installed, 0 if not.</p>
+
+<p>Returns 1 if a DOS mouse driver is installed, 0 if not. </p>
 <p>Needed to know if a DOS mouse driver is installed in order to reinstall it at program end. </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___keyboard_controller_gaa9a19096e4c8f7457fe99ad274ae4836_cgraph.png" border="0" usemap="#group___keyboard_controller_gaa9a19096e4c8f7457fe99ad274ae4836_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -1222,12 +1259,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Initializes the KeyBoard Controller. If 'debug' is not 0 every read or write to the KBC, together with the read or writed data is echoed to the screen. In this mode the function name being executed is printed followed by a ':', add=xx means the I/O address written, and data=xx the data read or written.</p>
+
+<p>Initializes the KeyBoard Controller. </p>
+<p>If 'debug' is not 0 every read or write to the KBC, together with the read or writed data is echoed to the screen. In this mode the function name being executed is printed followed by a ':', add=xx means the I/O address written, and data=xx the data read or written.</p>
 <p>A 1 is returned if a mouse is found.</p>
 <p>The function starts to flush any pending data in the KBC, reading the data register until a timeout is received.</p>
 <p>Then it enables the KBC mouse interface, send a MouseReset to the mouse and checks for the correct answer (0xFA, 0xAA then 0x00). If the mouse was detected, data streaming is disabled (StreamDisable), SampleRate is set to 100, Resolution is set to 8 counts/mm, Scaling is set to 1:1, the mouse interrupts generation are enabled at the KBC (not at the PIC!), and data streaming enabled (StreamEnable). All this (but StreamEnable) shouldn't be necessary, as MouseReset is supposed to do it properly.</p>
 <p>The KBDRate is also set to its maximum speed.</p>
-<p>Uses <a class="el" href="group___keyboard_controller.html#gad0f35d8bf87c5a507aede8692c45f877">write_kbc_cmd()</a>, <a class="el" href="group___keyboard_controller.html#gab19779ea7896435b3d4a5ff8a420f37e">write_kbc_data()</a>, <a class="el" href="group___keyboard_controller.html#ga52a7ce44125208dfa303e597e6302a71">read_kbc()</a> and <a class="el" href="group___keyboard_controller.html#ga60b51b413d6f90bfb8dd7df85ddb63a2">write_aux()</a></p>
+<p>Uses <a class="el" href="group___keyboard_controller.html#gad0f35d8bf87c5a507aede8692c45f877" title="Write &#39;data&#39; to the command register, returning 0 for OK or -1 on timeout...">write_kbc_cmd()</a>, <a class="el" href="group___keyboard_controller.html#gab19779ea7896435b3d4a5ff8a420f37e" title="Write &#39;data&#39; to the data register, returning ACK, Error or -1 on timeout...">write_kbc_data()</a>, <a class="el" href="group___keyboard_controller.html#ga52a7ce44125208dfa303e597e6302a71" title="Returns the data read a the data register.">read_kbc()</a> and <a class="el" href="group___keyboard_controller.html#ga60b51b413d6f90bfb8dd7df85ddb63a2" title="Send &#39;cmd&#39; to the mouse, prefacing it with the WriteMouse command to the...">write_aux()</a></p>
 <p>Example Output generated with debug = 1: <code></p>
 <pre>
 read_kbc: timeout
@@ -1288,7 +1327,15 @@ read_kbc: data=fa
       </table>
 </div>
 <div class="memdoc">
-<p>Disable the mouse, sending a StreamDisable to the mouse, then disables generation of mouse interrupts at the KBC, sends a DisableMouse to the KBC and finnaly disable mouse interrupts at the PIC2 </p>
+
+<p>Disable the mouse, sending a StreamDisable to the mouse, then disables generation of mouse interrupts at the KBC, sends a DisableMouse to the KBC and finnaly disable mouse interrupts at the PIC2. </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___keyboard_controller_ga2f953c4ccfdb59883c1821412f73f237_cgraph.png" border="0" usemap="#group___keyboard_controller_ga2f953c4ccfdb59883c1821412f73f237_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -1307,8 +1354,16 @@ read_kbc: data=fa
       </table>
 </div>
 <div class="memdoc">
-<p>Returns the data read a the data register.</p>
+
+<p>Returns the data read a the data register. </p>
 <p>Waits for OBF on status register up to KBC_TIMEOUT milliseconds, then reads and returns the data read at the data register. Returns -1 on timeout or transmission error. </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___keyboard_controller_ga52a7ce44125208dfa303e597e6302a71_cgraph.png" border="0" usemap="#group___keyboard_controller_ga52a7ce44125208dfa303e597e6302a71_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -1327,9 +1382,17 @@ read_kbc: data=fa
       </table>
 </div>
 <div class="memdoc">
-<p>Send 'cmd' to the mouse, prefacing it with the WriteMouse command to the command register.</p>
+
+<p>Send 'cmd' to the mouse, prefacing it with the WriteMouse command to the command register. </p>
 <p>If a Resend reply is received from the KBC, it retries up to 3 times to write 'cmd', resending the whole sequence.</p>
-<p>Uses <a class="el" href="group___keyboard_controller.html#gad0f35d8bf87c5a507aede8692c45f877">write_kbc_cmd()</a>, <a class="el" href="group___keyboard_controller.html#gad0f4763c978797b701c51fe3841ebdb0">write_kbc()</a> and <a class="el" href="group___keyboard_controller.html#ga52a7ce44125208dfa303e597e6302a71">read_kbc()</a> </p>
+<p>Uses <a class="el" href="group___keyboard_controller.html#gad0f35d8bf87c5a507aede8692c45f877" title="Write &#39;data&#39; to the command register, returning 0 for OK or -1 on timeout...">write_kbc_cmd()</a>, <a class="el" href="group___keyboard_controller.html#gad0f4763c978797b701c51fe3841ebdb0" title="Write &#39;data&#39; at IO address &#39;adr&#39; , returning -1 on error or timeout...">write_kbc()</a> and <a class="el" href="group___keyboard_controller.html#ga52a7ce44125208dfa303e597e6302a71" title="Returns the data read a the data register.">read_kbc()</a> </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___keyboard_controller_ga60b51b413d6f90bfb8dd7df85ddb63a2_cgraph.png" border="0" usemap="#group___keyboard_controller_ga60b51b413d6f90bfb8dd7df85ddb63a2_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -1357,8 +1420,16 @@ read_kbc: data=fa
       </table>
 </div>
 <div class="memdoc">
-<p>Write 'data' at IO address 'adr' , returning -1 on error or timeout.</p>
+
+<p>Write 'data' at IO address 'adr' , returning -1 on error or timeout. </p>
 <p>Waits for IBF on status register , than writes data to 'adr', return -1 on timeout. </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___keyboard_controller_gad0f4763c978797b701c51fe3841ebdb0_cgraph.png" border="0" usemap="#group___keyboard_controller_gad0f4763c978797b701c51fe3841ebdb0_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -1377,8 +1448,16 @@ read_kbc: data=fa
       </table>
 </div>
 <div class="memdoc">
-<p>Write 'data' to the command register, returning 0 for OK or -1 on timeout.</p>
-<p>Uses <a class="el" href="group___keyboard_controller.html#gad0f4763c978797b701c51fe3841ebdb0">write_kbc()</a> </p>
+
+<p>Write 'data' to the command register, returning 0 for OK or -1 on timeout. </p>
+<p>Uses <a class="el" href="group___keyboard_controller.html#gad0f4763c978797b701c51fe3841ebdb0" title="Write &#39;data&#39; at IO address &#39;adr&#39; , returning -1 on error or timeout...">write_kbc()</a> </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___keyboard_controller_gad0f35d8bf87c5a507aede8692c45f877_cgraph.png" border="0" usemap="#group___keyboard_controller_gad0f35d8bf87c5a507aede8692c45f877_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -1397,9 +1476,17 @@ read_kbc: data=fa
       </table>
 </div>
 <div class="memdoc">
-<p>Write 'data' to the data register, returning ACK, Error or -1 on timeout.</p>
+
+<p>Write 'data' to the data register, returning ACK, Error or -1 on timeout. </p>
 <p>If a Resend reply is received from the KBC, it retries up to 3 times to write the data.</p>
-<p>Uses <a class="el" href="group___keyboard_controller.html#gad0f4763c978797b701c51fe3841ebdb0">write_kbc()</a> and <a class="el" href="group___keyboard_controller.html#ga52a7ce44125208dfa303e597e6302a71">read_kbc()</a> </p>
+<p>Uses <a class="el" href="group___keyboard_controller.html#gad0f4763c978797b701c51fe3841ebdb0" title="Write &#39;data&#39; at IO address &#39;adr&#39; , returning -1 on error or timeout...">write_kbc()</a> and <a class="el" href="group___keyboard_controller.html#ga52a7ce44125208dfa303e597e6302a71" title="Returns the data read a the data register.">read_kbc()</a> </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___keyboard_controller_gab19779ea7896435b3d4a5ff8a420f37e_cgraph.png" border="0" usemap="#group___keyboard_controller_gab19779ea7896435b3d4a5ff8a420f37e_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -1418,7 +1505,7 @@ read_kbc: data=fa
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon May 24 05:42:05 2010 for BSoD Syndrome by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue May 25 04:21:02 2010 for BSoD-Syndrome by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

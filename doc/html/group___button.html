@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>BSoD Syndrome: Button</title>
+<title>BSoD-Syndrome: Button</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -38,22 +38,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <div class="contents">
-<h1>Button</h1><table border="0" cellpadding="0" cellspacing="0">
+<h1>Button</h1>
+<p><a class="el" href="struct_button.html" title="Button definition.">Button</a> related functions.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Data Structures</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_button.html">Button</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="struct_button.html" title="Button definition.">Button</a> definition.  <a href="struct_button.html#_details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2>Enumerations</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___button.html#gaa46074d34fe2d6631c6bd9dc74633657">ButtonState</a> { <a class="el" href="group___button.html#ggaa46074d34fe2d6631c6bd9dc74633657a50d1448013c6f17125caee18aa418af7">NORMAL</a>, 
 <a class="el" href="group___button.html#ggaa46074d34fe2d6631c6bd9dc74633657aee4b1697462879d869ff122fc694e9e8">OVER</a>, 
 <a class="el" href="group___button.html#ggaa46074d34fe2d6631c6bd9dc74633657ad37324c719e7d564128110e054a550e4">CLICKED</a>
  }</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p><a class="el" href="struct_button.html" title="Button definition.">Button</a> States. </p>
+ <a href="group___button.html#gaa46074d34fe2d6631c6bd9dc74633657">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2>Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_button.html">Button</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___button.html#ga4feba8c17356f919848588eaa1dff40f">newButton</a> (int x, int y, char **over)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates new button.  <a href="#ga4feba8c17356f919848588eaa1dff40f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___button.html#gab1e47784e93a1fb88fc2fd5862704bae">drawButton</a> (<a class="el" href="struct_button.html">Button</a> *button, char *buffer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draws a button.  <a href="#gab1e47784e93a1fb88fc2fd5862704bae"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___button.html#gadbe2988d54a6782f96bc129bd60840b0">updateButton</a> (<a class="el" href="struct_button.html">Button</a> *button, <a class="el" href="struct_hammer.html">Hammer</a> *hammer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Updates the hammer button based on the position of the hammer.  <a href="#gadbe2988d54a6782f96bc129bd60840b0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___button.html#gab7a658b6a86582bb9a1d754e14c336f7">deleteButton</a> (<a class="el" href="struct_button.html">Button</a> *button)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Deletes the button.  <a href="#gab7a658b6a86582bb9a1d754e14c336f7"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p><a class="el" href="struct_button.html">Button</a> related functions </p>
+<p><a class="el" href="struct_button.html" title="Button definition.">Button</a> related functions. </p>
 <hr/><h2>Enumeration Type Documentation</h2>
 <a class="anchor" id="gaa46074d34fe2d6631c6bd9dc74633657"></a><!-- doxytag: member="button.h::ButtonState" ref="gaa46074d34fe2d6631c6bd9dc74633657" args="" -->
 <div class="memitem">
@@ -65,7 +75,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p><a class="el" href="struct_button.html">Button</a> States </p>
+
+<p><a class="el" href="struct_button.html" title="Button definition.">Button</a> States. </p>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="ggaa46074d34fe2d6631c6bd9dc74633657a50d1448013c6f17125caee18aa418af7"></a><!-- doxytag: member="NORMAL" ref="ggaa46074d34fe2d6631c6bd9dc74633657a50d1448013c6f17125caee18aa418af7" args="" -->NORMAL</em>&nbsp;</td><td>
 </td></tr>
@@ -95,13 +106,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Deletes the button </p>
+
+<p>Deletes the button. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>button</em>&nbsp;</td><td>the button itself </td></tr>
   </table>
   </dd>
 </dl>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___button_gab7a658b6a86582bb9a1d754e14c336f7_cgraph.png" border="0" usemap="#group___button_gab7a658b6a86582bb9a1d754e14c336f7_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -129,7 +148,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Draws a button </p>
+
+<p>Draws a button. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>button</em>&nbsp;</td><td>button to draw </td></tr>
@@ -137,6 +157,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </table>
   </dd>
 </dl>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___button_gab1e47784e93a1fb88fc2fd5862704bae_cgraph.png" border="0" usemap="#group___button_gab1e47784e93a1fb88fc2fd5862704bae_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -170,7 +197,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Creates new button </p>
+
+<p>Creates new button. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>x</em>&nbsp;</td><td>position x on screen </td></tr>
@@ -180,6 +208,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>returns a pointer to the button itself </dd></dl>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___button_ga4feba8c17356f919848588eaa1dff40f_cgraph.png" border="0" usemap="#group___button_ga4feba8c17356f919848588eaa1dff40f_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -207,7 +242,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Updates the hammer button based on the position of the hammer </p>
+
+<p>Updates the hammer button based on the position of the hammer. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>button</em>&nbsp;</td><td>the button to be updated </td></tr>
@@ -215,6 +251,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </table>
   </dd>
 </dl>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___button_gadbe2988d54a6782f96bc129bd60840b0_cgraph.png" border="0" usemap="#group___button_gadbe2988d54a6782f96bc129bd60840b0_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -233,7 +276,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon May 24 05:42:05 2010 for BSoD Syndrome by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue May 25 04:21:02 2010 for BSoD-Syndrome by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

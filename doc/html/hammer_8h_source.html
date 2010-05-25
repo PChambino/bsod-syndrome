@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>BSoD Syndrome: /Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/hammer.h Source File</title>
+<title>BSoD-Syndrome: /Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/src/hammer.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -42,7 +42,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
-<h1>/Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/hammer.h</h1><a href="hammer_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef _HAMMER_H_</span>
+<h1>/Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/src/hammer.h</h1><a href="hammer_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef _HAMMER_H_</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define _HAMMER_H_</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;<a class="code" href="music_8h.html">music.h</a>&quot;</span>
@@ -55,21 +55,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00020"></a><a class="code" href="group___hammer.html#ga94ec90d02755e59ee3c10cafe65a6a5e">00020</a> <span class="preprocessor"></span><span class="preprocessor">#define HAMMER_DELAY 200</span>
 <a name="l00021"></a>00021 <span class="preprocessor"></span>
 <a name="l00022"></a>00022 
-<a name="l00025"></a><a class="code" href="group___hammer.html#gga5d3e44227849c96a952ec76cffdbe415aba595d8bca8bc5e67c37c0a9d89becfa">00025</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> {<a class="code" href="group___hammer.html#gga5d3e44227849c96a952ec76cffdbe415ac54d95b2f3fdc00ced2d1b7af01cc2d8">GET_HAMMER</a>, <a class="code" href="group___hammer.html#gga5d3e44227849c96a952ec76cffdbe415aba595d8bca8bc5e67c37c0a9d89becfa">UP</a>, <a class="code" href="group___hammer.html#gga5d3e44227849c96a952ec76cffdbe415ad4cf8619fedf804702c72835be555da0">HIT</a>, <a class="code" href="group___hammer.html#gga5d3e44227849c96a952ec76cffdbe415a9b0b4a95b99523966e0e34ffdadac9da">DOWN</a>, <a class="code" href="group___hammer.html#gga5d3e44227849c96a952ec76cffdbe415a1bbbbab32a55da6e38af9dbdf2ddecbf">GET_CD</a>, <a class="code" href="group___hammer.html#gga5d3e44227849c96a952ec76cffdbe415a9aea9e501fa935b114b235e8e9754267">CD</a>, <a class="code" href="group___hammer.html#gga5d3e44227849c96a952ec76cffdbe415af3a414f96ec08d102c2ef2235aeda4d0">CD_HIT</a>, <a class="code" href="group___hammer.html#gga5d3e44227849c96a952ec76cffdbe415abf624779c70d061d7bde770c44380033">CD_DOWN</a>} <a class="code" href="group___hammer.html#ga5d3e44227849c96a952ec76cffdbe415">HammerState</a>;
+<a name="l00025"></a><a class="code" href="group___hammer.html#gga5d3e44227849c96a952ec76cffdbe415aba595d8bca8bc5e67c37c0a9d89becfa">00025</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> {<a class="code" href="group___hammer.html#gga5d3e44227849c96a952ec76cffdbe415ac54d95b2f3fdc00ced2d1b7af01cc2d8">GET_HAMMER</a>, <a class="code" href="group___hammer.html#gga5d3e44227849c96a952ec76cffdbe415aba595d8bca8bc5e67c37c0a9d89becfa">UP</a>, <a class="code" href="group___hammer.html#gga5d3e44227849c96a952ec76cffdbe415ad4cf8619fedf804702c72835be555da0">HIT</a>, <a class="code" href="group___hammer.html#gga5d3e44227849c96a952ec76cffdbe415a9b0b4a95b99523966e0e34ffdadac9da">DOWN</a>, <a class="code" href="group___hammer.html#gga5d3e44227849c96a952ec76cffdbe415a1bbbbab32a55da6e38af9dbdf2ddecbf">GET_CD</a>, <a class="code" href="group___hammer.html#gga5d3e44227849c96a952ec76cffdbe415a9aea9e501fa935b114b235e8e9754267">CD</a>, <a class="code" href="group___hammer.html#gga5d3e44227849c96a952ec76cffdbe415af3a414f96ec08d102c2ef2235aeda4d0">CD_HIT</a>, <a class="code" href="group___hammer.html#gga5d3e44227849c96a952ec76cffdbe415abf624779c70d061d7bde770c44380033">CD_DOWN</a>} <a class="code" href="group___hammer.html#ga5d3e44227849c96a952ec76cffdbe415" title="Hammer States.">HammerState</a>;
 <a name="l00026"></a>00026 
 <a name="l00029"></a><a class="code" href="struct_hammer.html">00029</a> <span class="keyword">typedef</span> <span class="keyword">struct </span>{
-<a name="l00030"></a><a class="code" href="struct_hammer.html#a7c54302f990f134ca6e37a2e9ef9999d">00030</a>         <a class="code" href="struct_sprite.html">Sprite</a>* sprite; <span class="comment">//&lt; Hammer sprite</span>
-<a name="l00031"></a><a class="code" href="struct_hammer.html#a6007dac50043600a304186c33d56716a">00031</a>         <a class="code" href="group___hammer.html#ga5d3e44227849c96a952ec76cffdbe415">HammerState</a> state; <span class="comment">//&lt; Hammer state</span>
-<a name="l00032"></a><a class="code" href="struct_hammer.html#a3cbadfd9201992a5379f6d5f95bd5a7f">00032</a>         <a class="code" href="struct_song.html">Song</a>* sound; <span class="comment">//&lt; Hammer hit sound</span>
-<a name="l00033"></a>00033 } <a class="code" href="struct_hammer.html">Hammer</a>;
+<a name="l00030"></a><a class="code" href="struct_hammer.html#a7c54302f990f134ca6e37a2e9ef9999d">00030</a>                 <a class="code" href="struct_sprite.html" title="Sprite definition.">Sprite</a>* sprite; <span class="comment">//&lt; Hammer sprite</span>
+<a name="l00031"></a><a class="code" href="struct_hammer.html#a6007dac50043600a304186c33d56716a">00031</a>                 <a class="code" href="group___hammer.html#ga5d3e44227849c96a952ec76cffdbe415" title="Hammer States.">HammerState</a> state; <span class="comment">//&lt; Hammer state</span>
+<a name="l00032"></a><a class="code" href="struct_hammer.html#a3cbadfd9201992a5379f6d5f95bd5a7f">00032</a>                 <a class="code" href="struct_song.html" title="Song definition.">Song</a>* sound; <span class="comment">//&lt; Hammer hit sound</span>
+<a name="l00033"></a>00033 } <a class="code" href="struct_hammer.html" title="Hammer Definition.">Hammer</a>;
 <a name="l00034"></a>00034 
-<a name="l00038"></a>00038 <a class="code" href="struct_hammer.html">Hammer</a>* <a class="code" href="group___hammer.html#ga78e732376f8306285203f170862d8245">newHammer</a>();
+<a name="l00038"></a>00038 <a class="code" href="struct_hammer.html" title="Hammer Definition.">Hammer</a>* <a class="code" href="group___hammer.html#ga78e732376f8306285203f170862d8245" title="Creates a Hammer.">newHammer</a>();
 <a name="l00039"></a>00039 
-<a name="l00044"></a>00044 <span class="keywordtype">void</span> <a class="code" href="group___hammer.html#ga23201f89143e15968dd5b82323a51237">drawHammer</a>(<a class="code" href="struct_hammer.html">Hammer</a> *hammer, <span class="keywordtype">char</span>* buffer);
+<a name="l00044"></a>00044 <span class="keywordtype">void</span> <a class="code" href="group___hammer.html#ga23201f89143e15968dd5b82323a51237" title="Draws a hammer to the buffer.">drawHammer</a>(<a class="code" href="struct_hammer.html" title="Hammer Definition.">Hammer</a> *hammer, <span class="keywordtype">char</span>* buffer);
 <a name="l00045"></a>00045 
-<a name="l00056"></a>00056 <span class="keywordtype">void</span> <a class="code" href="group___hammer.html#ga19e198421e92ab056eede3b30f0d391c">updateHammer</a>(<a class="code" href="struct_hammer.html">Hammer</a> *hammer, <span class="keywordtype">double</span> mili, <span class="keywordtype">char</span> key, <a class="code" href="struct_mouse.html">Mouse</a> *mouse);
+<a name="l00056"></a>00056 <span class="keywordtype">void</span> <a class="code" href="group___hammer.html#ga19e198421e92ab056eede3b30f0d391c" title="Updates the hammer.">updateHammer</a>(<a class="code" href="struct_hammer.html" title="Hammer Definition.">Hammer</a> *hammer, <span class="keywordtype">double</span> mili, <span class="keywordtype">char</span> key, <a class="code" href="struct_mouse.html" title="Mouse Event definition.">Mouse</a> *mouse);
 <a name="l00057"></a>00057 
-<a name="l00061"></a>00061 <span class="keywordtype">void</span> <a class="code" href="group___hammer.html#ga72a82f740c808be4a381156cc2b86098">deleteHammer</a>(<a class="code" href="struct_hammer.html">Hammer</a>* hammer);
+<a name="l00061"></a>00061 <span class="keywordtype">void</span> <a class="code" href="group___hammer.html#ga72a82f740c808be4a381156cc2b86098" title="Deletes Hammer.">deleteHammer</a>(<a class="code" href="struct_hammer.html" title="Hammer Definition.">Hammer</a>* hammer);
 <a name="l00062"></a>00062 
 <a name="l00064"></a>00064 
 <a name="l00065"></a>00065 <span class="preprocessor">#endif</span>
@@ -88,7 +88,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon May 24 05:42:05 2010 for BSoD Syndrome by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue May 25 04:21:02 2010 for BSoD-Syndrome by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

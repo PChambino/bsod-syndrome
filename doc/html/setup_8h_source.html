@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>BSoD Syndrome: /Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/setup.h Source File</title>
+<title>BSoD-Syndrome: /Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/src/setup.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -42,7 +42,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
-<h1>/Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/setup.h</h1><a href="setup_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef _SETUP_H_</span>
+<h1>/Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/src/setup.h</h1><a href="setup_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef _SETUP_H_</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define _SETUP_H_</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
@@ -55,27 +55,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00011"></a>00011 <span class="preprocessor">#include &quot;<a class="code" href="gqueue_8h.html">GQueue.h</a>&quot;</span>
 <a name="l00012"></a>00012 <span class="preprocessor">#include &quot;<a class="code" href="kbc_8h.html">kbc.h</a>&quot;</span>
 <a name="l00013"></a>00013 
-<a name="l00022"></a>00022 <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="group___setup.html#ga45b67662d620a977a2cfe519f7ab6273">fps</a>;
+<a name="l00022"></a>00022 <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="group___setup.html#ga45b67662d620a977a2cfe519f7ab6273" title="frames per second the game loop while run.">fps</a>;
 <a name="l00023"></a>00023 
-<a name="l00026"></a>00026 <span class="keywordtype">void</span> <a class="code" href="group___setup.html#gaefcb3f70374ff9b6256aac6e12870399">process_args</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv);
+<a name="l00026"></a>00026 <span class="keywordtype">void</span> <a class="code" href="group___setup.html#gaefcb3f70374ff9b6256aac6e12870399" title="Reads and process arguments.">process_args</a>(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv);
 <a name="l00027"></a>00027 
-<a name="l00030"></a>00030 <span class="keyword">extern</span> FILE* <a class="code" href="group___setup.html#gae4ddb6424cb1a9269552e521edb44479">logger</a>;
+<a name="l00030"></a>00030 <span class="keyword">extern</span> FILE* <a class="code" href="group___setup.html#gae4ddb6424cb1a9269552e521edb44479" title="Logger file.">logger</a>;
 <a name="l00031"></a>00031 
-<a name="l00035"></a>00035 <span class="keywordtype">void</span> <a class="code" href="group___setup.html#ga01425a7d9a7a1624f929747b444b49cf">setup_log</a>();
+<a name="l00035"></a>00035 <span class="keywordtype">void</span> <a class="code" href="group___setup.html#ga01425a7d9a7a1624f929747b444b49cf" title="Setup log file.">setup_log</a>();
 <a name="l00036"></a>00036 
-<a name="l00039"></a>00039 <span class="keyword">extern</span> <span class="keywordtype">char</span> *<a class="code" href="group___setup.html#gaaa2fae125feca2b4de4f3f7640c76ce4">base</a>;
-<a name="l00043"></a>00043 <span class="keywordtype">void</span> <a class="code" href="group___setup.html#ga812b83af3eba894791333cbe5bf381fa">setup_video</a>();
+<a name="l00039"></a>00039 <span class="keyword">extern</span> <span class="keywordtype">char</span> *<a class="code" href="group___setup.html#gaaa2fae125feca2b4de4f3f7640c76ce4" title="video address base">base</a>;
+<a name="l00043"></a>00043 <span class="keywordtype">void</span> <a class="code" href="group___setup.html#ga812b83af3eba894791333cbe5bf381fa" title="Setup video Starts graphic mode.">setup_video</a>();
 <a name="l00044"></a>00044 
-<a name="l00047"></a>00047 <span class="keyword">extern</span> <a class="code" href="struct_queue.html">Queue</a> <a class="code" href="group___setup.html#ga429c239da1a4c48b168b66da5852f76b">keys</a>;
-<a name="l00050"></a>00050 <span class="keyword">extern</span> <a class="code" href="struct_g_queue.html">GQueue</a> *<a class="code" href="group___setup.html#ga6230e3617763dc8d1aeadfba850c3681">mouseQueue</a>;
-<a name="l00053"></a>00053 <span class="keywordtype">void</span> <a class="code" href="group___setup.html#gaf33f8cb9149a5cd2b7a6fce713865669">setup_kbc</a>();
+<a name="l00047"></a>00047 <span class="keyword">extern</span> <a class="code" href="struct_queue.html" title="Queue definition.">Queue</a> <a class="code" href="group___setup.html#ga429c239da1a4c48b168b66da5852f76b" title="Keyboard keys queue.">keys</a>;
+<a name="l00050"></a>00050 <span class="keyword">extern</span> <a class="code" href="struct_g_queue.html" title="GQueue definition.">GQueue</a> *<a class="code" href="group___setup.html#ga6230e3617763dc8d1aeadfba850c3681" title="Mouse queue.">mouseQueue</a>;
+<a name="l00053"></a>00053 <span class="keywordtype">void</span> <a class="code" href="group___setup.html#gaf33f8cb9149a5cd2b7a6fce713865669" title="Setup mouse and keyboard.">setup_kbc</a>();
 <a name="l00054"></a>00054 
-<a name="l00057"></a>00057 <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="group___setup.html#ga426c68286ac4134f93ee1227d1698ad5">mili_tick</a>;
-<a name="l00060"></a>00060 <span class="keywordtype">void</span> <a class="code" href="group___setup.html#ga2e54077c9c1e0ad46786e3c97a21ae62">setup_rtc</a>();
+<a name="l00057"></a>00057 <span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code" href="group___setup.html#ga426c68286ac4134f93ee1227d1698ad5" title="Counts milisec using rtc_isr.">mili_tick</a>;
+<a name="l00060"></a>00060 <span class="keywordtype">void</span> <a class="code" href="group___setup.html#ga2e54077c9c1e0ad46786e3c97a21ae62" title="Setup rtc.">setup_rtc</a>();
 <a name="l00061"></a>00061 
-<a name="l00064"></a>00064 <span class="keywordtype">void</span> <a class="code" href="group___setup.html#ga4e7127f2f48fb1c538bbd67fe921c58c">setup_timer</a>();
+<a name="l00064"></a>00064 <span class="keywordtype">void</span> <a class="code" href="group___setup.html#ga4e7127f2f48fb1c538bbd67fe921c58c" title="Setup timer.">setup_timer</a>();
 <a name="l00065"></a>00065 
-<a name="l00068"></a>00068 <span class="keywordtype">void</span> <a class="code" href="group___setup.html#ga1c2d12056f4c427a691dde84a130c3f9">tear_down</a>();
+<a name="l00068"></a>00068 <span class="keywordtype">void</span> <a class="code" href="group___setup.html#ga1c2d12056f4c427a691dde84a130c3f9" title="Reinstalls and undo all setups.">tear_down</a>();
 <a name="l00069"></a>00069 
 <a name="l00071"></a>00071 
 <a name="l00072"></a>00072 <span class="preprocessor">#endif</span>
@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon May 24 05:42:05 2010 for BSoD Syndrome by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue May 25 04:21:02 2010 for BSoD-Syndrome by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

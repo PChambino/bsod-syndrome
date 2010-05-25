@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>BSoD Syndrome: /Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/button.h Source File</title>
+<title>BSoD-Syndrome: /Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/src/button.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -42,26 +42,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
-<h1>/Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/button.h</h1><a href="button_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef _BUTTON_H_</span>
+<h1>/Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/src/button.h</h1><a href="button_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef _BUTTON_H_</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define _BUTTON_H_</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &quot;<a class="code" href="sprite_8h.html">sprite.h</a>&quot;</span>
 <a name="l00005"></a>00005 <span class="preprocessor">#include &quot;<a class="code" href="hammer_8h.html">hammer.h</a>&quot;</span>
 <a name="l00006"></a>00006 
-<a name="l00015"></a><a class="code" href="group___button.html#ggaa46074d34fe2d6631c6bd9dc74633657aee4b1697462879d869ff122fc694e9e8">00015</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> {<a class="code" href="group___button.html#ggaa46074d34fe2d6631c6bd9dc74633657a50d1448013c6f17125caee18aa418af7">NORMAL</a>, <a class="code" href="group___button.html#ggaa46074d34fe2d6631c6bd9dc74633657aee4b1697462879d869ff122fc694e9e8">OVER</a>, <a class="code" href="group___button.html#ggaa46074d34fe2d6631c6bd9dc74633657ad37324c719e7d564128110e054a550e4">CLICKED</a>} <a class="code" href="group___button.html#gaa46074d34fe2d6631c6bd9dc74633657">ButtonState</a>;
+<a name="l00015"></a><a class="code" href="group___button.html#ggaa46074d34fe2d6631c6bd9dc74633657aee4b1697462879d869ff122fc694e9e8">00015</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> {<a class="code" href="group___button.html#ggaa46074d34fe2d6631c6bd9dc74633657a50d1448013c6f17125caee18aa418af7">NORMAL</a>, <a class="code" href="group___button.html#ggaa46074d34fe2d6631c6bd9dc74633657aee4b1697462879d869ff122fc694e9e8">OVER</a>, <a class="code" href="group___button.html#ggaa46074d34fe2d6631c6bd9dc74633657ad37324c719e7d564128110e054a550e4">CLICKED</a>} <a class="code" href="group___button.html#gaa46074d34fe2d6631c6bd9dc74633657" title="Button States.">ButtonState</a>;
 <a name="l00016"></a>00016 
 <a name="l00019"></a><a class="code" href="struct_button.html">00019</a> <span class="keyword">typedef</span> <span class="keyword">struct </span>{
-<a name="l00020"></a><a class="code" href="struct_button.html#a7c54302f990f134ca6e37a2e9ef9999d">00020</a>         <a class="code" href="struct_sprite.html">Sprite</a>* sprite;         
-<a name="l00021"></a><a class="code" href="struct_button.html#a276288c3c0e330920bd74febf89b84c1">00021</a>         <a class="code" href="group___button.html#gaa46074d34fe2d6631c6bd9dc74633657">ButtonState</a> state;      
-<a name="l00022"></a>00022 } <a class="code" href="struct_button.html">Button</a>;
+<a name="l00020"></a><a class="code" href="struct_button.html#a7c54302f990f134ca6e37a2e9ef9999d">00020</a>                 <a class="code" href="struct_sprite.html" title="Sprite definition.">Sprite</a>* sprite;                 
+<a name="l00021"></a><a class="code" href="struct_button.html#a276288c3c0e330920bd74febf89b84c1">00021</a>                 <a class="code" href="group___button.html#gaa46074d34fe2d6631c6bd9dc74633657" title="Button States.">ButtonState</a> state;              
+<a name="l00022"></a>00022 } <a class="code" href="struct_button.html" title="Button definition.">Button</a>;
 <a name="l00023"></a>00023 
-<a name="l00031"></a>00031 <a class="code" href="struct_button.html">Button</a>* <a class="code" href="group___button.html#ga4feba8c17356f919848588eaa1dff40f">newButton</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">char</span>** over);
+<a name="l00031"></a>00031 <a class="code" href="struct_button.html" title="Button definition.">Button</a>* <a class="code" href="group___button.html#ga4feba8c17356f919848588eaa1dff40f" title="Creates new button.">newButton</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">char</span>** over);
 <a name="l00032"></a>00032 
-<a name="l00037"></a>00037 <span class="keywordtype">void</span> <a class="code" href="group___button.html#gab1e47784e93a1fb88fc2fd5862704bae">drawButton</a>(<a class="code" href="struct_button.html">Button</a> *button, <span class="keywordtype">char</span>* buffer);
+<a name="l00037"></a>00037 <span class="keywordtype">void</span> <a class="code" href="group___button.html#gab1e47784e93a1fb88fc2fd5862704bae" title="Draws a button.">drawButton</a>(<a class="code" href="struct_button.html" title="Button definition.">Button</a> *button, <span class="keywordtype">char</span>* buffer);
 <a name="l00038"></a>00038 
-<a name="l00043"></a>00043 <span class="keywordtype">void</span> <a class="code" href="group___button.html#gadbe2988d54a6782f96bc129bd60840b0">updateButton</a>(<a class="code" href="struct_button.html">Button</a> *button, <a class="code" href="struct_hammer.html">Hammer</a> *hammer);
+<a name="l00043"></a>00043 <span class="keywordtype">void</span> <a class="code" href="group___button.html#gadbe2988d54a6782f96bc129bd60840b0" title="Updates the hammer button based on the position of the hammer.">updateButton</a>(<a class="code" href="struct_button.html" title="Button definition.">Button</a> *button, <a class="code" href="struct_hammer.html" title="Hammer Definition.">Hammer</a> *hammer);
 <a name="l00044"></a>00044 
-<a name="l00048"></a>00048 <span class="keywordtype">void</span> <a class="code" href="group___button.html#gab7a658b6a86582bb9a1d754e14c336f7">deleteButton</a>(<a class="code" href="struct_button.html">Button</a> *button);
+<a name="l00048"></a>00048 <span class="keywordtype">void</span> <a class="code" href="group___button.html#gab7a658b6a86582bb9a1d754e14c336f7" title="Deletes the button.">deleteButton</a>(<a class="code" href="struct_button.html" title="Button definition.">Button</a> *button);
 <a name="l00049"></a>00049 
 <a name="l00052"></a>00052 <span class="preprocessor">#endif</span>
 </pre></div></div>
@@ -79,7 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon May 24 05:42:05 2010 for BSoD Syndrome by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue May 25 04:21:01 2010 for BSoD-Syndrome by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

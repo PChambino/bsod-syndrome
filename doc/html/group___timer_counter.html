@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>BSoD Syndrome: TimerCounter</title>
+<title>BSoD-Syndrome: TimerCounter</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -38,11 +38,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <div class="contents">
-<h1>TimerCounter</h1><table border="0" cellpadding="0" cellspacing="0">
+<h1>TimerCounter</h1>
+<p>Timer-Counter definitions.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___timer_counter.html#ga6617a30ded5d745873f7de678030d10c">timer_init</a> (int timer, int mode)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Program timer (0,1,2) with mode.  <a href="#ga6617a30ded5d745873f7de678030d10c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___timer_counter.html#gae17f36dbe5d10ebced7a88cc463a7ea9">timer_load</a> (int timer, int value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Load timer (0,1,2) with value.  <a href="#gae17f36dbe5d10ebced7a88cc463a7ea9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___timer_counter.html#ga41884d7120e9408d1c5719e2858f6564">mili_sleep</a> (int mili)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Wait mili miliseconds, indirectly counting T0 interrupts.  <a href="#ga41884d7120e9408d1c5719e2858f6564"></a><br/></td></tr>
 <tr><td colspan="2"><h2>Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___timer_counter.html#ga53016b94e23fa586ef98d6919c284422">time_tick</a></td></tr>
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Used in t0_isr, counts miliseconds.  <a href="#ga53016b94e23fa586ef98d6919c284422"></a><br/></td></tr>
@@ -79,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The Most Significative Byte of a Word.  <a href="#ga100824284a4b3301df9cdd3f49914fde"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>Timer-Counter definitions </p>
+<p>Timer-Counter definitions. </p>
 <hr/><h2>Define Documentation</h2>
 <a class="anchor" id="gaea17a229fcf743540b24e8acde7b3a8f"></a><!-- doxytag: member="timer.h::LCOM_MODE" ref="gaea17a229fcf743540b24e8acde7b3a8f" args="" -->
 <div class="memitem">
@@ -272,7 +278,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Wait mili miliseconds, indirectly counting T0 interrupts </p>
+
+<p>Wait mili miliseconds, indirectly counting T0 interrupts. </p>
 
 </div>
 </div>
@@ -300,7 +307,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Program timer (0,1,2) with mode </p>
+
+<p>Program timer (0,1,2) with mode. </p>
 
 </div>
 </div>
@@ -328,7 +336,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Load timer (0,1,2) with value </p>
+
+<p>Load timer (0,1,2) with value. </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___timer_counter_gae17f36dbe5d10ebced7a88cc463a7ea9_cgraph.png" border="0" usemap="#group___timer_counter_gae17f36dbe5d10ebced7a88cc463a7ea9_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -363,7 +379,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon May 24 05:42:05 2010 for BSoD Syndrome by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue May 25 04:21:02 2010 for BSoD-Syndrome by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>BSoD Syndrome: /Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/sprite.h Source File</title>
+<title>BSoD-Syndrome: /Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/src/sprite.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -42,7 +42,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
-<h1>/Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/sprite.h</h1><a href="sprite_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef _SPRITE_H_</span>
+<h1>/Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/src/sprite.h</h1><a href="sprite_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef _SPRITE_H_</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define _SPRITE_H_</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &lt;stdio.h&gt;</span>
@@ -53,29 +53,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00009"></a>00009 <span class="preprocessor">#include &quot;<a class="code" href="mouse_8h.html">mouse.h</a>&quot;</span>
 <a name="l00010"></a>00010 <span class="preprocessor">#include &quot;<a class="code" href="utypes_8h.html">utypes.h</a>&quot;</span>
 <a name="l00011"></a>00011 
-<a name="l00032"></a>00032 <span class="keywordtype">char</span> *<a class="code" href="group___sprite.html#ga87bd140b1b1b28386f37ebac5c9b9d2e">read_xpm</a>(<span class="keywordtype">char</span> *map[], <span class="keywordtype">int</span> *width, <span class="keywordtype">int</span> *height);
+<a name="l00032"></a>00032 <span class="keywordtype">char</span> *<a class="code" href="group___sprite.html#ga87bd140b1b1b28386f37ebac5c9b9d2e" title="Reads a xpm-like sprite defined in &amp;quot;map&amp;quot; (look at pixmap.h for examples)...">read_xpm</a>(<span class="keywordtype">char</span> *map[], <span class="keywordtype">int</span> *width, <span class="keywordtype">int</span> *height);
 <a name="l00033"></a>00033 
-<a name="l00036"></a><a class="code" href="group___sprite.html#gabb1060e0b7ecf8b4eba2c1bb55cfe5e2">00036</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_sprite.html">Sprite</a> <a class="code" href="struct_sprite.html">Sprite</a>;
+<a name="l00036"></a><a class="code" href="group___sprite.html#gabb1060e0b7ecf8b4eba2c1bb55cfe5e2">00036</a> <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_sprite.html" title="Sprite definition.">Sprite</a> <a class="code" href="struct_sprite.html" title="Sprite definition.">Sprite</a>;
 <a name="l00037"></a>00037 
-<a name="l00040"></a><a class="code" href="struct_sprite.html">00040</a> <span class="keyword">struct </span><a class="code" href="struct_sprite.html">Sprite</a> {
-<a name="l00041"></a><a class="code" href="struct_sprite.html#a0a2f84ed7838f07779ae24c5a9086d33">00041</a>         <span class="keywordtype">int</span> <a class="code" href="struct_sprite.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>, <a class="code" href="struct_sprite.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a>; <span class="comment">//&lt; position on screen</span>
-<a name="l00042"></a><a class="code" href="struct_sprite.html#ae83003a634c514d79a764d56e9b3d1f9">00042</a>         <span class="keywordtype">char</span> **<a class="code" href="struct_sprite.html#ae83003a634c514d79a764d56e9b3d1f9">img</a>; <span class="comment">//&lt; array of images</span>
-<a name="l00043"></a><a class="code" href="struct_sprite.html#a3e85eab037e571a6b74a1820c86880c5">00043</a>         <span class="keywordtype">int</span> <a class="code" href="struct_sprite.html#a3e85eab037e571a6b74a1820c86880c5">imgs</a>, <a class="code" href="struct_sprite.html#a43531d5121651cc0d006fedbedb03b00">imgIndex</a>; <span class="comment">//&lt; images count and index of current image</span>
-<a name="l00044"></a><a class="code" href="struct_sprite.html#a2474a5474cbff19523a51eb1de01cda4">00044</a>         <span class="keywordtype">int</span> <a class="code" href="struct_sprite.html#a2474a5474cbff19523a51eb1de01cda4">width</a>, <a class="code" href="struct_sprite.html#ad12fc34ce789bce6c8a05d8a17138534">height</a>; <span class="comment">//&lt; images sizes</span>
+<a name="l00040"></a><a class="code" href="struct_sprite.html">00040</a> <span class="keyword">struct </span><a class="code" href="struct_sprite.html" title="Sprite definition.">Sprite</a> {
+<a name="l00041"></a><a class="code" href="struct_sprite.html#a0a2f84ed7838f07779ae24c5a9086d33">00041</a>                 <span class="keywordtype">int</span> <a class="code" href="struct_sprite.html#a6150e0515f7202e2fb518f7206ed97dc">x</a>, <a class="code" href="struct_sprite.html#a0a2f84ed7838f07779ae24c5a9086d33">y</a>; <span class="comment">//&lt; position on screen</span>
+<a name="l00042"></a><a class="code" href="struct_sprite.html#ae83003a634c514d79a764d56e9b3d1f9">00042</a>                 <span class="keywordtype">char</span> **<a class="code" href="struct_sprite.html#ae83003a634c514d79a764d56e9b3d1f9">img</a>; <span class="comment">//&lt; array of images</span>
+<a name="l00043"></a><a class="code" href="struct_sprite.html#a3e85eab037e571a6b74a1820c86880c5">00043</a>                 <span class="keywordtype">int</span> <a class="code" href="struct_sprite.html#a3e85eab037e571a6b74a1820c86880c5">imgs</a>, <a class="code" href="struct_sprite.html#a43531d5121651cc0d006fedbedb03b00">imgIndex</a>; <span class="comment">//&lt; images count and index of current image</span>
+<a name="l00044"></a><a class="code" href="struct_sprite.html#a2474a5474cbff19523a51eb1de01cda4">00044</a>                 <span class="keywordtype">int</span> <a class="code" href="struct_sprite.html#a2474a5474cbff19523a51eb1de01cda4">width</a>, <a class="code" href="struct_sprite.html#ad12fc34ce789bce6c8a05d8a17138534">height</a>; <span class="comment">//&lt; images sizes</span>
 <a name="l00045"></a>00045 };
 <a name="l00046"></a>00046 
-<a name="l00052"></a>00052 <a class="code" href="struct_sprite.html">Sprite</a>* <a class="code" href="group___sprite.html#ga7de84d48ef02e444f38190dfd1ac9690">newSprite</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">char</span> **map[], <span class="keywordtype">int</span> maps);
+<a name="l00052"></a>00052 <a class="code" href="struct_sprite.html" title="Sprite definition.">Sprite</a>* <a class="code" href="group___sprite.html#ga7de84d48ef02e444f38190dfd1ac9690" title="Creates a sprite.">newSprite</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">char</span> **map[], <span class="keywordtype">int</span> maps);
 <a name="l00053"></a>00053 
-<a name="l00059"></a>00059 <span class="keywordtype">void</span> <a class="code" href="group___sprite.html#ga12e2c68a7bc16fd28963980a6c1a7141">drawSprite</a>(<a class="code" href="struct_sprite.html">Sprite</a> *sprite, <span class="keywordtype">char</span> *buffer);
-<a name="l00063"></a>00063 <span class="keywordtype">void</span> <a class="code" href="group___sprite.html#ga08f2a8c4ed48cde16ca6ebd9a3e748d1">drawSpriteT</a>(<a class="code" href="struct_sprite.html">Sprite</a> *sprite, <span class="keywordtype">char</span> t, <span class="keywordtype">char</span> *buffer);
-<a name="l00067"></a>00067 <span class="keywordtype">void</span> <a class="code" href="group___sprite.html#gada12c5893e93e7b9e744ab3a8164afc8">drawSpriteBG</a>(<a class="code" href="struct_sprite.html">Sprite</a> *sprite, <span class="keywordtype">char</span> *buffer);
+<a name="l00059"></a>00059 <span class="keywordtype">void</span> <a class="code" href="group___sprite.html#ga12e2c68a7bc16fd28963980a6c1a7141" title="Draws a sprite line by line using memcpy.">drawSprite</a>(<a class="code" href="struct_sprite.html" title="Sprite definition.">Sprite</a> *sprite, <span class="keywordtype">char</span> *buffer);
+<a name="l00063"></a>00063 <span class="keywordtype">void</span> <a class="code" href="group___sprite.html#ga08f2a8c4ed48cde16ca6ebd9a3e748d1" title="Draws a sprite pixel by pixel, not drawing pixel of color t.">drawSpriteT</a>(<a class="code" href="struct_sprite.html" title="Sprite definition.">Sprite</a> *sprite, <span class="keywordtype">char</span> t, <span class="keywordtype">char</span> *buffer);
+<a name="l00067"></a>00067 <span class="keywordtype">void</span> <a class="code" href="group___sprite.html#gada12c5893e93e7b9e744ab3a8164afc8" title="Draws a sprite entirely to the buffer using mempy.">drawSpriteBG</a>(<a class="code" href="struct_sprite.html" title="Sprite definition.">Sprite</a> *sprite, <span class="keywordtype">char</span> *buffer);
 <a name="l00069"></a>00069 
-<a name="l00072"></a>00072 <span class="keywordtype">void</span> <a class="code" href="group___sprite.html#gae8e68f89e4bd1e98645808b9109f896b">moveSprite</a>(<a class="code" href="struct_sprite.html">Sprite</a> *sprite, <span class="keywordtype">int</span> dx, <span class="keywordtype">int</span> dy);
+<a name="l00072"></a>00072 <span class="keywordtype">void</span> <a class="code" href="group___sprite.html#gae8e68f89e4bd1e98645808b9109f896b" title="Moves x and y variables of sprite by dx and dy.">moveSprite</a>(<a class="code" href="struct_sprite.html" title="Sprite definition.">Sprite</a> *sprite, <span class="keywordtype">int</span> dx, <span class="keywordtype">int</span> dy);
 <a name="l00073"></a>00073 
-<a name="l00079"></a>00079 <a class="code" href="group___user_types.html#ga39db6982619d623273fad8a383489309">Bool</a> <a class="code" href="group___sprite.html#ga6c61e3d4469911e51e3cffc24d74cad3">collidesSpriteRect</a>(<a class="code" href="struct_sprite.html">Sprite</a> *sprite, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);
-<a name="l00082"></a>00082 <a class="code" href="group___user_types.html#ga39db6982619d623273fad8a383489309">Bool</a> <a class="code" href="group___sprite.html#ga2e550f30ca6a94427bcc22e12d8e090d">collidesSprite</a>(<a class="code" href="struct_sprite.html">Sprite</a> *sprite, <a class="code" href="struct_sprite.html">Sprite</a> *other);
+<a name="l00079"></a>00079 <a class="code" href="group___user_types.html#ga39db6982619d623273fad8a383489309" title="User defined boolean type.">Bool</a> <a class="code" href="group___sprite.html#ga6c61e3d4469911e51e3cffc24d74cad3" title="Checks collision between a sprite and a rectangle.">collidesSpriteRect</a>(<a class="code" href="struct_sprite.html" title="Sprite definition.">Sprite</a> *sprite, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);
+<a name="l00082"></a>00082 <a class="code" href="group___user_types.html#ga39db6982619d623273fad8a383489309" title="User defined boolean type.">Bool</a> <a class="code" href="group___sprite.html#ga2e550f30ca6a94427bcc22e12d8e090d" title="Checks collision between two sprites.">collidesSprite</a>(<a class="code" href="struct_sprite.html" title="Sprite definition.">Sprite</a> *sprite, <a class="code" href="struct_sprite.html" title="Sprite definition.">Sprite</a> *other);
 <a name="l00084"></a>00084 
-<a name="l00087"></a>00087 <span class="keywordtype">void</span> <a class="code" href="group___sprite.html#ga87294dafbc36911f5f1adbbd759d69de">deleteSprite</a>(<a class="code" href="struct_sprite.html">Sprite</a> *sprite);
+<a name="l00087"></a>00087 <span class="keywordtype">void</span> <a class="code" href="group___sprite.html#ga87294dafbc36911f5f1adbbd759d69de" title="Deletes a sprite.">deleteSprite</a>(<a class="code" href="struct_sprite.html" title="Sprite definition.">Sprite</a> *sprite);
 <a name="l00088"></a>00088 
 <a name="l00091"></a>00091 <span class="preprocessor">#endif</span>
 </pre></div></div>
@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon May 24 05:42:05 2010 for BSoD Syndrome by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue May 25 04:21:02 2010 for BSoD-Syndrome by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

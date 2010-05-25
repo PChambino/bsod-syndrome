@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>BSoD Syndrome: /Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/video.h File Reference</title>
+<title>BSoD-Syndrome: /Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/src/video.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -44,7 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <div class="contents">
-<h1>/Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/video.h File Reference</h1><code>#include &lt;dpmi.h&gt;</code><br/>
+<h1>/Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/src/video.h File Reference</h1><code>#include &lt;dpmi.h&gt;</code><br/>
 <code>#include &lt;sys/nearptr.h&gt;</code><br/>
 <code>#include &lt;unistd.h&gt;</code><br/>
 <code>#include &lt;stdlib.h&gt;</code><br/>
@@ -60,27 +60,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___video.html#gac606e9733c1af3b71d46f36cf4b13098">VRETRACE</a>&nbsp;&nbsp;&nbsp;0x08</td></tr>
 <tr><td colspan="2"><h2>Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___video.html#ga5aabe34646f6a43d997432ae1a14dc4b">enter_graphics</a> (int mode)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Enter graphics mode, enabling near pointers and mapping video physical memory to program virtual address.  <a href="group___video.html#ga5aabe34646f6a43d997432ae1a14dc4b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___video.html#gab8cd65e9666c5539c3b42566edf9a024">leave_graphics</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Unmap video memory, disable near pointer and returns to text mode.  <a href="group___video.html#gab8cd65e9666c5539c3b42566edf9a024"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___video.html#gaf1429f5063e65601457f1646f42f0d9b">draw_line</a> (int xi, int yi, int xf, int yf, int color)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draw a line of color "color" between point (xi,yi) and (xf,yf) at memory address "base".  <a href="group___video.html#gaf1429f5063e65601457f1646f42f0d9b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___video.html#ga4a90533210223c253882c45166c3c477">wait_for_retrace</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Waits for the screen vertical retrace.  <a href="group___video.html#ga4a90533210223c253882c45166c3c477"></a><br/></td></tr>
 <tr><td colspan="2"><div class="groupHeader">Set Pixel Functions</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p><a class="anchor" id="amgrp7aa838c9cb1bbbe98145656bbbeb74cf"></a> Draws a pixel of color "color" at screen coordinates x, y at memory address "base" </p>
+<tr><td colspan="2"><div class="groupText"><p><a class="anchor" id="amgrp7aa838c9cb1bbbe98145656bbbeb74cf"></a>Draws a pixel of color "color" at screen coordinates x, y at memory address "base" </p>
 <br/><br/></div></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___video.html#ga46dee7df7b5c2bb25046cf65f1cead76">set_pixelb</a> (int x, int y, int color, char *<a class="el" href="group___setup.html#gaaa2fae125feca2b4de4f3f7640c76ce4">base</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___video.html#ga879feb03dbd6bbd080c10a7d9bb88bde">set_pixel</a> (int x, int y, int color)</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Get Pixel Functions</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p><a class="anchor" id="amgrpa32feb45c7a40eb7d0ee3e21d4a474ea"></a> Returns the pixel color at screen coordinates x, y at memory address "base" </p>
+<tr><td colspan="2"><div class="groupText"><p><a class="anchor" id="amgrpa32feb45c7a40eb7d0ee3e21d4a474ea"></a>Returns the pixel color at screen coordinates x, y at memory address "base" </p>
 <br/><br/></div></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___video.html#gabf368c166836b75af93852cf9eeb14b6">get_pixelb</a> (int x, int y, char *<a class="el" href="group___setup.html#gaaa2fae125feca2b4de4f3f7640c76ce4">base</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___video.html#ga7961f7df25b0873639d89f1ba79fde19">get_pixel</a> (int x, int y)</td></tr>
 <tr><td colspan="2"><div class="groupHeader">Clear Screen Functions</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p><a class="anchor" id="amgrp72954fd57fa65e39057522014bcf9695"></a> Set graphics memory at memory address "base" to "color". </p>
+<tr><td colspan="2"><div class="groupText"><p><a class="anchor" id="amgrp72954fd57fa65e39057522014bcf9695"></a>Set graphics memory at memory address "base" to "color". </p>
 <br/><br/></div></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___video.html#ga6987d7d5c4d2227c9139dad87a0b579a">clear_screenb</a> (char color, char *<a class="el" href="group___setup.html#gaaa2fae125feca2b4de4f3f7640c76ce4">base</a>)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___video.html#gac8347f08c3743d58625e32a799907de5">clear_screen</a> (char color)</td></tr>
 <tr><td colspan="2"><h2>Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___video.html#ga2a60090435aefe2530692883c79d9bb8">HRES</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">global variable with the horizontal resolution in pixels  <a href="group___video.html#ga2a60090435aefe2530692883c79d9bb8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___video.html#ga02a30657228763729d9e2351a0b6bcba">VRES</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">global variable with the vertical resolution in pixels  <a href="group___video.html#ga02a30657228763729d9e2351a0b6bcba"></a><br/></td></tr>
 </table>
 </div>
 <!--- window showing the filter options -->
@@ -97,7 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon May 24 05:42:05 2010 for BSoD Syndrome by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue May 25 04:21:02 2010 for BSoD-Syndrome by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

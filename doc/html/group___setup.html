@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>BSoD Syndrome: Setup</title>
+<title>BSoD-Syndrome: Setup</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -38,25 +38,41 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <div class="contents">
-<h1>Setup</h1><table border="0" cellpadding="0" cellspacing="0">
+<h1>Setup</h1>
+<p>Setup related functions.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___setup.html#gaefcb3f70374ff9b6256aac6e12870399">process_args</a> (int argc, char **argv)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reads and process arguments.  <a href="#gaefcb3f70374ff9b6256aac6e12870399"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___setup.html#ga01425a7d9a7a1624f929747b444b49cf">setup_log</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Setup log file.  <a href="#ga01425a7d9a7a1624f929747b444b49cf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___setup.html#ga812b83af3eba894791333cbe5bf381fa">setup_video</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Setup video Starts graphic mode.  <a href="#ga812b83af3eba894791333cbe5bf381fa"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___setup.html#gaf33f8cb9149a5cd2b7a6fce713865669">setup_kbc</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Setup mouse and keyboard.  <a href="#gaf33f8cb9149a5cd2b7a6fce713865669"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___setup.html#ga2e54077c9c1e0ad46786e3c97a21ae62">setup_rtc</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Setup rtc.  <a href="#ga2e54077c9c1e0ad46786e3c97a21ae62"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___setup.html#ga4e7127f2f48fb1c538bbd67fe921c58c">setup_timer</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Setup timer.  <a href="#ga4e7127f2f48fb1c538bbd67fe921c58c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___setup.html#ga1c2d12056f4c427a691dde84a130c3f9">tear_down</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reinstalls and undo all setups.  <a href="#ga1c2d12056f4c427a691dde84a130c3f9"></a><br/></td></tr>
 <tr><td colspan="2"><h2>Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___setup.html#ga45b67662d620a977a2cfe519f7ab6273">fps</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">frames per second the game loop while run.  <a href="#ga45b67662d620a977a2cfe519f7ab6273"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">FILE *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___setup.html#gae4ddb6424cb1a9269552e521edb44479">logger</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Logger file.  <a href="#gae4ddb6424cb1a9269552e521edb44479"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">char *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___setup.html#gaaa2fae125feca2b4de4f3f7640c76ce4">base</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">video address base  <a href="#gaaa2fae125feca2b4de4f3f7640c76ce4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_queue.html">Queue</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___setup.html#ga429c239da1a4c48b168b66da5852f76b">keys</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Keyboard keys queue.  <a href="#ga429c239da1a4c48b168b66da5852f76b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_g_queue.html">GQueue</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___setup.html#ga6230e3617763dc8d1aeadfba850c3681">mouseQueue</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><a class="el" href="struct_mouse.html" title="Mouse Event definition.">Mouse</a> queue.  <a href="#ga6230e3617763dc8d1aeadfba850c3681"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___setup.html#ga426c68286ac4134f93ee1227d1698ad5">mili_tick</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Counts milisec using rtc_isr.  <a href="#ga426c68286ac4134f93ee1227d1698ad5"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>Setup related functions </p>
+<p>Setup related functions. </p>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="gaefcb3f70374ff9b6256aac6e12870399"></a><!-- doxytag: member="setup.h::process_args" ref="gaefcb3f70374ff9b6256aac6e12870399" args="(int argc, char **argv)" -->
 <div class="memitem">
@@ -82,6 +98,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
+
 <p>Reads and process arguments. </p>
 
 </div>
@@ -100,7 +117,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Setup mouse and keyboard </p>
+
+<p>Setup mouse and keyboard. </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___setup_gaf33f8cb9149a5cd2b7a6fce713865669_cgraph.png" border="0" usemap="#group___setup_gaf33f8cb9149a5cd2b7a6fce713865669_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -118,7 +143,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Setup log file. Opens log file and dups to stdout </p>
+
+<p>Setup log file. </p>
+<p>Opens log file and dups to stdout </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___setup_ga01425a7d9a7a1624f929747b444b49cf_cgraph.png" border="0" usemap="#group___setup_ga01425a7d9a7a1624f929747b444b49cf_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -136,7 +170,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Setup rtc </p>
+
+<p>Setup rtc. </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___setup_ga2e54077c9c1e0ad46786e3c97a21ae62_cgraph.png" border="0" usemap="#group___setup_ga2e54077c9c1e0ad46786e3c97a21ae62_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -154,7 +196,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Setup timer </p>
+
+<p>Setup timer. </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___setup_ga4e7127f2f48fb1c538bbd67fe921c58c_cgraph.png" border="0" usemap="#group___setup_ga4e7127f2f48fb1c538bbd67fe921c58c_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -172,7 +222,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
+
 <p>Setup video Starts graphic mode. </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___setup_ga812b83af3eba894791333cbe5bf381fa_cgraph.png" border="0" usemap="#group___setup_ga812b83af3eba894791333cbe5bf381fa_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -190,7 +248,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Reinstalls and undo all setups </p>
+
+<p>Reinstalls and undo all setups. </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___setup_ga1c2d12056f4c427a691dde84a130c3f9_cgraph.png" border="0" usemap="#group___setup_ga1c2d12056f4c427a691dde84a130c3f9_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -205,6 +271,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
+
 <p>video address base </p>
 
 </div>
@@ -219,6 +286,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
+
 <p>frames per second the game loop while run. </p>
 
 </div>
@@ -233,7 +301,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Keyboard keys queue </p>
+
+<p>Keyboard keys queue. </p>
 
 </div>
 </div>
@@ -247,7 +316,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Logger file </p>
+
+<p>Logger file. </p>
 
 </div>
 </div>
@@ -261,7 +331,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Counts milisec using rtc_isr </p>
+
+<p>Counts milisec using rtc_isr. </p>
 
 </div>
 </div>
@@ -275,7 +346,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p><a class="el" href="struct_mouse.html">Mouse</a> queue </p>
+
+<p><a class="el" href="struct_mouse.html" title="Mouse Event definition.">Mouse</a> queue. </p>
 
 </div>
 </div>
@@ -294,7 +366,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon May 24 05:42:05 2010 for BSoD Syndrome by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue May 25 04:21:02 2010 for BSoD-Syndrome by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

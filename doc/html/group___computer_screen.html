@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>BSoD Syndrome: ComputerScreen</title>
+<title>BSoD-Syndrome: ComputerScreen</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -38,9 +38,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <div class="contents">
-<h1>ComputerScreen</h1><table border="0" cellpadding="0" cellspacing="0">
+<h1>ComputerScreen</h1>
+<p>Computer Screen functions.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Data Structures</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">struct &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_c_screen.html">CScreen</a></td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Computer Screen definition.  <a href="struct_c_screen.html#_details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2>Enumerations</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___computer_screen.html#ga167faa2215a60ddeddc88988f206924c">CScreenState</a> { <br/>
 &nbsp;&nbsp;<a class="el" href="group___computer_screen.html#gga167faa2215a60ddeddc88988f206924ca24dfb0dfbc26bfbff6ba7d638f7b9ceb">WINDOWS</a>, 
@@ -51,12 +55,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 &nbsp;&nbsp;<a class="el" href="group___computer_screen.html#gga167faa2215a60ddeddc88988f206924ca3ff8ba88da6f8947ab7c22b7825c6bb6">INACTIVE</a>
 <br/>
  }</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Computer Screen possible states. </p>
+ <a href="group___computer_screen.html#ga167faa2215a60ddeddc88988f206924c">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2>Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_c_screen.html">CScreen</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___computer_screen.html#gab4fa556ba3e11258659fddd30e951e2e">newCScreen</a> (int x, int y, int small)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a new computer screen.  <a href="#gab4fa556ba3e11258659fddd30e951e2e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___computer_screen.html#gaf0ff98dd5a8ecda6a6ee97a8a2ef1d27">deleteCScreen</a> (<a class="el" href="struct_c_screen.html">CScreen</a> *)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Deletes the computer screen.  <a href="#gaf0ff98dd5a8ecda6a6ee97a8a2ef1d27"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___computer_screen.html#gaddd769954edf0f16abbb9fefe7f5912d">updateCScreen</a> (<a class="el" href="struct_c_screen.html">CScreen</a> *cscreen, <a class="el" href="struct_hammer.html">Hammer</a> *hammer, int *numberPCs, int *score, double mili)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Updates the state of the computer screen based on the position of the hammer.  <a href="#gaddd769954edf0f16abbb9fefe7f5912d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___computer_screen.html#ga7e2f1b30e31e4f80ecbefc6bf920b6de">drawCScreen</a> (<a class="el" href="struct_c_screen.html">CScreen</a> *cscreen, char *buffer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draw computer screen.  <a href="#ga7e2f1b30e31e4f80ecbefc6bf920b6de"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___computer_screen.html#gad70b9bc67d26757169f404690b86636c">resetCScreen</a> (<a class="el" href="struct_c_screen.html">CScreen</a> *cscreen)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reset computer Screen.  <a href="#gad70b9bc67d26757169f404690b86636c"></a><br/></td></tr>
 <tr><td colspan="2"><h2>CScreen constants</h2></td></tr>
 <tr><td colspan="2"><p><a class="anchor" id="amgrpdb03a1912c9eb5fab400fed1e7f8d053"></a> </p>
 <br/><br/></td></tr>
@@ -68,7 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___computer_screen.html#ga430e484e67e31a9269403bb9957d81c0">scoreDeath</a>&nbsp;&nbsp;&nbsp;15</td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>Computer Screen functions </p>
+<p>Computer Screen functions. </p>
 <hr/><h2>Define Documentation</h2>
 <a class="anchor" id="ga71ad00ba94641fe35fa045be242c5618"></a><!-- doxytag: member="cscreen.h::BSoDTime" ref="ga71ad00ba94641fe35fa045be242c5618" args="" -->
 <div class="memitem">
@@ -159,7 +170,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Computer Screen possible states </p>
+
+<p>Computer Screen possible states. </p>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga167faa2215a60ddeddc88988f206924ca24dfb0dfbc26bfbff6ba7d638f7b9ceb"></a><!-- doxytag: member="WINDOWS" ref="gga167faa2215a60ddeddc88988f206924ca24dfb0dfbc26bfbff6ba7d638f7b9ceb" args="" -->WINDOWS</em>&nbsp;</td><td>
 </td></tr>
@@ -193,13 +205,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Deletes the computer screen </p>
+
+<p>Deletes the computer screen. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
-    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="struct_c_screen.html">CScreen</a></em>&nbsp;</td><td>the computer screen itself </td></tr>
+    <tr><td valign="top"></td><td valign="top"><em><a class="el" href="struct_c_screen.html" title="Computer Screen definition.">CScreen</a></em>&nbsp;</td><td>the computer screen itself </td></tr>
   </table>
   </dd>
 </dl>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___computer_screen_gaf0ff98dd5a8ecda6a6ee97a8a2ef1d27_cgraph.png" border="0" usemap="#group___computer_screen_gaf0ff98dd5a8ecda6a6ee97a8a2ef1d27_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -227,7 +247,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Draw computer screen </p>
+
+<p>Draw computer screen. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>cscreen</em>&nbsp;</td><td>computer screen to be drawn </td></tr>
@@ -235,6 +256,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </table>
   </dd>
 </dl>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___computer_screen_ga7e2f1b30e31e4f80ecbefc6bf920b6de_cgraph.png" border="0" usemap="#group___computer_screen_ga7e2f1b30e31e4f80ecbefc6bf920b6de_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -268,7 +296,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Creates a new computer screen </p>
+
+<p>Creates a new computer screen. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>x</em>&nbsp;</td><td>position x of computer on game screen </td></tr>
@@ -278,6 +307,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>returns a pointer to the computer screen itself </dd></dl>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___computer_screen_gab4fa556ba3e11258659fddd30e951e2e_cgraph.png" border="0" usemap="#group___computer_screen_gab4fa556ba3e11258659fddd30e951e2e_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -296,7 +332,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Reset computer Screen </p>
+
+<p>Reset computer Screen. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>cscreen</em>&nbsp;</td><td>computer screen to be reset </td></tr>
@@ -348,7 +385,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Updates the state of the computer screen based on the position of the hammer </p>
+
+<p>Updates the state of the computer screen based on the position of the hammer. </p>
 <dl><dt><b>Parameters:</b></dt><dd>
   <table border="0" cellspacing="2" cellpadding="0">
     <tr><td valign="top"></td><td valign="top"><em>cscreen</em>&nbsp;</td><td>computer screen to be updated </td></tr>
@@ -359,6 +397,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </table>
   </dd>
 </dl>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___computer_screen_gaddd769954edf0f16abbb9fefe7f5912d_cgraph.png" border="0" usemap="#group___computer_screen_gaddd769954edf0f16abbb9fefe7f5912d_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -377,7 +422,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon May 24 05:42:05 2010 for BSoD Syndrome by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue May 25 04:21:02 2010 for BSoD-Syndrome by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

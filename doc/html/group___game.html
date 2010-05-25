@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>BSoD Syndrome: Game</title>
+<title>BSoD-Syndrome: Game</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -38,25 +38,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <div class="contents">
-<h1>Game</h1><table border="0" cellpadding="0" cellspacing="0">
+<h1>Game</h1>
+<p>Game functions.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___game.html#ga422fbc356f055134444727a31b4e7b0b">NUM_PCS</a>&nbsp;&nbsp;&nbsp;6</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Game constant.  <a href="#ga422fbc356f055134444727a31b4e7b0b"></a><br/></td></tr>
 <tr><td colspan="2"><h2>Enumerations</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___game.html#ga7899b65f1ea0f655e4bbf8d2a5714285">GameState</a> { <a class="el" href="group___game.html#gga7899b65f1ea0f655e4bbf8d2a5714285af095245f5cebc27a97a124345269fed8">PLAYING</a>, 
 <a class="el" href="group___game.html#gga7899b65f1ea0f655e4bbf8d2a5714285adc6f24fd6915a3f2786a1b7045406924">END</a>, 
 <a class="el" href="group___game.html#gga7899b65f1ea0f655e4bbf8d2a5714285a9f5cb747b2e1f0ea781d2b1f2a5b4824">HELP</a>, 
 <a class="el" href="group___game.html#gga7899b65f1ea0f655e4bbf8d2a5714285af57444a2814db96222f09035ff269767">SCORE</a>
  }</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight"><p>Game possible states. </p>
+ <a href="group___game.html#ga7899b65f1ea0f655e4bbf8d2a5714285">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2>Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___game.html#ga5f5ccbe5abfdef24c8378dc3cf32ffb3">game_init</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Function that initializes the game and the objects.  <a href="#ga5f5ccbe5abfdef24c8378dc3cf32ffb3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___game.html#gaf433d3f5ea485c7259d66592f99a85f2">update</a> (int mili)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Function used to update the objects of the game.  <a href="#gaf433d3f5ea485c7259d66592f99a85f2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___game.html#ga4c40a5bd4a2515fca4b16c58d4c7bbba">draw</a> (char *buffer)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Draws the objects of the game.  <a href="#ga4c40a5bd4a2515fca4b16c58d4c7bbba"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___game.html#gad73a94c51b866ae5ae1f93f66355904a">game_loop</a> (int <a class="el" href="group___setup.html#ga45b67662d620a977a2cfe519f7ab6273">fps</a>)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">The game loop uses double buffering and controls the number of frames per second calls update, draw and game_init.  <a href="#gad73a94c51b866ae5ae1f93f66355904a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___game.html#ga486d33bd072d399b11f0cf3ae7448e5b">game_end</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Game end called in atexit frees and deletes all game objects.  <a href="#ga486d33bd072d399b11f0cf3ae7448e5b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___game.html#ga6be2f294a4d060a7a6e445016a151100">reset_game</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reinitialize game.  <a href="#ga6be2f294a4d060a7a6e445016a151100"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>Game functions </p>
+<p>Game functions. </p>
 <hr/><h2>Define Documentation</h2>
 <a class="anchor" id="ga422fbc356f055134444727a31b4e7b0b"></a><!-- doxytag: member="game.h::NUM_PCS" ref="ga422fbc356f055134444727a31b4e7b0b" args="" -->
 <div class="memitem">
@@ -68,7 +80,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Game constant </p>
+
+<p>Game constant. </p>
 
 </div>
 </div>
@@ -83,7 +96,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Game possible states </p>
+
+<p>Game possible states. </p>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga7899b65f1ea0f655e4bbf8d2a5714285af095245f5cebc27a97a124345269fed8"></a><!-- doxytag: member="PLAYING" ref="gga7899b65f1ea0f655e4bbf8d2a5714285af095245f5cebc27a97a124345269fed8" args="" -->PLAYING</em>&nbsp;</td><td>
 </td></tr>
@@ -115,7 +129,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Draws the objects of the game </p>
+
+<p>Draws the objects of the game. </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___game_ga4c40a5bd4a2515fca4b16c58d4c7bbba_cgraph.png" border="0" usemap="#group___game_ga4c40a5bd4a2515fca4b16c58d4c7bbba_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -133,7 +155,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Game end called in atexit frees and deletes all game objects </p>
+
+<p>Game end called in atexit frees and deletes all game objects. </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___game_ga486d33bd072d399b11f0cf3ae7448e5b_cgraph.png" border="0" usemap="#group___game_ga486d33bd072d399b11f0cf3ae7448e5b_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -151,7 +181,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Function that initializes the game and the objects </p>
+
+<p>Function that initializes the game and the objects. </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___game_ga5f5ccbe5abfdef24c8378dc3cf32ffb3_cgraph.png" border="0" usemap="#group___game_ga5f5ccbe5abfdef24c8378dc3cf32ffb3_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -170,7 +208,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>The game loop uses double buffering and controls the number of frames per second calls update, draw and game_init </p>
+
+<p>The game loop uses double buffering and controls the number of frames per second calls update, draw and game_init. </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___game_gad73a94c51b866ae5ae1f93f66355904a_cgraph.png" border="0" usemap="#group___game_gad73a94c51b866ae5ae1f93f66355904a_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -188,7 +234,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Reinitialize game </p>
+
+<p>Reinitialize game. </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___game_ga6be2f294a4d060a7a6e445016a151100_cgraph.png" border="0" usemap="#group___game_ga6be2f294a4d060a7a6e445016a151100_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -207,7 +261,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Function used to update the objects of the game </p>
+
+<p>Function used to update the objects of the game. </p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="group___game_gaf433d3f5ea485c7259d66592f99a85f2_cgraph.png" border="0" usemap="#group___game_gaf433d3f5ea485c7259d66592f99a85f2_cgraph_map" alt=""></div>
+</div>
+</p>
 
 </div>
 </div>
@@ -226,7 +288,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon May 24 05:42:05 2010 for BSoD Syndrome by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue May 25 04:21:02 2010 for BSoD-Syndrome by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

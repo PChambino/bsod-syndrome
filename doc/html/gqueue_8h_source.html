@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>BSoD Syndrome: /Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/gqueue.h Source File</title>
+<title>BSoD-Syndrome: /Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/src/gqueue.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -42,7 +42,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
-<h1>/Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/gqueue.h</h1><a href="gqueue_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef _GQUEUE_H_</span>
+<h1>/Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/src/gqueue.h</h1><a href="gqueue_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef _GQUEUE_H_</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define _GQUEUE_H_</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &lt;stdlib.h&gt;</span>
@@ -52,27 +52,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00008"></a>00008 
 <a name="l00017"></a><a class="code" href="struct_g_queue.html">00017</a> <span class="keyword">typedef</span> <span class="keyword">struct</span>
 <a name="l00018"></a>00018 {
-<a name="l00019"></a><a class="code" href="struct_g_queue.html#add9af9569af79ec26dd741fb226b38ba">00019</a>         <span class="keywordtype">void</span> *ptr;
-<a name="l00020"></a><a class="code" href="struct_g_queue.html#a439227feff9d7f55384e8780cfc2eb82">00020</a>         <span class="keywordtype">int</span> in, out, count, size, ele_size;
-<a name="l00021"></a><a class="code" href="struct_g_queue.html#a5984ab6711f54b9b555bd934424244a7">00021</a>         <a class="code" href="group___user_types.html#ga39db6982619d623273fad8a383489309">Bool</a> being_accessed;
-<a name="l00022"></a>00022         
-<a name="l00023"></a>00023 } <a class="code" href="struct_g_queue.html">GQueue</a>;
+<a name="l00019"></a><a class="code" href="struct_g_queue.html#add9af9569af79ec26dd741fb226b38ba">00019</a>                 <span class="keywordtype">void</span> *ptr;
+<a name="l00020"></a><a class="code" href="struct_g_queue.html#a439227feff9d7f55384e8780cfc2eb82">00020</a>                 <span class="keywordtype">int</span> in, out, count, size, ele_size;
+<a name="l00021"></a><a class="code" href="struct_g_queue.html#a5984ab6711f54b9b555bd934424244a7">00021</a>                 <a class="code" href="group___user_types.html#ga39db6982619d623273fad8a383489309" title="User defined boolean type.">Bool</a> being_accessed;
+<a name="l00022"></a>00022                 
+<a name="l00023"></a>00023 } <a class="code" href="struct_g_queue.html" title="GQueue definition.">GQueue</a>;
 <a name="l00024"></a>00024 
-<a name="l00027"></a>00027 <a class="code" href="struct_g_queue.html">GQueue</a>* <a class="code" href="group___g_queue.html#ga8f8b7992043eaa3ab5fabecb1d7b51aa">newGQueue</a>(<span class="keywordtype">int</span> n_ele, <span class="keywordtype">int</span> ele_size);
+<a name="l00027"></a>00027 <a class="code" href="struct_g_queue.html" title="GQueue definition.">GQueue</a>* <a class="code" href="group___g_queue.html#ga8f8b7992043eaa3ab5fabecb1d7b51aa" title="New GQueue.">newGQueue</a>(<span class="keywordtype">int</span> n_ele, <span class="keywordtype">int</span> ele_size);
 <a name="l00028"></a>00028 
-<a name="l00031"></a>00031 <span class="keywordtype">void</span> <a class="code" href="group___g_queue.html#ga09e9626b3bab652ddaf00e25dfcfb6b4">deleteGQueue</a>(<a class="code" href="struct_g_queue.html">GQueue</a>* q);
+<a name="l00031"></a>00031 <span class="keywordtype">void</span> <a class="code" href="group___g_queue.html#ga09e9626b3bab652ddaf00e25dfcfb6b4" title="Delete GQueue.">deleteGQueue</a>(<a class="code" href="struct_g_queue.html" title="GQueue definition.">GQueue</a>* q);
 <a name="l00032"></a>00032 
-<a name="l00036"></a>00036 <a class="code" href="group___user_types.html#ga39db6982619d623273fad8a383489309">Bool</a> <a class="code" href="group___g_queue.html#ga9a35404da103e7953029ef99f967c80f">putGQueue</a>(<a class="code" href="struct_g_queue.html">GQueue</a>* q, <span class="keywordtype">void</span>* ele);
+<a name="l00036"></a>00036 <a class="code" href="group___user_types.html#ga39db6982619d623273fad8a383489309" title="User defined boolean type.">Bool</a> <a class="code" href="group___g_queue.html#ga9a35404da103e7953029ef99f967c80f" title="Put element to GQueue.">putGQueue</a>(<a class="code" href="struct_g_queue.html" title="GQueue definition.">GQueue</a>* q, <span class="keywordtype">void</span>* ele);
 <a name="l00037"></a>00037 
-<a name="l00040"></a>00040 <span class="keywordtype">void</span>* <a class="code" href="group___g_queue.html#ga0df34aa0e9642f8feb601d5e20c82999">peekGQueue</a>(<a class="code" href="struct_g_queue.html">GQueue</a>* q);
+<a name="l00040"></a>00040 <span class="keywordtype">void</span>* <a class="code" href="group___g_queue.html#ga0df34aa0e9642f8feb601d5e20c82999" title="Peek element GQueue.">peekGQueue</a>(<a class="code" href="struct_g_queue.html" title="GQueue definition.">GQueue</a>* q);
 <a name="l00041"></a>00041 
-<a name="l00044"></a>00044 <span class="keywordtype">void</span>* <a class="code" href="group___g_queue.html#gae84cf8633739df50f6d77c195a4a5450">getGQueue</a>(<a class="code" href="struct_g_queue.html">GQueue</a>* q);
+<a name="l00044"></a>00044 <span class="keywordtype">void</span>* <a class="code" href="group___g_queue.html#gae84cf8633739df50f6d77c195a4a5450" title="Get element GQueue.">getGQueue</a>(<a class="code" href="struct_g_queue.html" title="GQueue definition.">GQueue</a>* q);
 <a name="l00045"></a>00045 
-<a name="l00048"></a>00048 <span class="keywordtype">void</span> <a class="code" href="group___g_queue.html#ga0bbaec1ebc563ed20ef145c680702bbe">clearGQueue</a>(<a class="code" href="struct_g_queue.html">GQueue</a>* q);
+<a name="l00048"></a>00048 <span class="keywordtype">void</span> <a class="code" href="group___g_queue.html#ga0bbaec1ebc563ed20ef145c680702bbe" title="Clear GQueue.">clearGQueue</a>(<a class="code" href="struct_g_queue.html" title="GQueue definition.">GQueue</a>* q);
 <a name="l00049"></a>00049 
-<a name="l00053"></a>00053 <a class="code" href="group___user_types.html#ga39db6982619d623273fad8a383489309">Bool</a> <a class="code" href="group___g_queue.html#ga96a033ea15e0fa2a9f5bbc22cd1dc1a0">isEmptyGQueue</a>(<a class="code" href="struct_g_queue.html">GQueue</a>* q);
+<a name="l00053"></a>00053 <a class="code" href="group___user_types.html#ga39db6982619d623273fad8a383489309" title="User defined boolean type.">Bool</a> <a class="code" href="group___g_queue.html#ga96a033ea15e0fa2a9f5bbc22cd1dc1a0" title="Checks if GQueue is empty.">isEmptyGQueue</a>(<a class="code" href="struct_g_queue.html" title="GQueue definition.">GQueue</a>* q);
 <a name="l00054"></a>00054 
-<a name="l00058"></a>00058 <a class="code" href="group___user_types.html#ga39db6982619d623273fad8a383489309">Bool</a> <a class="code" href="group___g_queue.html#gadfeebb70cd84e753092e814317dc64d8">isFullGQueue</a>(<a class="code" href="struct_g_queue.html">GQueue</a>* q);
+<a name="l00058"></a>00058 <a class="code" href="group___user_types.html#ga39db6982619d623273fad8a383489309" title="User defined boolean type.">Bool</a> <a class="code" href="group___g_queue.html#gadfeebb70cd84e753092e814317dc64d8" title="Checks if GQueue is full.">isFullGQueue</a>(<a class="code" href="struct_g_queue.html" title="GQueue definition.">GQueue</a>* q);
 <a name="l00059"></a>00059 
 <a name="l00062"></a>00062 <span class="preprocessor">#endif</span>
 </pre></div></div>
@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon May 24 05:42:05 2010 for BSoD Syndrome by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue May 25 04:21:02 2010 for BSoD-Syndrome by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

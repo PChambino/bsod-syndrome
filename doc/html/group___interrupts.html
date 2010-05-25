@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>BSoD Syndrome: Interrupts</title>
+<title>BSoD-Syndrome: Interrupts</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -38,14 +38,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <div class="contents">
-<h1>Interrupts</h1><table border="0" cellpadding="0" cellspacing="0">
+<h1>Interrupts</h1>
+<p>Interrupt related functions.  
+<a href="#_details">More...</a></p>
+<table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___interrupts.html#ga9804d238d82a0d72a73fd868f42ef29a">install_asm_irq_handler</a> (int irq, void(*irq_func)(void), _go32_dpmi_seginfo *old_irq)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Installs the ASM written function 'irq_func' as the interrupt handler associated with interrupt 'irq', updating the 'old_irq' structure with the current interrupt handler.  <a href="#ga9804d238d82a0d72a73fd868f42ef29a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___interrupts.html#gaa7b3458b0e4df6d02a1c63738e5fd506">install_c_irq_handler</a> (int irq, void(*irq_func)(void), _go32_dpmi_seginfo *old_irq)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Installs the C written 'irq_func' interrupt handler at the interrupt handler associated with interrupt 'irq', updating the old_irq structure with the current interrupt handler.  <a href="#gaa7b3458b0e4df6d02a1c63738e5fd506"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___interrupts.html#ga1bff8e5131acdf8a4e6309c058f8652d">reinstall_asm_irq_handler</a> (int irq, _go32_dpmi_seginfo *old_irq)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reinstalls the interrupt handler specified in 'old_irq' for interrupt 'irq'.  <a href="#ga1bff8e5131acdf8a4e6309c058f8652d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___interrupts.html#gaf966b0cfdee8e75839de3e138dd55f67">reinstall_c_irq_handler</a> (int irq, _go32_dpmi_seginfo *old_irq)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Reinstalls the interrupt handler specified in 'old_irq' for interrupt 'irq'.  <a href="#gaf966b0cfdee8e75839de3e138dd55f67"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___interrupts.html#gad36bc1b286b003e91b38d00c60508ab4">disable_irq</a> (int irq)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Mask the bit corresponding to 'irq', disabling its interrupts.  <a href="#gad36bc1b286b003e91b38d00c60508ab4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___interrupts.html#ga71c80934bf15a4691e5a360fe0283227">enable_irq</a> (int irq)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Unmask the bit corresponding to 'irq', enabling its interrupts.  <a href="#ga71c80934bf15a4691e5a360fe0283227"></a><br/></td></tr>
 <tr><td colspan="2"><h2>PIC registers address</h2></td></tr>
 <tr><td colspan="2"><p><a class="anchor" id="amgrp0e27873a06f342c0540253e4288ecbd2"></a> </p>
 <br/><br/></td></tr>
@@ -88,10 +97,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><p><a class="anchor" id="amgrp1aea66ee1b4a97fbdcdbefe71adebb34"></a> </p>
 <br/><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___interrupts.html#ga74447581a052899240d863b9ffa80752">IRQ_MASK_BIT</a>(irq)&nbsp;&nbsp;&nbsp;((irq) &lt; 8 ? 1 &lt;&lt; (irq) : (1 &lt;&lt; (irq)) &gt;&gt; 8)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Gives mask bit associated with a given irq.  <a href="#ga74447581a052899240d863b9ffa80752"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___interrupts.html#ga56163aadc0579c92911b527ed9d11496">IRQ_VECTOR</a>(irq)&nbsp;&nbsp;&nbsp;((irq) &lt; 8 ? (irq) + 0x08 : (irq) - 8 + 0x70)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">gives the vector associated with a given IRQ  <a href="#ga56163aadc0579c92911b527ed9d11496"></a><br/></td></tr>
 </table>
 <hr/><a name="_details"></a><h2>Detailed Description</h2>
-<p>Interrupt related functions </p>
+<p>Interrupt related functions. </p>
 <hr/><h2>Define Documentation</h2>
 <a class="anchor" id="ga3685c78b9bd6dd0fa3861807e24a4e1b"></a><!-- doxytag: member="ints.h::COM1_IRQ" ref="ga3685c78b9bd6dd0fa3861807e24a4e1b" args="" -->
 <div class="memitem">
@@ -213,7 +224,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Gives mask bit associated with a given irq. <em>Warning</em>, if irq &gt; 7 the result must be applied to PIC2 </p>
+
+<p>Gives mask bit associated with a given irq. </p>
+<p><em>Warning</em>, if irq &gt; 7 the result must be applied to PIC2 </p>
 
 </div>
 </div>
@@ -232,6 +245,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
+
 <p>gives the vector associated with a given IRQ </p>
 
 </div>
@@ -387,7 +401,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Mask the bit corresponding to 'irq', disabling its interrupts. Returns the previous irq status The correct PIC is used. </p>
+
+<p>Mask the bit corresponding to 'irq', disabling its interrupts. </p>
+<p>Returns the previous irq status The correct PIC is used. </p>
 
 </div>
 </div>
@@ -406,7 +422,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Unmask the bit corresponding to 'irq', enabling its interrupts. The correct PIC is used. </p>
+
+<p>Unmask the bit corresponding to 'irq', enabling its interrupts. </p>
+<p>The correct PIC is used. </p>
 
 </div>
 </div>
@@ -440,8 +458,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Installs the ASM written function 'irq_func' as the interrupt handler associated with interrupt 'irq', updating the 'old_irq' structure with the current interrupt handler. Returns 0 on success or -1 on error, in which case the original interrupt handler remains installed.</p>
-<p>See <a class="el" href="group___interrupts.html#ga1bff8e5131acdf8a4e6309c058f8652d">reinstall_asm_irq_handler()</a> to reinstall the original handler. </p>
+
+<p>Installs the ASM written function 'irq_func' as the interrupt handler associated with interrupt 'irq', updating the 'old_irq' structure with the current interrupt handler. </p>
+<p>Returns 0 on success or -1 on error, in which case the original interrupt handler remains installed.</p>
+<p>See <a class="el" href="group___interrupts.html#ga1bff8e5131acdf8a4e6309c058f8652d" title="Reinstalls the interrupt handler specified in &#39;old_irq&#39; for interrupt &#39;irq&#39;...">reinstall_asm_irq_handler()</a> to reinstall the original handler. </p>
 
 </div>
 </div>
@@ -475,8 +495,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Installs the C written 'irq_func' interrupt handler at the interrupt handler associated with interrupt 'irq', updating the old_irq structure with the current interrupt handler. Returns 0 on success or -1 on error, in which case the original interrupt handler remains installed.</p>
-<p>See <a class="el" href="group___interrupts.html#gaf966b0cfdee8e75839de3e138dd55f67">reinstall_c_irq_handler()</a> to reinstall the original handler. </p>
+
+<p>Installs the C written 'irq_func' interrupt handler at the interrupt handler associated with interrupt 'irq', updating the old_irq structure with the current interrupt handler. </p>
+<p>Returns 0 on success or -1 on error, in which case the original interrupt handler remains installed.</p>
+<p>See <a class="el" href="group___interrupts.html#gaf966b0cfdee8e75839de3e138dd55f67" title="Reinstalls the interrupt handler specified in &#39;old_irq&#39; for interrupt &#39;irq&#39;...">reinstall_c_irq_handler()</a> to reinstall the original handler. </p>
 
 </div>
 </div>
@@ -504,7 +526,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Reinstalls the interrupt handler specified in 'old_irq' for interrupt 'irq'. See <a class="el" href="group___interrupts.html#ga9804d238d82a0d72a73fd868f42ef29a">install_asm_irq_handler()</a>. </p>
+
+<p>Reinstalls the interrupt handler specified in 'old_irq' for interrupt 'irq'. </p>
+<p>See <a class="el" href="group___interrupts.html#ga9804d238d82a0d72a73fd868f42ef29a" title="Installs the ASM written function &#39;irq_func&#39; as the interrupt handler associated...">install_asm_irq_handler()</a>. </p>
 
 </div>
 </div>
@@ -532,7 +556,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </table>
 </div>
 <div class="memdoc">
-<p>Reinstalls the interrupt handler specified in 'old_irq' for interrupt 'irq'. See <a class="el" href="group___interrupts.html#gaa7b3458b0e4df6d02a1c63738e5fd506">install_c_irq_handler()</a>. </p>
+
+<p>Reinstalls the interrupt handler specified in 'old_irq' for interrupt 'irq'. </p>
+<p>See <a class="el" href="group___interrupts.html#gaa7b3458b0e4df6d02a1c63738e5fd506" title="Installs the C written &#39;irq_func&#39; interrupt handler at the interrupt handler...">install_c_irq_handler()</a>. </p>
 
 </div>
 </div>
@@ -551,7 +577,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon May 24 05:42:05 2010 for BSoD Syndrome by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue May 25 04:21:02 2010 for BSoD-Syndrome by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

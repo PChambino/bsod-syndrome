@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>BSoD Syndrome: /Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/queue.h Source File</title>
+<title>BSoD-Syndrome: /Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/src/queue.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -42,7 +42,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
-<h1>/Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/queue.h</h1><a href="queue_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<h1>/Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/src/queue.h</h1><a href="queue_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
 <a name="l00002"></a>00002 <span class="preprocessor">#ifndef __QUEUE_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span><span class="preprocessor">#define __QUEUE_H</span>
 <a name="l00004"></a>00004 <span class="preprocessor"></span>
@@ -54,19 +54,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00018"></a><a class="code" href="struct_queue.html#aa8000eda101cade7c6c4b913fce0cc9c">00018</a>     <span class="keywordtype">int</span> out; <span class="comment">//&lt; output position</span>
 <a name="l00019"></a><a class="code" href="struct_queue.html#a9cfbb269728dc4185236d28be58d9eab">00019</a>     <span class="keywordtype">int</span> cnt; <span class="comment">//&lt; count elements</span>
 <a name="l00020"></a><a class="code" href="struct_queue.html#a439227feff9d7f55384e8780cfc2eb82">00020</a>     <span class="keywordtype">int</span> size; <span class="comment">//&lt; size of queue</span>
-<a name="l00021"></a>00021 } <a class="code" href="struct_queue.html">Queue</a>;
+<a name="l00021"></a>00021 } <a class="code" href="struct_queue.html" title="Queue definition.">Queue</a>;
 <a name="l00022"></a>00022 
 <a name="l00023"></a>00023 <span class="comment">// typedef enum {false = 0, true = 1} Bool;</span>
 <a name="l00024"></a>00024 
-<a name="l00027"></a>00027 <span class="keywordtype">void</span> <a class="code" href="group___queue.html#ga92674b703b54d19714e58b4521e960d9">queueInit</a>(<a class="code" href="struct_queue.html">Queue</a> *q);
+<a name="l00027"></a>00027 <span class="keywordtype">void</span> <a class="code" href="group___queue.html#ga92674b703b54d19714e58b4521e960d9" title="Inicializes Queue.">queueInit</a>(<a class="code" href="struct_queue.html" title="Queue definition.">Queue</a> *q);
 <a name="l00028"></a>00028 
-<a name="l00031"></a>00031 <a class="code" href="group___user_types.html#ga39db6982619d623273fad8a383489309">Bool</a> <a class="code" href="group___queue.html#ga9f3e1501db32dc7a7ba7845776a29f5d">queuePut</a>(<a class="code" href="struct_queue.html">Queue</a> *q, <span class="keywordtype">char</span> c);
+<a name="l00031"></a>00031 <a class="code" href="group___user_types.html#ga39db6982619d623273fad8a383489309" title="User defined boolean type.">Bool</a> <a class="code" href="group___queue.html#ga9f3e1501db32dc7a7ba7845776a29f5d" title="Puts char to queue.">queuePut</a>(<a class="code" href="struct_queue.html" title="Queue definition.">Queue</a> *q, <span class="keywordtype">char</span> c);
 <a name="l00032"></a>00032 
-<a name="l00035"></a>00035 <span class="keywordtype">int</span> <a class="code" href="group___queue.html#gac74285636b6e45f870e193cd790ed5a5">queueGet</a>(<a class="code" href="struct_queue.html">Queue</a> *q);
+<a name="l00035"></a>00035 <span class="keywordtype">int</span> <a class="code" href="group___queue.html#gac74285636b6e45f870e193cd790ed5a5" title="Gets char from queue.">queueGet</a>(<a class="code" href="struct_queue.html" title="Queue definition.">Queue</a> *q);
 <a name="l00036"></a>00036 
-<a name="l00041"></a>00041 <a class="code" href="group___user_types.html#ga39db6982619d623273fad8a383489309">Bool</a> <a class="code" href="group___queue.html#ga80d4134ca16818ec36c96799d474013a">queueEmpty</a>(<a class="code" href="struct_queue.html">Queue</a> *q);
+<a name="l00041"></a>00041 <a class="code" href="group___user_types.html#ga39db6982619d623273fad8a383489309" title="User defined boolean type.">Bool</a> <a class="code" href="group___queue.html#ga80d4134ca16818ec36c96799d474013a" title="Checks if it&amp;#39;s empty.">queueEmpty</a>(<a class="code" href="struct_queue.html" title="Queue definition.">Queue</a> *q);
 <a name="l00042"></a>00042 
-<a name="l00047"></a>00047 <a class="code" href="group___user_types.html#ga39db6982619d623273fad8a383489309">Bool</a> <a class="code" href="group___queue.html#gaf052cf742bfd58dee32a98757a049bb5">queueFull</a>(<a class="code" href="struct_queue.html">Queue</a> *q);
+<a name="l00047"></a>00047 <a class="code" href="group___user_types.html#ga39db6982619d623273fad8a383489309" title="User defined boolean type.">Bool</a> <a class="code" href="group___queue.html#gaf052cf742bfd58dee32a98757a049bb5" title="Checks if it&amp;#39;s full.">queueFull</a>(<a class="code" href="struct_queue.html" title="Queue definition.">Queue</a> *q);
 <a name="l00048"></a>00048 
 <a name="l00050"></a>00050 
 <a name="l00051"></a>00051 <span class="preprocessor">#endif </span><span class="comment">/* __QUEUE_H */</span>
@@ -85,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon May 24 05:42:05 2010 for BSoD Syndrome by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue May 25 04:21:02 2010 for BSoD-Syndrome by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

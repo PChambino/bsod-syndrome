@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>BSoD Syndrome: /Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/rtc.c File Reference</title>
+<title>BSoD-Syndrome: /Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/src/rtc.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -44,20 +44,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <div class="contents">
-<h1>/Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/rtc.c File Reference</h1><code>#include &quot;<a class="el" href="rtc_8h_source.html">rtc.h</a>&quot;</code><br/>
+<h1>/Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/src/rtc.c File Reference</h1><code>#include &quot;<a class="el" href="rtc_8h_source.html">rtc.h</a>&quot;</code><br/>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___real_time_controller.html#ga839845a3a9f35e3860e525cfe86f3405">bcd2dec</a> (<a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a> i)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">converts BCD (Binary Coded Decimal) to decimal  <a href="group___real_time_controller.html#ga839845a3a9f35e3860e525cfe86f3405"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___real_time_controller.html#ga4b857d1c0d66ceaf587d2343881252c1">dec2bcd</a> (<a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a> i)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">converts decimal to BCD (Binary Coded Decimal)  <a href="group___real_time_controller.html#ga4b857d1c0d66ceaf587d2343881252c1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___real_time_controller.html#gae9b349676544e84360bb9278ef4c0a96">rtc_valid</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Wait until data in rtc is valid.  <a href="group___real_time_controller.html#gae9b349676544e84360bb9278ef4c0a96"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___real_time_controller.html#ga4a59b403e6b8da03106ab2a09ec2431f">read_rtc</a> (<a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a> add)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns rtc data from I/O address add.  <a href="group___real_time_controller.html#ga4a59b403e6b8da03106ab2a09ec2431f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a>&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___real_time_controller.html#ga433f5ef3940f2cce7b17aa9771080516">read_rtcv</a> (<a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a> add)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Returns rtc data from I/O address add.  <a href="group___real_time_controller.html#ga433f5ef3940f2cce7b17aa9771080516"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___real_time_controller.html#ga18c4e040accb4c214682d5605f596e60">write_rtc</a> (<a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a> add, <a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a> value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write value to I/O address add.  <a href="group___real_time_controller.html#ga18c4e040accb4c214682d5605f596e60"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___real_time_controller.html#ga28ed5315f068afb9339b74dd434c04bd">write_rtcv</a> (<a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a> add, <a class="el" href="group___user_types.html#gae3a497195d617519e5353ea7b417940f">Byte</a> value)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write value to I/O address add.  <a href="group___real_time_controller.html#ga28ed5315f068afb9339b74dd434c04bd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___real_time_controller.html#ga3554832f0cd4b7366219d8c1aa9ae321">rtc_read_time</a> (<a class="el" href="struct_r_t_c___t_i_m_e.html">RTC_TIME</a> *time)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Read RTC stored time.  <a href="group___real_time_controller.html#ga3554832f0cd4b7366219d8c1aa9ae321"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___real_time_controller.html#gaef01346a833632b8540100f23fecdd09">rtc_read_date</a> (<a class="el" href="struct_r_t_c___d_a_t_e.html">RTC_DATE</a> *date)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Read RTC stored date.  <a href="group___real_time_controller.html#gaef01346a833632b8540100f23fecdd09"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___real_time_controller.html#ga41fd5f9c71342629f1149063251e3827">rtc_read_alarm</a> (<a class="el" href="struct_r_t_c___t_i_m_e.html">RTC_TIME</a> *alarm)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Read RTC stored alarm.  <a href="group___real_time_controller.html#ga41fd5f9c71342629f1149063251e3827"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___real_time_controller.html#gab5992248e26867cf6bb3b08aa822b37e">rtc_write_alarm</a> (<a class="el" href="struct_r_t_c___t_i_m_e.html">RTC_TIME</a> *alarm)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Write alarm to RTC.  <a href="group___real_time_controller.html#gab5992248e26867cf6bb3b08aa822b37e"></a><br/></td></tr>
 </table>
 </div>
 <!--- window showing the filter options -->
@@ -74,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon May 24 05:42:05 2010 for BSoD Syndrome by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue May 25 04:21:02 2010 for BSoD-Syndrome by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

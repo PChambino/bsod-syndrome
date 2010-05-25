@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>BSoD Syndrome: /Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/game.h Source File</title>
+<title>BSoD-Syndrome: /Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/src/game.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -42,7 +42,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="globals.html"><span>Globals</span></a></li>
     </ul>
   </div>
-<h1>/Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/game.h</h1><a href="game_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef _GAME_H_</span>
+<h1>/Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/src/game.h</h1><a href="game_8h.html">Go to the documentation of this file.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#ifndef _GAME_H_</span>
 <a name="l00002"></a>00002 <span class="preprocessor"></span><span class="preprocessor">#define _GAME_H_</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span>
 <a name="l00004"></a>00004 <span class="preprocessor">#include &lt;dos.h&gt;</span>
@@ -69,19 +69,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00025"></a>00025 
 <a name="l00034"></a><a class="code" href="group___game.html#ga422fbc356f055134444727a31b4e7b0b">00034</a> <span class="preprocessor">#define NUM_PCS 6</span>
 <a name="l00035"></a>00035 <span class="preprocessor"></span>
-<a name="l00038"></a><a class="code" href="group___game.html#gga7899b65f1ea0f655e4bbf8d2a5714285af57444a2814db96222f09035ff269767">00038</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> {<a class="code" href="group___game.html#gga7899b65f1ea0f655e4bbf8d2a5714285af095245f5cebc27a97a124345269fed8">PLAYING</a>, <a class="code" href="group___game.html#gga7899b65f1ea0f655e4bbf8d2a5714285adc6f24fd6915a3f2786a1b7045406924">END</a>, <a class="code" href="group___game.html#gga7899b65f1ea0f655e4bbf8d2a5714285a9f5cb747b2e1f0ea781d2b1f2a5b4824">HELP</a>, <a class="code" href="group___game.html#gga7899b65f1ea0f655e4bbf8d2a5714285af57444a2814db96222f09035ff269767">SCORE</a>} <a class="code" href="group___game.html#ga7899b65f1ea0f655e4bbf8d2a5714285">GameState</a>;
+<a name="l00038"></a><a class="code" href="group___game.html#gga7899b65f1ea0f655e4bbf8d2a5714285af57444a2814db96222f09035ff269767">00038</a> <span class="keyword">typedef</span> <span class="keyword">enum</span> {<a class="code" href="group___game.html#gga7899b65f1ea0f655e4bbf8d2a5714285af095245f5cebc27a97a124345269fed8">PLAYING</a>, <a class="code" href="group___game.html#gga7899b65f1ea0f655e4bbf8d2a5714285adc6f24fd6915a3f2786a1b7045406924">END</a>, <a class="code" href="group___game.html#gga7899b65f1ea0f655e4bbf8d2a5714285a9f5cb747b2e1f0ea781d2b1f2a5b4824">HELP</a>, <a class="code" href="group___game.html#gga7899b65f1ea0f655e4bbf8d2a5714285af57444a2814db96222f09035ff269767">SCORE</a>} <a class="code" href="group___game.html#ga7899b65f1ea0f655e4bbf8d2a5714285" title="Game possible states.">GameState</a>;
 <a name="l00039"></a>00039 
-<a name="l00042"></a>00042 <span class="keywordtype">void</span> <a class="code" href="group___game.html#ga5f5ccbe5abfdef24c8378dc3cf32ffb3">game_init</a>();
+<a name="l00042"></a>00042 <span class="keywordtype">void</span> <a class="code" href="group___game.html#ga5f5ccbe5abfdef24c8378dc3cf32ffb3" title="Function that initializes the game and the objects.">game_init</a>();
 <a name="l00043"></a>00043 
-<a name="l00046"></a>00046 <span class="keywordtype">void</span> <a class="code" href="group___game.html#gaf433d3f5ea485c7259d66592f99a85f2">update</a>(<span class="keywordtype">int</span> mili);
+<a name="l00046"></a>00046 <span class="keywordtype">void</span> <a class="code" href="group___game.html#gaf433d3f5ea485c7259d66592f99a85f2" title="Function used to update the objects of the game.">update</a>(<span class="keywordtype">int</span> mili);
 <a name="l00047"></a>00047 
-<a name="l00050"></a>00050 <span class="keywordtype">void</span> <a class="code" href="group___game.html#ga4c40a5bd4a2515fca4b16c58d4c7bbba">draw</a>(<span class="keywordtype">char</span> *buffer);
+<a name="l00050"></a>00050 <span class="keywordtype">void</span> <a class="code" href="group___game.html#ga4c40a5bd4a2515fca4b16c58d4c7bbba" title="Draws the objects of the game.">draw</a>(<span class="keywordtype">char</span> *buffer);
 <a name="l00051"></a>00051 
-<a name="l00056"></a>00056 <span class="keywordtype">void</span> <a class="code" href="group___game.html#gad73a94c51b866ae5ae1f93f66355904a">game_loop</a>(<span class="keywordtype">int</span> <a class="code" href="group___setup.html#ga45b67662d620a977a2cfe519f7ab6273">fps</a>);
+<a name="l00056"></a>00056 <span class="keywordtype">void</span> <a class="code" href="group___game.html#gad73a94c51b866ae5ae1f93f66355904a" title="The game loop uses double buffering and controls the number of frames per second...">game_loop</a>(<span class="keywordtype">int</span> <a class="code" href="group___setup.html#ga45b67662d620a977a2cfe519f7ab6273" title="frames per second the game loop while run.">fps</a>);
 <a name="l00057"></a>00057 
-<a name="l00062"></a>00062 <span class="keywordtype">void</span> <a class="code" href="group___game.html#ga486d33bd072d399b11f0cf3ae7448e5b">game_end</a>();
+<a name="l00062"></a>00062 <span class="keywordtype">void</span> <a class="code" href="group___game.html#ga486d33bd072d399b11f0cf3ae7448e5b" title="Game end called in atexit frees and deletes all game objects.">game_end</a>();
 <a name="l00063"></a>00063 
-<a name="l00066"></a>00066 <span class="keywordtype">void</span> <a class="code" href="group___game.html#ga6be2f294a4d060a7a6e445016a151100">reset_game</a>();
+<a name="l00066"></a>00066 <span class="keywordtype">void</span> <a class="code" href="group___game.html#ga6be2f294a4d060a7a6e445016a151100" title="Reinitialize game.">reset_game</a>();
 <a name="l00067"></a>00067 
 <a name="l00070"></a>00070 <span class="preprocessor">#endif</span>
 </pre></div></div>
@@ -99,7 +99,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon May 24 05:42:05 2010 for BSoD Syndrome by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue May 25 04:21:02 2010 for BSoD-Syndrome by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>BSoD Syndrome: /Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/music.c File Reference</title>
+<title>BSoD-Syndrome: /Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/src/music.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -44,7 +44,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <div class="contents">
-<h1>/Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/music.c File Reference</h1><code>#include &quot;<a class="el" href="music_8h_source.html">music.h</a>&quot;</code><br/>
+<h1>/Users/pchambino/Desktop/Pedro/FEUP/2 Ano/2 Semestre/LCOM/Projecto/bsod-syndrome/src/music.c File Reference</h1><code>#include &quot;<a class="el" href="music_8h_source.html">music.h</a>&quot;</code><br/>
 <table border="0" cellpadding="0" cellspacing="0">
 <tr><td colspan="2"><h2>Enumerations</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="music_8c.html#a9cd2f7208097e5cdf04bb94d92a123a9">MusicState</a> { <a class="el" href="music_8c.html#a9cd2f7208097e5cdf04bb94d92a123a9aac132f2982b98bcaa3445e535a03ff75">OFF</a>, 
@@ -55,12 +55,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2>Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="music_8c.html#a3a776155ce16a4937e70e5b2b77523c7">music_state_machine</a> ()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___music.html#ga8775bebfe360d9a11f9b163457033d47">speaker_on</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Turns the speeker on.  <a href="group___music.html#ga8775bebfe360d9a11f9b163457033d47"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___music.html#gaddcc91b3923481afa543b7bfa7a48409">speaker_off</a> ()</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Turns the speeker off.  <a href="group___music.html#gaddcc91b3923481afa543b7bfa7a48409"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_song.html">Song</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___music.html#ga7413112e74fbb80ee8f6b3da6cf676c5">newSong</a> (int pause, <a class="el" href="struct_note.html">Note</a> notes[], int lenght)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Creates a song.  <a href="group___music.html#ga7413112e74fbb80ee8f6b3da6cf676c5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___music.html#gadff07de0e33c8533c7452fd10fbc0f49">deleteSong</a> (<a class="el" href="struct_song.html">Song</a> *s)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Deletes a song.  <a href="group___music.html#gadff07de0e33c8533c7452fd10fbc0f49"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___music.html#ga67d79eecd73c5954729a7dd34af5d1c5">play_song</a> (<a class="el" href="struct_song.html">Song</a> *s)</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Plays a song in background using rtc.  <a href="group___music.html#ga67d79eecd73c5954729a7dd34af5d1c5"></a><br/></td></tr>
 <tr><td colspan="2"><h2>Variables</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">float&nbsp;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___music.html#ga14961692ca6c47d43cc4f13219156abd">notes_frequency</a> []</td></tr>
+<tr><td class="mdescLeft">&nbsp;</td><td class="mdescRight">Notes frequencies, in Hz, synchronized with arrays NotesN and NotesP.  <a href="group___music.html#ga14961692ca6c47d43cc4f13219156abd"></a><br/></td></tr>
 </table>
 <hr/><h2>Enumeration Type Documentation</h2>
 <a class="anchor" id="a9cd2f7208097e5cdf04bb94d92a123a9"></a><!-- doxytag: member="music.c::MusicState" ref="a9cd2f7208097e5cdf04bb94d92a123a9" args="" -->
@@ -104,6 +110,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dynsection">
+<div class="center"><img src="music_8c_a3a776155ce16a4937e70e5b2b77523c7_cgraph.png" border="0" usemap="#music_8c_a3a776155ce16a4937e70e5b2b77523c7_cgraph_map" alt=""></div>
+</div>
+</p>
+
 </div>
 </div>
 </div>
@@ -121,7 +134,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
-<hr size="1"/><address style="text-align: right;"><small>Generated on Mon May 24 05:42:05 2010 for BSoD Syndrome by&nbsp;
+<hr size="1"/><address style="text-align: right;"><small>Generated on Tue May 25 04:21:02 2010 for BSoD-Syndrome by&nbsp;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.6.1 </small></address>
 </body>
